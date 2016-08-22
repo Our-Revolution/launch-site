@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title>{{title }}</title>
+  <link rel='stylesheet' href='/components/bootstrap/dist/css/bootstrap.css' />
   <link rel="stylesheet" href="/css/style.css">
   {{#if ENV_DEVELOPMENT}}
     <script src="http://localhost:35729/livereload.js"></script>
@@ -11,9 +12,35 @@
 </head>
 <body>
 
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Our Revolution</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="main-navbar">
+        <ul class="nav navbar-nav navbar-nav--centered">
+          <li><a href="/about">About</a></li>
+          <li><a href="/action">Take Action</a></li>
+          <li><a href="/issues">Issues</a></li>
+          <li><a href="/candidates">Candidates</a></li>
+        </ul>
+        <a href="#" class="pull-right btn btn-primary navbar-btn">Donate</a>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 
   {{{body}}}
 
-
   </body>
+  <script src="/components/jquery/dist/jquery.js"></script>
+  <script src="/components/bootstrap/dist/js/bootstrap.js"></script>
 </html>

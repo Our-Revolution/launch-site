@@ -1,6 +1,13 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+.navbar-header, .navbar-btn {
+  z-index: 9;
+  position: relative; }
 
-a {
-  color: #00B7FF; }
+@media (min-width: 768px) {
+  .navbar-nav--centered {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0; }
+    .navbar-nav--centered > li {
+      float: none;
+      display: inline-block; } }
