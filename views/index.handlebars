@@ -2,24 +2,34 @@
   <div class="container">
     <section class="module-container clearfix">
 
-      <div class="module--full">
-        <h2>Join us for the future of our political movement.</h2>
+      <div class="module--centered col-md-8">
+        <div class="module__content sign-up-form">
+          <h2>Join us for the future of our political movement.</h2>
 
-        <form>
-        	<span class="form-group email col-md-5">
-        		<label for="email">Email Address</label>
-        		<input type="email" name="email" id="email" class="email" placeholder="you@example.com">
-        	</span>
+          <form>
+          	<span class="form-group email">
+          		<label for="email">Email Address</label>
+          		<input type="email" name="email" id="email" class="email" placeholder="you@example.com">
+          	</span>
 
-        	<span class="form-group zip col-md-4">
-        		<label for="zip">Zip Code</label>
-        		<input type="text" name="zip" id="zip" class="zip" placeholder="90210">
-        	</span>
+          	<span class="form-group zip">
+          		<label for="zip">Zip Code</label>
+          		<input type="text" name="zip" id="zip" class="zip" placeholder="90210">
+          	</span>
 
-          <span class="col-md-3">
-          	<button class="btn btn-primary btn-block">Submit</button>
-          </span>
-        </form>
+            <span class="form-group submit">
+            	<button class="btn btn-primary btn-block">Join the Fight</button>
+            </span>
+          </form>
+        </div>
+      </div>
+
+      <div class="module--centered dark col-md-4">
+        <div class="module__content">
+          <h2>Stop the TPP</h2>
+          <p>Together we can stop the disastrous Trans-Pacific Partnership</p>
+          <a href="#" class='btn btn-secondary'>Take Action</a>
+        </div>
       </div>
 
     </section>
@@ -28,29 +38,32 @@
 
 <div class="container">
   <section class='home-section--info col-md-10 col-md-offset-1'>
-    <div class='col-md-8'>
+    <div class='col-md-8 col-md-offset-2'>
       <h2>It's time to get back to work.</h2>
-      <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.</p>
+      <p class="info__description">Our Revolution will reclaim democracy for the working people of our country by harnessing the transformative energy of the “political revolution.”  Through supporting a new generation of progressive leaders, empowering millions to fight for progressive change and elevating the political consciousness, Our Revolution will transform American politics to make our political and economic systems once again responsive to the needs of working families.</p>
     </div>
 
-    <div class="col-md-4">
-      <ul>
-        <li>
-          <a href="/action">
+    <div class="col-md-12">
+      <ul class="action-list">
+        <li class="action-list__action col-md-4">
+          <a class="action__link" href="/action">
             <h3>Take Action</h3>
-            <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+            <p class="action__description">Volunteer today and help continue our political revolution through grassroots organization.</p>
+            <span class="glyphicon glyphicon-chevron-right hidden-md hidden-sm"></span>
           </a>
         </li>
-        <li>
-          <a href="/issues">
+        <li class="action-list__action col-md-4">
+          <a class="action__link" href="/issues">
             <h3>Learn About the Issues</h3>
-            <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+            <p class="action__description">Learn about the important issues facing our country today, and what you can do to fix them.</p>
+            <span class="glyphicon glyphicon-chevron-right hidden-md hidden-sm"></span>
           </a>
         </li>
-        <li>
-          <a href="/candidates">  
+        <li class="action-list__action col-md-4">
+          <a class="action__link" href="/candidates">
             <h3>Explore Our Candidates</h3>
-            <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+            <p class="action__description">Find out who will continue the political revolution, and what you can do to help them win.</p>
+            <span class="glyphicon glyphicon-chevron-right hidden-md hidden-sm"></span>
           </a>
         </li>
       </ul>
@@ -61,39 +74,48 @@
 <div class="row row--dark">
   <div class="container">
     <section class="home-section--news col-md-10 col-md-offset-1">
-      <h2>News</h2>
-      <div class="col-md-4">
-        <h3>Purus Mollis Ligula Dolor</h3>
-        <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui.</p>
+      <h2 class="section-heading">News</h2>
+      <div class="col-md-4 content">
+        <div class="news-item">
+          <h3 class="content__heading">Purus Mollis Ligula Dolor</h3>
+          <p class="content__copy">Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod.</p>
+          <a href="#" class="content__btn btn btn-secondary">Read <span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div>
       </div>
-      <div class="col-md-4">
-        <h3>Purus Mollis Ligula Dolor</h3>
-        <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui.</p>
+      <div class="col-md-4 content">
+        <div class="news-item">
+          <h3 class="content__heading">Purus Mollis Ligula Dolor</h3>
+          <p class="content__copy">Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          <a href="#" class="content__btn btn btn-secondary">Read <span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div>
       </div>
-      <div class="col-md-4">
-        <h3>Purus Mollis Ligula Dolor</h3>
-        <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui.</p>
+      <div class="col-md-4 content">
+        <div class="news-item">
+          <h3 class="content__heading">Purus Mollis Ligula Dolor</h3>
+          <p class="content__copy">Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod.</p>
+          <a href="#" class="content__btn btn btn-secondary">Read <span class="glyphicon glyphicon-chevron-right"></span></a>
+        <div>
       </div>
     </section>
   </div>
 </div>
 
 <div class="container">
-  <section class="home-section--sign-up col-md-8 col-md-offset-2">
+  <section class="home-section--sign-up col-md-6 col-md-offset-3 sign-up-form">
     <h2>Join us for the future of our political movement.</h2>
 
     <form>
-    	<span class="form-group email col-md-5">
+    	<span class="form-group email">
     		<label for="email">Email Address</label>
     		<input type="email" name="email" id="email" class="email" placeholder="you@example.com">
     	</span>
 
-    	<span class="form-group zip col-md-4">
+    	<span class="form-group zip ">
     		<label for="zip">Zip Code</label>
     		<input type="text" name="zip" id="zip" class="zip" placeholder="90210">
     	</span>
 
-      <span class="col-md-3">
+      <span class="form-group submit">
       	<button class="btn btn-primary btn-block">Submit</button>
       </span>
     </form>
@@ -101,7 +123,9 @@
 </div>
 
 <div class="row row--dark">
-  <section class="home-section--donate col-md-8 col-md-offset-2">
-    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum. Curabitur blandit tempus porttitor.</p>
+  <section class="home-section--donate col-md-6 col-md-offset-3">
+    <h3>Donate to Our Revolution</h3>
+    <p>Our Revolution is a non-profit that runs off of funds from contributors like you. Help us continue this movement.</p>
+    <a href="#" class='btn btn-donate btn-block'>Donate</a>
   </section>
 </div>
