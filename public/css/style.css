@@ -2,6 +2,9 @@
   z-index: 9;
   position: relative; }
 
+.navbar-default {
+  margin-bottom: 0; }
+
 @media (min-width: 768px) {
   .navbar-nav--centered {
     text-align: center;
@@ -11,3 +14,22 @@
     .navbar-nav--centered > li {
       float: none;
       display: inline-block; } }
+.row--dark {
+  background: #eee; }
+
+.module-container {
+  background: white;
+  border-radius: 3px;
+  margin: 10px 0;
+  padding: 20px;
+  min-height: 600px; }
+
+footer {
+  padding: 40px 0; }
+
+.home-section, .home-section--sign-up, .home-section--info, .home-section--news, .home-section--donate {
+  padding: 40px 0; }
+  .home-section--sign-up label, .home-section--sign-up input {
+    display: block; }
+  .home-section--sign-up input {
+    width: 100%; }

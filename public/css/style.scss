@@ -1,6 +1,12 @@
+// Bootstrap Overrides
+// Nav
 .navbar-header, .navbar-btn {
   z-index: 9;
   position: relative;
+}
+
+.navbar-default {
+    margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
@@ -15,5 +21,42 @@
       float: none;
       display: inline-block;
     }
+  }
+}
+
+// Global
+.row--dark {
+  background: #eee;
+}
+
+.module-container {
+  background: white;
+  border-radius: 3px;
+  margin: 10px 0;
+  padding: 20px;
+  min-height: 600px;
+}
+
+footer {
+  padding: 40px 0;
+}
+
+// Home
+.home-section {
+  padding: 40px 0;
+
+  &--sign-up {
+    @extend .home-section;
+    label, input {
+      display: block;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+  &--info, &--news, &--donate {
+    @extend .home-section;
   }
 }
