@@ -24,6 +24,14 @@
   padding: 20px;
   min-height: 600px; }
 
+.page-heading {
+  background: #eee;
+  border-radius: 3px;
+  padding: 20px;
+  margin: 10px 0;
+  height: 200px;
+  vertical-align: bottom; }
+
 footer {
   padding: 40px 0; }
 
@@ -33,3 +41,27 @@ footer {
     display: block; }
   .home-section--sign-up input {
     width: 100%; }
+
+.goals {
+  background: #eee;
+  border-radius: 3px;
+  margin-top: 40px;
+  margin-bottom: 40px; }
+  .goals__title {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-width: 0 1px 1px 0;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: 0.25s; }
+    .goals__title:hover {
+      background: #d5d5d5; }
+    .goals__title.active {
+      background: #bbbbbb; }
+    .goals__title:first-child {
+      border-radius: 3px 0 0 0; }
+    .goals__title:last-child {
+      border-right: none;
+      border-radius: 0 3px 0 0; }
+  .goals__description {
+    padding: 40px; }
