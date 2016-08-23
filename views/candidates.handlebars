@@ -2,4 +2,22 @@
   <div class="page-heading">
     <h1>{{title}}</h1>
   </div>
+
+  <div>
+    <ul class="candidate-list">
+    {{#each data}}
+      <li class="candidate clearfix">
+        <a href="#">
+          <div class="candidate__photo" src="{{this.photo}}"></div>
+          <div class="candidate__content">
+            <span class="candidate__name">{{this.name}}</span>
+            <span class="candidate__state">{{this.state}}</span>
+            <span class="candidate__district">{{this.district}}</span>
+            <span class="candidate__office">{{this.office}}</span>
+          </div>
+        </a>
+      </li>
+    {{/each}}
+
+  </div>
 </div>

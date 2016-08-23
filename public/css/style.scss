@@ -12,45 +12,81 @@
 }
 
 .btn-primary,
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary.focus,
-.btn-primary:active,
-.btn-primary.active,
-.btn-primary:visited,
-.btn-primary:active:hover,
-.btn-primary.active:hover {
+.btn-primary:visited {
   background-color: $green;
   color: white;
   border: none;
   outline: none;
 }
 
+.btn-primary:hover,
+.btn-primary:active:hover,
+.btn-primary.active:hover {
+  background-color: darken($green, 8);
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active {
+  background-color: darken($green, 15);
+  color: white;
+  border: none;
+  outline: none;
+}
+
 .btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus,
-.btn-secondary.focus,
-.btn-secondary:active,
-.btn-secondary.active,
-.btn-secondary:visited,
-.btn-secondary:active:hover,
-.btn-secondary.active:hover {
+.btn-secondary:visited {
   background-color: $blue;
   color: white;
   border: none;
   outline: none;
 }
 
+.btn-secondary:hover,
+.btn-secondary:active:hover,
+.btn-secondary.active:hover {
+  background-color: darken($blue, 10);
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.btn-secondary:focus,
+.btn-secondary.focus,
+.btn-secondary:active,
+.btn-secondary.active {
+  background-color: darken($blue, 15);
+  color: white;
+  border: none;
+  outline: none;
+}
+
 .btn-donate,
+.btn-donate:visited {
+  background-color: $red;
+  color: white;
+  border: none;
+  outline: none;
+}
+
 .btn-donate:hover,
+.btn-donate:active:hover,
+.btn-donate.active:hover {
+  background-color: darken($red, 10);
+  color: white;
+  border: none;
+  outline: none;
+}
+
 .btn-donate:focus,
 .btn-donate.focus,
 .btn-donate:active,
-.btn-donate.active,
-.btn-donate:visited,
-.btn-donate:active:hover,
-.btn-donate.active:hover {
-  background-color: $red;
+.btn-donate.active {
+  background-color: darken($red, 15);
   color: white;
   border: none;
   outline: none;
@@ -77,6 +113,10 @@ input {
 }
 
 // Global
+body {
+  padding-top: 50px;
+}
+
 .row--dark {
   background: #eee;
 }
@@ -157,13 +197,18 @@ footer {
 .sign-up-form {
   .form-group {
     display: inline-block;
+    margin-right: 2%;
+
+    &:last-child {
+      margin-right: 0;
+    }
 
     &.email {
-      width: 50%;
+      width: 48%;
     }
 
     &.zip {
-      width: 28%;
+      width: 26%;
     }
 
     &.submit {
@@ -240,6 +285,10 @@ footer {
 }
 
 // About
+.mission {
+  margin-top: 40px;
+}
+
 .goals {
   background: #eee;
   border-radius: 3px;
@@ -350,4 +399,41 @@ footer {
 // Footer
 footer {
   background: #e5e5e5;
+}
+
+// Candidates Page
+.candidate-list {
+  list-style-type: none;
+  margin: 0 0 1% 0;
+
+  .candidate {
+    width: 23%;
+    height: 100px;
+    background: #eee;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 3px;
+    margin: 1% 1% 0 0;
+  }
+
+  .candidate__photo {
+    display: inline-block;
+    border-radius: 3px 0 0 3px;
+    height: 100px;
+    width: 100px;
+    background: #999;
+  }
+
+  .candidate__name {
+    display: block;
+  }
+
+  .candidate__office {
+    display: block;
+  }
+
+  .candidate__content {
+    width: calc(100% - 100px);
+    float: right;
+  }
 }
