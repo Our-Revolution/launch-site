@@ -144,6 +144,36 @@ footer {
   .content .content__btn {
     display: block; }
 
+.navbar-brand {
+  padding: 10px; }
+  .navbar-brand .logo {
+    height: 30px; }
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 80px; }
+
+  .navbar-brand {
+    padding: 15px; }
+
+  .navbar .logo {
+    height: 50px;
+    width: auto;
+    transition: 0.25s; }
+    .navbar .logo:hover {
+      transform: scale(1.1); }
+
+  .navbar {
+    height: 80px; }
+
+  .navbar-default .navbar-nav > li > a {
+    padding-top: 30px;
+    padding-bottom: 30px; }
+
+  .navbar .btn-donate.navbar-btn {
+    margin-top: 17px;
+    margin-bottom: 17px;
+    padding: 12px 18px; } }
 .module-container {
   background: white;
   border-radius: 3px;
@@ -190,7 +220,12 @@ footer {
     flex-flow: row wrap; }
     .module-container .module--centered {
       flex: 0 0 100%;
-      padding: 20px; } }
+      padding: 20px; }
+
+  .navbar .btn-donate {
+    display: block;
+    width: 100%;
+    float: none !important; } }
 .sign-up-form .form-group {
   display: inline-block;
   margin-right: 2%;

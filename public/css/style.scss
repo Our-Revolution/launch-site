@@ -189,6 +189,50 @@ footer {
   }
 }
 
+// Nav
+.navbar-brand {
+  padding: 10px;
+
+  .logo {
+    height: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+body {
+  padding-top: 80px;
+}
+
+.navbar-brand {
+  padding: 15px;
+}
+
+.navbar .logo {
+  height: 50px;
+  width: auto;
+  transition: 0.25s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.navbar {
+  height: 80px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.navbar .btn-donate.navbar-btn {
+  margin-top: 17px;
+  margin-bottom: 17px;
+  padding: 12px 18px;
+}
+}
+
 // Modules
 .module-container {
   background: white;
@@ -262,6 +306,12 @@ footer {
       flex: 0 0 100%;
       padding: 20px;
     }
+  }
+
+  .navbar .btn-donate {
+    display: block;
+    width: 100%;
+    float: none !important;
   }
 }
 
