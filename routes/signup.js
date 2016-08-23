@@ -3,8 +3,12 @@ var router = express.Router();
 var pg = require('pg');
 var cookieParser = require('cookie-parser');
 
-/* POST to sign up. */
+/* GET to sign up. */
+router.get('/', function(req, res) {
+  res.redirect('/');
+});
 
+/* POST to sign up. */
 router.post('/', function(req, res) {
   var error = null;
   try {
@@ -40,7 +44,7 @@ router.post('/', function(req, res) {
       type: 'website'
   	});
   else
-  	res.redirect('https://secure.actblue.com/contribute/page/ourrevolution?refcode=sp160725&amount=27.00');
+  	res.redirect('https://secure.actblue.com/contribute/page/ourrevolution?refcode=signup-redirect&amount=27.00');
 });
 
 module.exports = router;
