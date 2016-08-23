@@ -2,11 +2,15 @@
   <div class="container">
     <section class="module-container clearfix">
 
-      <div class="module--centered col-md-8">
+      <div class="module--centered col-md-4">
         <div class="module__content sign-up-form">
           <h2>Join us for the future of our political movement.</h2>
 
-          <form action="/signup" method="POST">
+          <form action="/signup" method="POST" enctype="application/x-www-form-urlencoded">
+          {{#if error}}
+            <div class="alert alert-danger" role="alert">{{error}}</div>
+          {{/if}}
+
           	<span class="form-group email">
           		<label for="email">Email Address</label>
           		<input type="email" name="email" id="email" class="email" placeholder="you@example.com">
@@ -24,11 +28,11 @@
         </div>
       </div>
 
-      <div class="module--centered dark col-md-4">
+      <div class="module--centered module--video dark col-md-8">
         <div class="module__content">
-          <h2>Stop the TPP</h2>
-          <p>Together we can stop the disastrous Trans-Pacific Partnership</p>
-          <a href="#" class='btn btn-secondary'>Take Action</a>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Kp4tFcwkjhQ" frameborder="0" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
 
@@ -78,26 +82,29 @@
 <div class="row row--dark">
   <div class="container">
     <section class="home-section--news col-md-10 col-md-offset-1">
-      <h2 class="section-heading">News</h2>
+      <h2 class="section-heading">In the News</h2>
       <div class="col-md-4 content">
         <div class="news-item">
-          <h3 class="content__heading">Purus Mollis Ligula Dolor</h3>
-          <p class="content__copy">Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod.</p>
+          <h4 class="content__heading">What Is "Our Revolution"? Bernie Sanders' New Organization Is Keeping The Movement Going</h4>
+          <div class="attribution">Amée Latour | <strong>Bustle</strong></div>
+          <p class="content__copy">Sen. Bernie Sanders said time and again throughout his presidential primary bid that the movement it sparked must continue beyond his campaign...</p>
           <a href="#" class="content__btn btn btn-secondary">Read <span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
       </div>
       <div class="col-md-4 content">
         <div class="news-item">
-          <h3 class="content__heading">Purus Mollis Ligula Dolor</h3>
-          <p class="content__copy">Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          <h4 class="content__heading">Amid Tribe's Protest, Construction Of Oil Pipeline In N. Dakota Halts — For Now</h4>
+          <div class="attribution">Merrit Kennedy | <strong>NPR</strong></div>
+          <p class="content__copy">Construction of a controversial crude oil pipeline set to span at least 1,168 miles from North Dakota to Illinois has temporarily been halted in North Dakota amid protests by Native American tribes...</p>
           <a href="#" class="content__btn btn btn-secondary">Read <span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
       </div>
       <div class="col-md-4 content">
         <div class="news-item">
-          <h3 class="content__heading">Purus Mollis Ligula Dolor</h3>
-          <p class="content__copy">Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod.</p>
-          <a href="#" class="content__btn btn btn-secondary">Read <span class="glyphicon glyphicon-chevron-right"></span></a>
+          <h4 class="content__heading">The Axis Of Destruction And Hope</h4>
+          <div class="attribution">Bill McKibben | <strong>Contribution, Huffington Post</strong></div>
+          <p class="content__copy">If you want to understand the climate crisis today, you need to journey roughly along the 95th meridian, from Louisiana in the south to the the Standing Rock Sioux Reservation in the Dakotas...</p>
+          <a href="http://www.huffingtonpost.com/bill-mckibben/the-axis-of-destruction-a_b_11546860.html" target="_blank" class="content__btn btn btn-secondary">Read <span class="glyphicon glyphicon-chevron-right"></span></a>
         <div>
       </div>
     </section>
