@@ -31,7 +31,7 @@
 
 .btn-secondary,
 .btn-secondary:visited {
-  background-color: #4A90E2;
+  background-color: #53A2F2;
   color: white;
   border: none;
   outline: none; }
@@ -39,7 +39,7 @@
 .btn-secondary:hover,
 .btn-secondary:active:hover,
 .btn-secondary.active:hover {
-  background-color: #2275d7;
+  background-color: #2488ee;
   color: white;
   border: none;
   outline: none; }
@@ -48,14 +48,14 @@
 .btn-secondary.focus,
 .btn-secondary:active,
 .btn-secondary.active {
-  background-color: #1f69c1;
+  background-color: #117ce7;
   color: white;
   border: none;
   outline: none; }
 
 .btn-donate,
 .btn-donate:visited {
-  background-color: #F23B3B;
+  background-color: #F43737;
   color: white;
   border: none;
   outline: none; }
@@ -63,7 +63,7 @@
 .btn-donate:hover,
 .btn-donate:active:hover,
 .btn-donate.active:hover {
-  background-color: #ea1010;
+  background-color: #eb0d0d;
   color: white;
   border: none;
   outline: none; }
@@ -72,7 +72,7 @@
 .btn-donate.focus,
 .btn-donate:active,
 .btn-donate.active {
-  background-color: #d30e0e;
+  background-color: #d30c0c;
   color: white;
   border: none;
   outline: none; }
@@ -229,7 +229,7 @@ footer {
   .action-list__action {
     position: relative;
     padding: 0;
-    background: #4A90E2;
+    background: #53A2F2;
     color: white;
     text-decoration: none;
     border-radius: 3px;
@@ -237,7 +237,7 @@ footer {
     .action-list__action .action__description {
       margin-right: 40px; }
     .action-list__action:hover, .action-list__action:focus {
-      background: #2275d7;
+      background: #2488ee;
       color: white;
       text-decoration: none; }
     .action-list__action .action__link {
