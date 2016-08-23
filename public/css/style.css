@@ -3,7 +3,8 @@
   position: relative; }
 
 .navbar-default {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  background: white; }
 
 .btn-primary,
 .btn-primary:visited {
