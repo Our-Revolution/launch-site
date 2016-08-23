@@ -12,11 +12,20 @@
     background: white;
 }
 
+.nav-pills > li > a {
+  background: #eee;
+  margin-bottom: 10px;
+
+  &:hover {
+    background: darken(#eee, 10);
+  }
+}
+
 .btn-primary,
 .btn-primary:visited {
   background-color: $green;
   color: white;
-  border: none;
+  border: 1px solid $green;
   outline: none;
 }
 
@@ -25,7 +34,7 @@
 .btn-primary.active:hover {
   background-color: darken($green, 8);
   color: white;
-  border: none;
+  border: 1px solid darken($green, 8);
   outline: none;
 }
 
@@ -33,7 +42,7 @@
 .btn-primary.focus,
 .btn-primary:active,
 .btn-primary.active {
-  background-color: darken($green, 15);
+  border: 1px solid darken($green, 15);
   color: white;
   border: none;
   outline: none;
@@ -114,20 +123,18 @@ input {
 }
 
 // Global
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   padding-top: 50px;
+  margin-bottom: 100px;
 }
 
 .row--dark {
   background: #eee;
-}
-
-.module-container {
-  background: white;
-  border-radius: 3px;
-  margin: 10px 0;
-  height: 600px;
-  display: flex;
 }
 
 .page-heading {
@@ -135,8 +142,20 @@ body {
   border-radius: 3px;
   padding: 20px;
   margin: 10px 0;
-  height: 200px;
   vertical-align: bottom;
+
+  h1 {
+    margin: 100px 0 5px 0;
+  }
+
+  h3 {
+    margin-top: 0;
+    font-weight: normal;
+  }
+
+  p {
+    max-width: 600px;
+  }
 }
 
 .dark {
@@ -144,7 +163,12 @@ body {
 }
 
 footer {
-  padding: 40px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: #f5f5f5;
 }
 
 .content {
@@ -166,10 +190,23 @@ footer {
 }
 
 // Modules
+.module-container {
+  background: white;
+  border-radius: 3px;
+  margin: 10px 0;
+  height: 600px;
+  display: flex;
+}
+
 .module {
   height: 100%;
 
+  h1, h2, h3 {
+    margin-top: 0;
+  }
+
   &--centered {
+    @extend .module;
     display: flex;
     align-content: center;
     justify-content: center;
@@ -195,10 +232,44 @@ footer {
   }
 }
 
+@media (max-width: 991px) {
+  .module-container .sign-up-form .form-group {
+    margin-bottom: 10px;
+
+    &.email {
+      width: 60%;
+    }
+
+    &.zip {
+      width: 36%;
+      margin-right: 0;
+    }
+
+    &.submit {
+      display: block;
+      width: 100%;
+    }
+
+  }
+}
+
+@media (max-width: 767px) {
+  .module-container {
+    height: auto;
+    flex-flow: row wrap;
+
+    .module--centered {
+      flex: 0 0 100%;
+      padding: 20px;
+    }
+  }
+}
+
 .sign-up-form {
   .form-group {
     display: inline-block;
     margin-right: 2%;
+    margin-bottom: 0;
 
     &:last-child {
       margin-right: 0;
@@ -236,9 +307,34 @@ footer {
   }
 }
 
+@media (max-width: 520px) {
+  .sign-up-form .form-group {
+    margin-bottom: 10px;
+
+    &.email {
+      width: 60%;
+    }
+
+    &.zip {
+      width: 36%;
+      margin-right: 0;
+    }
+
+    &.submit {
+      display: block;
+      width: 100%;
+    }
+
+  }
+}
+
 // Home
 .home-section {
-  padding: 40px 0;
+  padding: 80px 0;
+
+  h2, h3 {
+    margin-top: 0;
+  }
 
   &--sign-up {
     @extend .home-section;
@@ -281,6 +377,40 @@ footer {
     .content {
       display: flex;
       flex: 1;
+    }
+  }
+}
+
+.quick-donate {
+  .btn-amount, input {
+    width: 12%;
+    margin-right: 1%;
+    text-align: center;
+    height: 40px;
+  }
+
+  .btn-amount {
+    padding: 9px 12px;
+  }
+
+  .btn-continue {
+    height: 40px;
+    border-radius: 40px;
+    width: 30%;
+  }
+}
+
+@media (max-width: 600px) {
+  .quick-donate {
+    .btn-amount, input {
+      width: 17%;
+    }
+
+    .btn-continue {
+      display: block;
+      width: 50%;
+      margin: auto;
+      margin-top: 10px;
     }
   }
 }
@@ -400,6 +530,7 @@ footer {
 // Footer
 footer {
   background: #e5e5e5;
+  padding: 30px;
 }
 
 // Candidates Page
@@ -436,5 +567,44 @@ footer {
   .candidate__content {
     width: calc(100% - 100px);
     float: right;
+  }
+}
+
+// Issues
+.issues__content {
+  background: #f5f5f5;
+  border-radius: 3px;
+  padding: 80px;
+  margin-bottom: 10px;
+
+  .sign-up-form {
+    background: #ccc;
+    margin: 80px -80px -80px;
+    padding: 80px;
+    border-radius: 0 0 3px 3px;
+
+    h3 {
+      margin-top: 0;
+    }
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .sub-heading {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+  }
+}
+
+.issues__nav {
+  margin-left: -7.5px;
+}
+
+.solution-list {
+  > li {
+    margin: 20px 10px;
   }
 }

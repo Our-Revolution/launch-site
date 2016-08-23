@@ -20,7 +20,7 @@
 
   <footer class="text-center">
     <div class="container">
-      <p>Our Revolution will operate as a 501(c)(4) non-profit organization.</p>
+      <small>Our Revolution will operate as a 501(c)(4) non-profit organization.</small>
     </div>
   </footer>
 
@@ -44,6 +44,30 @@
           $(this).addClass('active');
 
           $('.goals__description p').text(goals[$(this).data("value")]);
+        });
+      });
+    </script>
+  {{/if}}
+
+  {{#if active.home}}
+    <script>
+      $(document).ready(function() {
+        var keycode;
+
+        $('.btn-amount').on('click touchstart', function(e) {
+          e.preventDefault();
+          $("input#amount").val(this.value);
+          $('form#quick-donate').submit();
+        });
+
+        $('.input-amount').on('keyup', function(e) {
+          keycode = (event.keyCode ? event.keyCode : event.which);
+
+          $("input#amount").val(this.value);
+
+          if(keycode == 13) {
+            $('form#quick-donate').submit();
+          }
         });
       });
     </script>

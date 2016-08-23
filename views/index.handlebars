@@ -1,4 +1,4 @@
-<div class="row row--dark">
+<div class="row row--dark home">
   <div class="container">
     <section class="module-container clearfix">
 
@@ -36,39 +36,43 @@
   </div>
 </div>
 
-<div class="container">
-  <section class='home-section--info col-md-10 col-md-offset-1'>
-    <div class='col-md-8 col-md-offset-2'>
-      <h2>It's time to get back to work.</h2>
-      <p class="info__description">Our Revolution will reclaim democracy for the working people of our country by harnessing the transformative energy of the “political revolution.”  Through supporting a new generation of progressive leaders, empowering millions to fight for progressive change and elevating the political consciousness, Our Revolution will transform American politics to make our political and economic systems once again responsive to the needs of working families.</p>
-    </div>
+<div class="row">
+  <div class="container">
+    <section class='home-section--info col-md-10 col-md-offset-1'>
+      <div class='col-md-8 col-md-offset-2'>
+        <h2>It's time to get back to work.</h2>
+        <p class="info__description">Our Revolution will reclaim democracy for the working people of our country by harnessing the transformative energy of the “political revolution.”  Through supporting a new generation of progressive leaders, empowering millions to fight for progressive change and elevating the political consciousness, Our Revolution will transform American politics to make our political and economic systems once again responsive to the needs of working families.</p>
+      </div>
 
-    <div class="col-md-12">
-      <ul class="action-list">
-        <li class="action-list__action col-md-4">
-          <a class="action__link" href="/action">
-            <h3>Take Action</h3>
-            <p class="action__description">Volunteer today and help continue our political revolution through grassroots organization.</p>
-            <span class="glyphicon glyphicon-chevron-right hidden-md hidden-sm"></span>
-          </a>
-        </li>
-        <li class="action-list__action col-md-4">
-          <a class="action__link" href="/issues">
-            <h3>Learn About the Issues</h3>
-            <p class="action__description">Learn about the important issues facing our country today, and what you can do to fix them.</p>
-            <span class="glyphicon glyphicon-chevron-right hidden-md hidden-sm"></span>
-          </a>
-        </li>
-        <li class="action-list__action col-md-4">
-          <a class="action__link" href="/candidates">
-            <h3>Explore Our Candidates</h3>
-            <p class="action__description">Find out who will continue the political revolution, and what you can do to help them win.</p>
-            <span class="glyphicon glyphicon-chevron-right hidden-md hidden-sm"></span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </section>
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="action-list">
+            <li class="action-list__action col-md-4">
+              <a class="action__link" href="/action">
+                <h3>Take Action</h3>
+                <p class="action__description">Volunteer today and help continue our political revolution through grassroots organization.</p>
+                <span class="glyphicon glyphicon-chevron-right hidden-md hidden-sm"></span>
+              </a>
+            </li>
+            <li class="action-list__action col-md-4">
+              <a class="action__link" href="/issues">
+                <h3>Learn About the Issues</h3>
+                <p class="action__description">Learn about the important issues facing our country today, and what you can do to fix them.</p>
+                <span class="glyphicon glyphicon-chevron-right hidden-md hidden-sm"></span>
+              </a>
+            </li>
+            <li class="action-list__action col-md-4">
+              <a class="action__link" href="/candidates">
+                <h3>Explore Our Candidates</h3>
+                <p class="action__description">Find out who will continue the political revolution, and what you can do to help them win.</p>
+                <span class="glyphicon glyphicon-chevron-right hidden-md hidden-sm"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
 </div>
 
 <div class="row row--dark">
@@ -100,26 +104,28 @@
   </div>
 </div>
 
-<div class="container">
-  <section class="home-section--sign-up col-md-6 col-md-offset-3 sign-up-form">
-    <h2>Join us for the future of our political movement.</h2>
+<div class="row">
+  <div class="container">
+    <section class="home-section--sign-up col-md-6 col-md-offset-3 sign-up-form">
+      <h2>Join us for the future of our political movement.</h2>
 
-    <form>
-    	<span class="form-group email">
-    		<label for="email">Email Address</label>
-    		<input type="email" name="email" id="email" class="email" placeholder="you@example.com">
-    	</span>
+      <form>
+      	<span class="form-group email">
+      		<label for="email">Email Address</label>
+      		<input type="email" name="email" id="email" class="email" placeholder="you@example.com">
+      	</span>
 
-    	<span class="form-group zip ">
-    		<label for="zip">Zip Code</label>
-    		<input type="text" name="zip" id="zip" class="zip" placeholder="90210">
-    	</span>
+      	<span class="form-group zip ">
+      		<label for="zip">Zip Code</label>
+      		<input type="text" name="zip" id="zip" class="zip" placeholder="90210">
+      	</span>
 
-      <span class="form-group submit">
-      	<button class="btn btn-primary btn-block">Submit</button>
-      </span>
-    </form>
-  </section>
+        <span class="form-group submit">
+        	<button class="btn btn-primary btn-block">Submit</button>
+        </span>
+      </form>
+    </section>
+  </div>
 </div>
 
 <div class="row row--dark">
@@ -127,7 +133,15 @@
     <section class="home-section--donate col-md-6 col-md-offset-3">
       <h3>Donate to Our Revolution</h3>
       <p>Our Revolution is a non-profit that runs off of funds from contributors like you. Help us continue this movement.</p>
-      <a href="#" class='btn btn-donate btn-block'>Donate</a>
+      <form id="quick-donate" class="quick-donate" action="https://secure.actblue.com/contribute/page/ourrevolution?amount=15" method="GET">
+        <button type="button" class="btn btn-default btn-amount" value="15">$15</button>
+        <button type="button" class="btn btn-primary btn-amount" value="27">$27</button>
+        <button type="button" class="btn btn-default btn-amount" value="50">$50</button>
+        <button type="button" class="btn btn-default btn-amount" value="100">$100</button>
+        <input type="text" placeholder="$___" class="input-amount">
+        <button class="btn btn-continue btn-secondary" id="donate-continue" type="submit">Continue <span class="glyphicon glyphicon-chevron-right"></span></button>
+        <input type="hidden" name="amount" id="amount">
+      </form>
     </section>
   </div>
 </div>
