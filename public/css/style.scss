@@ -23,6 +23,8 @@
 
 .btn {
   font-weight: 700;
+  height: 40px;
+  padding: 10px 15px;
 }
 
 .btn-primary,
@@ -140,12 +142,25 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+h4, h1 {
+  font-weight: 700;
+}
+
 .row--dark {
   background: #f5f5f5;
 }
 
+.row--colored {
+  background-color: $blue;
+  background: url('../img/bg_3.png') top center;
+  background-size: cover;
+  color: white;
+  text-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
 .page-heading {
-  background: $blue;
+  background: url('../img/bg_4.png') center center;
+  background-size: cover;
   color: white;
   border-radius: 3px;
   padding: 20px;
@@ -153,7 +168,7 @@ body {
   vertical-align: bottom;
 
   h1 {
-    margin: 100px 0 5px 0;
+    margin: 140px 0 5px 0;
   }
 
   h3 {
@@ -258,7 +273,7 @@ body {
 .navbar .btn-donate.navbar-btn {
   margin-top: 17px;
   margin-bottom: 17px;
-  padding: 12px 18px;
+  padding: 11px 18px;
 }
 }
 
@@ -441,6 +456,17 @@ body {
   button {
     height: 40px;
     width: 100%;
+  }
+
+  &--blue {
+    background-color: $blue;
+    color: white;
+    padding: 40px;
+    border-radius: 3px;
+
+    h2 {
+      margin-top: 0;
+    }
   }
 }
 

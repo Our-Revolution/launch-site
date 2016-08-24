@@ -6,7 +6,7 @@ var _ = require('lodash');
 /* GET Issues page. */
 
 router.get('/', function(req, res) {
-  res.render('issues', { title: 'Our Issues', active: {issues: true}, issues:issues, issue:{'income-inequality':true} });
+  res.render('issues', { title: 'Our Revolution - Issues', active: {issues: true}, issues:issues, issue:{'income-inequality':true} });
 });
 
 router.get('/:issue', function(req, res) {
