@@ -389,9 +389,10 @@ footer {
     cursor: pointer;
     transition: 0.25s; }
     .goals__title:hover {
-      background: gainsboro; }
+      background: #e1effd; }
     .goals__title.active {
-      background: #c2c2c2; }
+      background: #53A2F2;
+      color: white; }
     .goals__title:first-child {
       border-radius: 3px 0 0 0; }
     .goals__title:last-child {
@@ -449,7 +450,7 @@ footer {
       display: flex;
       align-items: center; } }
 footer {
-  background: #e5e5e5;
+  background: white;
   padding: 50px; }
 
 .candidate-list {
