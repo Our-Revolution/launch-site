@@ -420,28 +420,87 @@ footer {
 
 .candidate-list {
   list-style-type: none;
-  margin: 0 0 1% 0; }
+  margin: 0 0 1% 0;
+  padding: 0; }
   .candidate-list .candidate {
-    width: 23%;
+    width: 23.5%;
     height: 100px;
     background: #eee;
     display: inline-block;
     overflow: hidden;
     border-radius: 3px;
-    margin: 1% 1% 0 0; }
+    margin: 1% 1% 0 0;
+    transition: 0.1s; }
+    .candidate-list .candidate__content {
+      height: 100px;
+      position: relative; }
+    .candidate-list .candidate__name {
+      line-height: 12px; }
+    .candidate-list .candidate__location {
+      font-size: 12px;
+      font-weight: bolder;
+      line-height: 12px; }
+    .candidate-list .candidate__office {
+      position: absolute;
+      left: 10px;
+      bottom: 10px; }
+    .candidate-list .candidate:hover {
+      opacity: 0.9;
+      transform: scale(1.05); }
+    .candidate-list .candidate a {
+      color: #333; }
   .candidate-list .candidate__photo {
     display: inline-block;
     border-radius: 3px 0 0 3px;
     height: 100px;
     width: 100px;
-    background: #999; }
+    background: #999;
+    background-size: cover;
+    background-position: cover cover; }
   .candidate-list .candidate__name {
     display: block; }
   .candidate-list .candidate__office {
     display: block; }
   .candidate-list .candidate__content {
     width: calc(100% - 100px);
-    float: right; }
+    float: right;
+    padding: 10px; }
+
+@media (max-width: 1199px) {
+  .candidate-list .candidate {
+    width: 32%; } }
+@media (max-width: 991px) {
+  .candidate-list .candidate {
+    width: 49%; }
+    .candidate-list .candidate:nth-child(even) {
+      margin-right: 0; } }
+@media (max-width: 767px) {
+  .candidate-list .candidate {
+    width: 100%;
+    margin-right: 0; } }
+.candidate-bio {
+  padding: 40px 0; }
+
+.page-sub-nav {
+  background: #eee;
+  padding: 10px;
+  border-radius: 3px;
+  margin-top: 10px; }
+  .page-sub-nav a {
+    color: #333; }
+
+.candidate-action-bar {
+  background: #eee;
+  padding: 10px;
+  border-radius: 3px; }
+
+.candidate-sign-up {
+  background: #eee;
+  padding: 40px 20px;
+  border-radius: 3px;
+  margin-bottom: 10px; }
+  .candidate-sign-up h3 {
+    margin-top: 0; }
 
 .issues__content {
   background: #f5f5f5;
