@@ -663,7 +663,8 @@ footer {
     font-size: 12px; }
 
 .issues__nav {
-  transition: 0.25s; }
+  transition: 0.25s;
+  margin-left: -15px; }
   .issues__nav .glyphicon-chevron-down {
     display: none;
     position: absolute;
