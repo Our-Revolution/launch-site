@@ -23,7 +23,7 @@ router.post('/', function(req, res) {
     else if (!req.body.phone)
       error = 'Please provide a phone number.';
     else {
-      pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+      pg.connect(process.env.POSTGRES_URL, function(err, client, done) {
         client.query('INSERT INTO volunteers(email, firstName, lastName, zip, phone) values($1, $2, $3, $4, $5)', [req.body.email, req.body.firstName, req.body.lastName, req.body.zip, req.body.phone], function(err, result) {
           done();
           if (err) {
