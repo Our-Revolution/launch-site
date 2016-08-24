@@ -1010,7 +1010,26 @@ footer {
 }
 
 .issues__nav {
-  margin-left: -7.5px;
+  transition: 0.25s;
+
+  .glyphicon-chevron-down {
+    display: none;
+    position: absolute;
+    right:0;
+    top: 0;
+    position: absolute;
+    z-index: 999;
+    width: 40px;
+    text-align: center;
+    bottom: 0;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+  }
+
+  .glyphicon-remove {
+    display: none;
+  }
 
   a, li {
     position: relative;
@@ -1053,14 +1072,44 @@ footer {
   }
 
   .issues__nav {
-    max-height: 40px;
-    margin-bottom: 10px;
+    height: 40px;
     overflow: hidden;
-    margin-right: -7.5px;
+    margin-bottom: 10px;
+    margin: 10px -15px;
 
-    .expanded {
-      max-height: 2000px !important;
-      overflow: auto !important;
+    .glyphicon-chevron-down {
+      display: block;
     }
+  }
+
+  .issues__nav.expanded {
+    height:auto;
+    max-height: 9999px;
+    overflow: hidden;
+    display: block;
+    // position: absolute;
+    // border-radius: 3px;
+    // padding-top: 60px;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+    // top: 0;
+    // /* height: 300px; */
+    // overflow-y: auto;
+    // /* top: 0; */
+    // /* bottom: 0; */
+    // z-index: 99999;
+    // background: #fafafa;
+    // /* padding: 7.5px; */
+    // margin: 7.5px;
+
+    .glyphicon-chevron-down {
+      transform: rotateX(180deg);
+    }
+
+    // .expanded {
+    //   max-height: 2000px !important;
+    //   overflow: auto !important;
+    // }
   }
 }

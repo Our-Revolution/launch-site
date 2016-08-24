@@ -81,9 +81,9 @@
   {{#if active.issues}}
     <script>
       $(document).ready(function() {
-        $('.nav-toggle').on('click touchstart', function(e) {
+        $('.glyphicon-chevron-down').on('click touchstart', function(e) {
           e.preventDefault();
-          $(this).closest('ul').addClass('expanded');
+          $(this).closest('ul').toggleClass('expanded');
         })
       });
     </script>
