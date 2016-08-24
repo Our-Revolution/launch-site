@@ -395,7 +395,7 @@ body {
     margin-bottom: 10px;
 
     &.email {
-      width: 60%;
+      width: 59%;
     }
 
     &.zip {
@@ -749,6 +749,21 @@ footer {
   background: #eee;
   padding: 10px;
   border-radius: 3px;
+
+  a {
+    text-decoration: none !important;
+  }
+
+  .social-icon {
+    height: 32px;
+    width: auto;
+    margin-left: 5px;
+
+    &:hover {
+      opacity: 0.8;
+      text-decoration: none;
+    }
+  }
 }
 
 .candidate-sign-up {

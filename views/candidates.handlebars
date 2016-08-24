@@ -1,22 +1,24 @@
-<div class="container">
-  <div class="page-heading">
-    <h1>Our Candidates</h1>
-  </div>
+<div class="row">
+  <div class="container">
+    <div class="page-heading">
+      <h1>Our Candidates</h1>
+    </div>
 
-  <div>
-    <ul class="candidate-list">
-    {{#each data}}
-      <li class="candidate clearfix">
-        <a href="/candidates/{{@key}}">
-          <div class="candidate__photo" style="background-image: url('/img/candidates/profile/{{@key}}.jpg')"></div>
-          <div class="candidate__content">
-            <span class="candidate__name">{{this.name}}</span>
-            <span class="candidate__location">{{this.state_initials}} {{this.district}}</span>
-            <span class="candidate__office">{{this.office}}</span>
-          </div>
-        </a>
-      </li>
-    {{/each}}
+    <div>
+      <ul class="candidate-list">
+      {{#each data}}
+        <li class="candidate clearfix">
+          <a href="/candidates/{{@key}}">
+            <div class="candidate__photo" style="background-image: url('/img/candidates/profile/{{@key}}.jpg')"></div>
+            <div class="candidate__content">
+              <span class="candidate__name">{{this.name}}</span>
+              <span class="candidate__location">{{this.state_initials}} {{this.district}}</span>
+              <span class="candidate__office">{{this.office}}</span>
+            </div>
+          </a>
+        </li>
+      {{/each}}
 
+    </div>
   </div>
 </div>
