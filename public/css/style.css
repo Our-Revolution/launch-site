@@ -121,6 +121,8 @@ body {
   margin-bottom: 200px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+  body p {
+    font-size: 16px; }
 
 h4, h1 {
   font-weight: 700; }
