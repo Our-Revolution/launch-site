@@ -373,6 +373,8 @@ footer {
       width: 100%; } }
 .home-section, .home-section--sign-up, .home-section--info, .home-section--news, .home-section--donate {
   padding: 80px 0; }
+  .home-section.ballot-initiatives h3, .ballot-initiatives.home-section--sign-up h3, .ballot-initiatives.home-section--info h3, .ballot-initiatives.home-section--news h3, .ballot-initiatives.home-section--donate h3 {
+    margin-top: 40px; }
   .home-section h2, .home-section--sign-up h2, .home-section--info h2, .home-section--news h2, .home-section--donate h2, .home-section h3, .home-section--sign-up h3, .home-section--info h3, .home-section--news h3, .home-section--donate h3 {
     margin-top: 0; }
   .home-section--sign-up label, .home-section--sign-up input {

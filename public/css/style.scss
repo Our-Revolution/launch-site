@@ -539,6 +539,12 @@ body {
 .home-section {
   padding: 80px 0;
 
+  &.ballot-initiatives {
+    h3 {
+      margin-top: 40px;
+    }
+  }
+
   h2, h3 {
     margin-top: 0;
   }
