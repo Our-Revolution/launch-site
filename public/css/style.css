@@ -566,6 +566,15 @@ footer {
   .candidate-list .candidate {
     width: 100%;
     margin-right: 0; } }
+.candidate-photo {
+  background: #999;
+  background-size: cover;
+  background-position: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  margin: 40px 0; }
+
 .candidate-bio {
   padding: 40px 0; }
 
