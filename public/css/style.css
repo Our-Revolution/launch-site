@@ -12,6 +12,9 @@
   .nav-pills > li > a:hover {
     background: #d5d5d5; }
 
+.btn {
+  font-weight: 700; }
+
 .btn-primary,
 .btn-primary:visited {
   background-color: #58ea22;
@@ -102,8 +105,11 @@ html {
   min-height: 100%; }
 
 body {
+  font-family: 'Lato', sans-serif;
   padding-top: 50px;
-  margin-bottom: 200px; }
+  margin-bottom: 200px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 .row--dark {
   background: #eee; }
@@ -199,6 +205,8 @@ footer {
   margin: 10px 0;
   height: 600px;
   display: flex; }
+  .module-container--video {
+    display: block; }
 
 .module, .module--centered {
   height: 100%; }
@@ -206,7 +214,6 @@ footer {
     margin-top: 0; }
   .module--video {
     display: block !important;
-    background: url("..//img/blurred_crowd.png");
     background-size: cover;
     border-radius: 0 3px 3px 0; }
     .module--video .module__content {
@@ -220,7 +227,8 @@ footer {
     flex-direction: column; }
   .module__content {
     padding: 20px;
-    max-width: 600px; }
+    max-width: 600px;
+    margin: auto; }
   .module--two-thirds--full {
     width: 66%;
     float: left; }
@@ -229,6 +237,29 @@ footer {
     float: left;
     background: #eee;
     height: 100%; }
+
+@media (max-width: 991px) {
+  .module-container--video .module--video {
+    padding: 20px; }
+  .module-container--video .module--centered {
+    display: block;
+    height: auto; }
+  .module-container--video .video-wrapper {
+    margin-top: 10px;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0; } }
+.col-md-4 .sign-up-form .form-group {
+  margin-bottom: 10px; }
+  .col-md-4 .sign-up-form .form-group.email {
+    width: 59%; }
+  .col-md-4 .sign-up-form .form-group.zip {
+    width: 36%;
+    margin-right: 0; }
+  .col-md-4 .sign-up-form .form-group.submit {
+    display: block;
+    width: 100%; }
 
 @media (max-width: 991px) {
   .module-container .col-md-8 .sign-up-form .form-group {
@@ -379,13 +410,15 @@ footer {
     color: white;
     text-decoration: none;
     border-radius: 3px;
-    margin: 20px; }
+    margin: 20px;
+    transition: 0.1s; }
     .action-list__action .action__description {
       margin-right: 40px; }
     .action-list__action:hover, .action-list__action:focus {
       background: #2488ee;
       color: white;
-      text-decoration: none; }
+      text-decoration: none;
+      transform: scale(1.05); }
     .action-list__action .action__link {
       color: white;
       text-align: none;

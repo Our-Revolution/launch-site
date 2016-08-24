@@ -21,6 +21,10 @@
   }
 }
 
+.btn {
+  font-weight: 700;
+}
+
 .btn-primary,
 .btn-primary:visited {
   background-color: $green;
@@ -129,8 +133,11 @@ html {
 }
 
 body {
+  font-family: 'Lato', sans-serif;
   padding-top: 50px;
   margin-bottom: 200px;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .row--dark {
@@ -261,6 +268,10 @@ body {
   margin: 10px 0;
   height: 600px;
   display: flex;
+
+  &--video {
+    display: block;
+  }
 }
 
 .module {
@@ -272,7 +283,7 @@ body {
 
   &--video {
     display: block !important;
-    background: url('..//img/blurred_crowd.png');
+    // background: url('..//img/blurred_crowd.png');
     background-size: cover;
     border-radius: 0 3px 3px 0;
 
@@ -294,6 +305,7 @@ body {
   &__content {
     padding: 20px;
     max-width: 600px;
+    margin: auto;
   }
 
   &--two-thirds--full {
@@ -307,6 +319,47 @@ body {
     background: #eee;
     height: 100%;
   }
+}
+
+// Video Stuff
+@media (max-width: 991px) {
+  .module-container--video {
+    .module--video {
+      padding: 20px;
+    }
+
+    .module--centered {
+      display: block;
+      height: auto;
+    }
+
+    .video-wrapper {
+      margin-top: 10px;
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+.col-md-4 .sign-up-form .form-group {
+  margin-bottom: 10px;
+
+  &.email {
+    width: 59%;
+  }
+
+  &.zip {
+    width: 36%;
+    margin-right: 0;
+  }
+
+  &.submit {
+    display: block;
+    width: 100%;
+  }
+
 }
 
 @media (max-width: 991px) {
@@ -565,6 +618,7 @@ body {
     text-decoration: none;
     border-radius: 3px;
     margin: 20px;
+    transition: 0.1s;
 
     .action__description {
       margin-right: 40px;
@@ -574,6 +628,7 @@ body {
       background: darken($blue, 10);
       color: white;
       text-decoration: none;
+      transform: scale(1.05);
     }
 
     .action__link {
