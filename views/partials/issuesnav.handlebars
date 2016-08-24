@@ -1,0 +1,5 @@
+<ul class="nav nav-pills nav-stacked issues__nav">
+  {{#each issues}}
+    <li role="presentation"><a href="/issues/{{this.slug}}">{{this.name}}</a><span class="glyphicon glyphicon-chevron-down visible-sm-inline visible-xs-inline nav-toggle"></span></li>
+  {{/each}}
+</ul>

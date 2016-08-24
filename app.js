@@ -23,7 +23,10 @@ app.locals.ENV_DEVELOPMENT = env == 'development';
 
 app.engine('handlebars', exphbs({
   defaultLayout: 'main',
-  partialsDir: ['views/partials/']
+  partialsDir: ['views/partials/'],
+  helpers: {
+    stringToSlug: function (string) {return string.replace(/\s+/g, '-').toLowerCase();}
+  }
 }));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'handlebars');

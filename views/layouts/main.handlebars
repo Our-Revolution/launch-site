@@ -74,4 +74,15 @@
       });
     </script>
   {{/if}}
+
+  {{#if active.issues}}
+    <script>
+      $(document).ready(function() {
+        $('.nav-toggle').on('click touchstart', function(e) {
+          e.preventDefault();
+          $(this).closest('ul').addClass('expanded');
+        })
+      });
+    </script>
+  {{/if}}
 </html>
