@@ -329,6 +329,10 @@ body {
     background: darken($blue, 20);
     color: white;
     border-radius: 0 3px 3px 0;
+
+    input {
+      color: #333;
+    }
   }
 
   &--video {
@@ -499,6 +503,10 @@ body {
     color: white;
     padding: 40px;
     border-radius: 3px;
+
+    input {
+      color: #333;
+    }
 
     h2 {
       margin-top: 0;
@@ -974,6 +982,10 @@ footer {
   border-radius: 3px;
   margin-bottom: 10px;
 
+  input {
+    color: #333;
+  }
+
   h3 {
     margin-top: 0;
   }
@@ -992,6 +1004,10 @@ footer {
     margin: 80px -80px -80px;
     padding: 80px;
     border-radius: 0 0 3px 3px;
+
+    input {
+      color: #333;
+    }
 
     h3 {
       margin-top: 0;

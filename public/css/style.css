@@ -249,6 +249,8 @@ footer {
     background: #106fcf;
     color: white;
     border-radius: 0 3px 3px 0; }
+    .module--volunteer input {
+      color: #333; }
   .module--video {
     display: block !important;
     background: #106fcf;
@@ -353,6 +355,8 @@ footer {
   color: white;
   padding: 40px;
   border-radius: 3px; }
+  .sign-up-form--blue input {
+    color: #333; }
   .sign-up-form--blue h2 {
     margin-top: 0; }
 
@@ -639,6 +643,8 @@ footer {
   padding: 40px 20px;
   border-radius: 3px;
   margin-bottom: 10px; }
+  .candidate-sign-up input {
+    color: #333; }
   .candidate-sign-up h3 {
     margin-top: 0; }
 
@@ -653,6 +659,8 @@ footer {
     margin: 80px -80px -80px;
     padding: 80px;
     border-radius: 0 0 3px 3px; }
+    .issues__content .sign-up-form input {
+      color: #333; }
     .issues__content .sign-up-form h3 {
       margin-top: 0; }
   .issues__content h2 {
