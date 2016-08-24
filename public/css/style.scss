@@ -378,8 +378,8 @@ body {
 
 }
 
-@media (max-width: 991px) {
-  .module-container .col-md-8 .sign-up-form .form-group {
+@media (max-width: 991px) and (max-width: 768px) {
+  .module-container .sign-up-form .form-group {
     margin-bottom: 10px;
 
     &.email {
@@ -681,6 +681,68 @@ body {
       vertical-align: middle;
     }
   }
+}
+
+.volunteer-form {
+
+  .form-group {
+    display: inline-block;
+    margin-right: 2%;
+    margin-bottom: 10px;
+
+    &.email {
+      width: 97%;
+    }
+
+    &.first-name, &.last-name {
+      width:47%;
+    }
+
+    &.phone {
+      width:68%;
+    }
+
+    &.zip {
+      width: 26%;
+    }
+
+    &.submit {
+      margin-top: 5px;
+      width: 97%;
+    }
+
+    input {
+      height: 40px;
+      line-height: 40px;
+      text-indent: 10px;
+      width: 100%;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: normal;
+    }
+
+    button {
+      height: 40px;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 991px) {
+    &.email {
+      width: 97%;
+    }
+
+    &.first-name,
+    &.last-name,
+    &.submit {
+      width:47%;
+    }
+
+  }
+
 }
 
 @media (max-width: 1200px) and (min-width: 768px) {

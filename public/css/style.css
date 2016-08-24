@@ -275,15 +275,15 @@ footer {
     display: block;
     width: 100%; }
 
-@media (max-width: 991px) {
-  .module-container .col-md-8 .sign-up-form .form-group {
+@media (max-width: 991px) and (max-width: 768px) {
+  .module-container .sign-up-form .form-group {
     margin-bottom: 10px; }
-    .module-container .col-md-8 .sign-up-form .form-group.email {
+    .module-container .sign-up-form .form-group.email {
       width: 60%; }
-    .module-container .col-md-8 .sign-up-form .form-group.zip {
+    .module-container .sign-up-form .form-group.zip {
       width: 36%;
       margin-right: 0; }
-    .module-container .col-md-8 .sign-up-form .form-group.submit {
+    .module-container .sign-up-form .form-group.submit {
       display: block;
       width: 100%; } }
 @media (max-width: 767px) {
@@ -457,6 +457,39 @@ footer {
       bottom: 0;
       margin: auto;
       vertical-align: middle; }
+
+.volunteer-form .form-group {
+  display: inline-block;
+  margin-right: 2%;
+  margin-bottom: 10px; }
+  .volunteer-form .form-group.email {
+    width: 97%; }
+  .volunteer-form .form-group.first-name, .volunteer-form .form-group.last-name {
+    width: 47%; }
+  .volunteer-form .form-group.phone {
+    width: 68%; }
+  .volunteer-form .form-group.zip {
+    width: 26%; }
+  .volunteer-form .form-group.submit {
+    margin-top: 5px;
+    width: 97%; }
+  .volunteer-form .form-group input {
+    height: 40px;
+    line-height: 40px;
+    text-indent: 10px;
+    width: 100%; }
+  .volunteer-form .form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: normal; }
+  .volunteer-form .form-group button {
+    height: 40px;
+    width: 100%; }
+@media (max-width: 991px) {
+  .volunteer-form.email {
+    width: 97%; }
+  .volunteer-form.first-name, .volunteer-form.last-name, .volunteer-form.submit {
+    width: 47%; } }
 
 @media (max-width: 1200px) and (min-width: 768px) {
   .action-list__action .action__description {

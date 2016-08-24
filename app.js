@@ -12,7 +12,8 @@ var action = require('./routes/action');
 var issues = require('./routes/issues');
 var candidates = require('./routes/candidates');
 var signup = require('./routes/signup');
-var extra = require('./routes/extra')
+var volsignup = require('./routes/volunteer-signup');
+var extra = require('./routes/extra');
 
 var app = express();
 
@@ -47,6 +48,7 @@ app.use('/action', action);
 app.use('/issues', issues);
 app.use('/candidates', candidates);
 app.use('/signup', signup);
+app.use('/volunteer-signup', volsignup);
 app.use('/stop-the-tpp', extra);
 
 /// catch 404 and forward to error handler
