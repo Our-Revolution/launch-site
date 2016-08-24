@@ -7,10 +7,10 @@
   background: white; }
 
 .nav-pills > li > a {
-  background: #eee;
+  background: #f5f5f5;
   margin-bottom: 10px; }
   .nav-pills > li > a:hover {
-    background: #d5d5d5; }
+    background: gainsboro; }
 
 .btn {
   font-weight: 700; }
@@ -112,10 +112,11 @@ body {
   -moz-osx-font-smoothing: grayscale; }
 
 .row--dark {
-  background: #eee; }
+  background: #f5f5f5; }
 
 .page-heading {
-  background: #eee;
+  background: #53A2F2;
+  color: white;
   border-radius: 3px;
   padding: 20px;
   margin: 10px 0;
@@ -235,7 +236,7 @@ footer {
   .module--one-third--full {
     width: 34%;
     float: left;
-    background: #eee;
+    background: #f5f5f5;
     height: 100%; }
 
 @media (max-width: 991px) {
@@ -376,7 +377,7 @@ footer {
   margin-top: 40px; }
 
 .goals {
-  background: #eee;
+  background: #f5f5f5;
   border-radius: 3px;
   margin-top: 40px;
   margin-bottom: 40px; }
@@ -388,9 +389,9 @@ footer {
     cursor: pointer;
     transition: 0.25s; }
     .goals__title:hover {
-      background: #d5d5d5; }
+      background: gainsboro; }
     .goals__title.active {
-      background: #bbbbbb; }
+      background: #c2c2c2; }
     .goals__title:first-child {
       border-radius: 3px 0 0 0; }
     .goals__title:last-child {
@@ -449,7 +450,7 @@ footer {
       align-items: center; } }
 footer {
   background: #e5e5e5;
-  padding: 30px; }
+  padding: 50px; }
 
 .candidate-list {
   list-style-type: none;
@@ -458,7 +459,7 @@ footer {
   .candidate-list .candidate {
     width: 23.5%;
     height: 100px;
-    background: #eee;
+    background: #f5f5f5;
     display: inline-block;
     overflow: hidden;
     border-radius: 3px;
@@ -515,7 +516,7 @@ footer {
   padding: 40px 0; }
 
 .page-sub-nav {
-  background: #eee;
+  background: #f5f5f5;
   padding: 10px;
   border-radius: 3px;
   margin-top: 10px; }
@@ -523,7 +524,7 @@ footer {
     color: #333; }
 
 .candidate-action-bar {
-  background: #eee;
+  background: #f5f5f5;
   padding: 10px;
   border-radius: 3px; }
   .candidate-action-bar a {
@@ -537,7 +538,7 @@ footer {
       text-decoration: none; }
 
 .candidate-sign-up {
-  background: #eee;
+  background: #f5f5f5;
   padding: 40px 20px;
   border-radius: 3px;
   margin-bottom: 10px; }
@@ -550,7 +551,8 @@ footer {
   padding: 80px;
   margin-bottom: 10px; }
   .issues__content .sign-up-form {
-    background: #ccc;
+    background: #53A2F2;
+    color: white;
     margin: 80px -80px -80px;
     padding: 80px;
     border-radius: 0 0 3px 3px; }
@@ -588,6 +590,12 @@ footer {
   margin: 20px 10px; }
 
 @media (max-width: 991px) {
+  .issues__content {
+    padding: 40px; }
+    .issues__content .sign-up-form {
+      padding: 40px;
+      margin: 40px -40px -40px; }
+
   .issues__nav {
     max-height: 40px;
     margin-bottom: 10px;
