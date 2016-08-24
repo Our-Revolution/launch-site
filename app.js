@@ -14,6 +14,7 @@ var candidates = require('./routes/candidates');
 var signup = require('./routes/signup');
 var volsignup = require('./routes/volunteer-signup');
 var extra = require('./routes/extra');
+var privacypolicy = require('./routes/privacy-policy');
 
 var app = express();
 
@@ -50,6 +51,7 @@ app.use('/candidates', candidates);
 app.use('/signup', signup);
 app.use('/volunteer-signup', volsignup);
 app.use('/stop-the-tpp', extra);
+app.use('/privacy-policy', privacypolicy)
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
