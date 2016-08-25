@@ -1,5 +1,15 @@
+<div class="row">
+  <div class="container">
+    <div class="col-md-6 col-md-offset-3">
+      <section class="home-section text-center">
+        <h1>{{ message }}</h1>
+        {{ error.status }}
+        {{ error.stack }}
 
-  {{ message }}
-  {{ error.status }}
-  {{ error.stack }}  
-
+        <div class="row text">
+          <a class="btn btn-primary" href="/"><span class="glyphicon glyphicon-chevron-left"></span> Go Home</a>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
