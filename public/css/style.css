@@ -540,6 +540,11 @@ footer {
   background: white;
   padding: 50px; }
 
+@media (max-width: 767px) {
+  .btn-suggest {
+    float: none !important;
+    display: block;
+    margin-top: 10px; } }
 .candidate-list {
   list-style-type: none;
   margin: 0 0 1% 0;
@@ -578,7 +583,7 @@ footer {
     width: 100px;
     background: #999;
     background-size: cover;
-    background-position: cover cover; }
+    background-position: center; }
   .candidate-list .candidate__name {
     display: block; }
   .candidate-list .candidate__office {
@@ -603,7 +608,7 @@ footer {
 .candidate-photo {
   background: #999;
   background-size: cover;
-  background-position: top right;
+  background-position: center;
   width: 150px;
   height: 150px;
   border-radius: 100px;
