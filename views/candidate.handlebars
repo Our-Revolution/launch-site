@@ -19,9 +19,11 @@
       {{/if}}
     </div>
 
-    {{#if data.primary_cta}}
+    {{#if data.website}}
       <div class="candidate-action-bar clearfix">
-        <a href="{{data.primary_cta_link}}" class="btn btn-donate">{{data.primary_cta}}</a>
+        {{#if data.primary_cta}}
+          <a href="{{data.primary_cta_link}}" class="btn btn-donate">{{data.primary_cta}}</a>
+        {{/if}}
 
         {{#if data.secondary_cta}}
           <a href="{{data.secondary_cta_link}}" class="btn btn-primary">{{data.secondary_cta}}</a>
