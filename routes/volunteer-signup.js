@@ -50,7 +50,7 @@ router.post('/', function(req, res) {
       type: 'website'
   	});
   else
-  	res.redirect('https://secure.actblue.com/contribute/page/ourrevolution?refcode=volsignup-redirect&amount=27.00');
+  	res.redirect('success');
 });
 
 module.exports = router;
