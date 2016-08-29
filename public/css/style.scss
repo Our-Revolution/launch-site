@@ -94,6 +94,33 @@ a {
   outline: none;
 }
 
+.btn-dark, .btn-dark:visited {
+  background-color: darken($blue, 20);
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.btn-dark:hover,
+.btn-dark:active:hover,
+.btn-dark.active:hover {
+  background-color: darken($blue, 25);
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.btn-dark:focus,
+.btn-dark.focus,
+.btn-dark:active,
+.btn-dark.active {
+  background-color: darken($blue, 30);
+  color: white;
+  border: none;
+  outline: none;
+}
+
+
 .btn-donate,
 .btn-donate:visited {
   background-color: $red;
@@ -305,6 +332,7 @@ body {
   margin: 10px 0;
   height: 600px;
   display: flex;
+  padding: 0;
 
   &--video {
     display: block;
@@ -316,6 +344,26 @@ body {
 
   h1, h2, h3 {
     margin-top: 0;
+  }
+
+  &--news {
+    background-color: darken($blue, 20);
+    background: url('../img/bg_3.png');
+    background-size: cover;
+    color: white;
+
+    a {
+      color: white;
+    //
+    //   &:hover, &:focus {
+    //     text-decoration: none;
+    //     color: $blue;
+    //   }
+    }
+
+    .info {
+      align-self: baseline;
+    }
   }
 
   &--sign-up-main {
@@ -358,12 +406,31 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 0;
   }
 
   &__content {
-    padding: 20px;
+    padding: 30px;
     max-width: 600px;
     margin: auto;
+
+    &-flex {
+      @extend .module__content;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+    }
+  }
+
+  &--small-bottom {
+    background: $blue;
+    width: 100%;
+    align-self: flex-end;
+    margin-bottom: 0;
+    flex: 0 0 100px;
+    max-width: 100%;
   }
 
   &--two-thirds--full {
@@ -450,7 +517,6 @@ body {
 
     .module--centered {
       flex: 0 0 100%;
-      padding: 20px;
     }
   }
 
@@ -1168,12 +1234,12 @@ footer {
   @extend .page-heading;
   padding-top: 140px;
 
-  .article-type {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-
   h1 {
     margin-top: 0;
   }
+}
+
+.article-type {
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }

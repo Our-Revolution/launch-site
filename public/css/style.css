@@ -74,6 +74,29 @@ a {
   border: none;
   outline: none; }
 
+.btn-dark, .btn-dark:visited {
+  background-color: #106fcf;
+  color: white;
+  border: none;
+  outline: none; }
+
+.btn-dark:hover,
+.btn-dark:active:hover,
+.btn-dark.active:hover {
+  background-color: #0e62b8;
+  color: white;
+  border: none;
+  outline: none; }
+
+.btn-dark:focus,
+.btn-dark.focus,
+.btn-dark:active,
+.btn-dark.active {
+  background-color: #0c56a0;
+  color: white;
+  border: none;
+  outline: none; }
+
 .btn-donate,
 .btn-donate:visited {
   background-color: #F43737;
@@ -232,7 +255,8 @@ footer {
   border-radius: 3px;
   margin: 10px 0;
   height: 600px;
-  display: flex; }
+  display: flex;
+  padding: 0; }
   .module-container--video {
     display: block; }
 
@@ -240,6 +264,15 @@ footer {
   height: 100%; }
   .module h1, .module--centered h1, .module h2, .module--centered h2, .module h3, .module--centered h3 {
     margin-top: 0; }
+  .module--news {
+    background-color: #106fcf;
+    background: url("../img/bg_3.png");
+    background-size: cover;
+    color: white; }
+    .module--news a {
+      color: white; }
+    .module--news .info {
+      align-self: baseline; }
   .module--sign-up-main {
     border: 5px solid #53a2f2;
     border-width: 0 5px 0 0;
@@ -258,7 +291,7 @@ footer {
     background: #106fcf;
     background-size: cover;
     border-radius: 0 3px 3px 0; }
-    .module--video .module__content {
+    .module--video .module__content, .module--video .module__content-flex {
       max-width: 100%;
       padding: 0; }
   .module--centered {
@@ -266,11 +299,25 @@ footer {
     align-content: center;
     justify-content: center;
     align-items: center;
-    flex-direction: column; }
-  .module__content {
-    padding: 20px;
+    flex-direction: column;
+    padding: 0; }
+  .module__content, .module__content-flex {
+    padding: 30px;
     max-width: 600px;
     margin: auto; }
+    .module__content-flex {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-content: center; }
+  .module--small-bottom {
+    background: #53A2F2;
+    width: 100%;
+    align-self: flex-end;
+    margin-bottom: 0;
+    flex: 0 0 100px;
+    max-width: 100%; }
   .module--two-thirds--full {
     width: 66%;
     float: left; }
@@ -321,8 +368,7 @@ footer {
     height: auto;
     flex-flow: row wrap; }
     .module-container .module--centered {
-      flex: 0 0 100%;
-      padding: 20px; }
+      flex: 0 0 100%; }
 
   .navbar .btn-donate {
     display: block;
@@ -754,8 +800,9 @@ footer {
       transform: rotateX(180deg); } }
 .page-heading--press {
   padding-top: 140px; }
-  .page-heading--press .article-type {
-    text-transform: uppercase;
-    letter-spacing: 2px; }
   .page-heading--press h1 {
     margin-top: 0; }
+
+.article-type {
+  text-transform: uppercase;
+  letter-spacing: 2px; }
