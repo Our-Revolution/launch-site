@@ -118,7 +118,7 @@ html {
 body {
   font-family: 'Lato', sans-serif;
   padding-top: 50px;
-  margin-bottom: 200px;
+  margin-bottom: 250px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
   body p {
@@ -140,7 +140,7 @@ h4, h1 {
   color: white;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.5); }
 
-.page-heading {
+.page-heading, .page-heading--press {
   background: url("../img/bg_4.png") center center;
   background-size: cover;
   color: white;
@@ -148,12 +148,12 @@ h4, h1 {
   padding: 20px;
   margin: 10px 0;
   vertical-align: bottom; }
-  .page-heading h1 {
+  .page-heading h1, .page-heading--press h1 {
     margin: 140px 0 5px 0; }
-  .page-heading h3 {
+  .page-heading h3, .page-heading--press h3 {
     margin-top: 0;
     font-weight: normal; }
-  .page-heading p {
+  .page-heading p, .page-heading--press p {
     max-width: 600px; }
 
 .dark {
@@ -164,8 +164,8 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 200px;
-  background: #f5f5f5; }
+  height: 250px;
+  background: #fafafa; }
 
 .content {
   background: white;
@@ -375,6 +375,13 @@ footer {
       width: 100%; } }
 .home-section, .home-section--sign-up, .home-section--info, .home-section--news, .home-section--donate {
   padding: 80px 0; }
+  .home-section:before, .home-section--sign-up:before, .home-section--info:before, .home-section--news:before, .home-section--donate:before {
+    display: table;
+    content: " "; }
+  .home-section:after, .home-section--sign-up:after, .home-section--info:after, .home-section--news:after, .home-section--donate:after {
+    clear: both;
+    display: table;
+    content: " "; }
   .home-section.ballot-initiatives h3, .ballot-initiatives.home-section--sign-up h3, .ballot-initiatives.home-section--info h3, .ballot-initiatives.home-section--news h3, .ballot-initiatives.home-section--donate h3 {
     margin-top: 40px; }
   .home-section h2, .home-section--sign-up h2, .home-section--info h2, .home-section--news h2, .home-section--donate h2, .home-section h3, .home-section--sign-up h3, .home-section--info h3, .home-section--news h3, .home-section--donate h3 {
@@ -537,8 +544,9 @@ footer {
       display: flex;
       align-items: center; } }
 footer {
-  background: white;
-  padding: 50px; }
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 @media (max-width: 767px) {
   .btn-suggest {
@@ -744,3 +752,10 @@ footer {
     display: block; }
     .issues__nav.expanded .glyphicon-chevron-down {
       transform: rotateX(180deg); } }
+.page-heading--press {
+  padding-top: 140px; }
+  .page-heading--press .article-type {
+    text-transform: uppercase;
+    letter-spacing: 2px; }
+  .page-heading--press h1 {
+    margin-top: 0; }
