@@ -17,11 +17,14 @@
     "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
     "gulp": "^3.9.0",
-    "gulp-ruby-sass": "^2.0.1",
-    "gulp-nodemon": "^2.0.2",
     "gulp-livereload": "^3.8.0",
-    "gulp-plumber": "^1.0.0"
+    "gulp-nodemon": "^2.0.2",
+    "gulp-plumber": "^1.0.0",
+    "gulp-ruby-sass": "^2.0.1",
+    "mocha": "^3.0.2"
   },
   "engines": {
     "node": "5.8.0"
