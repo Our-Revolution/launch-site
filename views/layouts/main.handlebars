@@ -5,18 +5,36 @@
   <meta name="viewport" content="width=device-width">
   <title>{{title }}</title>
 
-  <meta name="description" content="The next step for Bernie Sanders' movement is a new group called Our Revolution, which will fight to transform America and advance the progressive agenda that we believe in." />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="Our Revolution" />
-  <meta property="og:description" content="The next step for Bernie Sanders' movement is a new group called Our Revolution, which will fight to transform America and advance the progressive agenda that we believe in." />
-  <meta property="og:url" content="https://ourrevolution.com" />
-  <meta property="og:site_name" content="Our Revolution" />
-  <meta property="og:image" content="https://ourrevolution.com/img/fb.png" />
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Our Revolution"/>
-  <meta name="twitter:description" content="The next step for Bernie Sanders' movement is a new group called Our Revolution, which will fight to transform America and advance the progressive agenda that we believe in."/>
-  <meta name="twitter:site" content="@OurRevolution"/>
-  <meta name="twitter:image" content="https://ourrevolution.com/img/fb.png"/>
+  {{#unless meta}}
+    <meta name="description" content="The next step for Bernie Sanders' movement is a new group called Our Revolution, which will fight to transform America and advance the progressive agenda that we believe in." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Our Revolution" />
+    <meta property="og:description" content="The next step for Bernie Sanders' movement is a new group called Our Revolution, which will fight to transform America and advance the progressive agenda that we believe in." />
+    <meta property="og:url" content="https://ourrevolution.com" />
+    <meta property="og:site_name" content="Our Revolution" />
+    <meta property="og:image" content="https://ourrevolution.com/img/fb.png" />
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Our Revolution"/>
+    <meta name="twitter:description" content="The next step for Bernie Sanders' movement is a new group called Our Revolution, which will fight to transform America and advance the progressive agenda that we believe in."/>
+    <meta name="twitter:site" content="@OurRevolution"/>
+    <meta name="twitter:image" content="https://ourrevolution.com/img/fb.png"/>
+  {{/unless}}
+
+  {{#if meta}}
+    <meta name="description" content="{{meta.description}}" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:description" content="{{meta.description}}" />
+    <meta property="og:url" content="https://ourrevolution.com" />
+    <meta property="og:site_name" content="Our Revolution" />
+    <meta property="og:image" content="https://ourrevolution.com/img/fb.png" />
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="{{title}}"/>
+    <meta name="twitter:description" content="{{meta.description}}"/>
+    <meta name="twitter:site" content="@OurRevolution"/>
+    <meta name="twitter:image" content="https://ourrevolution.com/img/fb.png"/>
+  {{/if}}
+
   <meta name="google-site-verification" content="ULKRcIZysCOsq4SLKSbW7ymdJ93OyRWwSMZpBfBPJN0" />
 
   <link rel='stylesheet' href='/components/bootstrap/dist/css/bootstrap.css' />
