@@ -264,15 +264,18 @@ footer {
   height: 100%; }
   .module h1, .module--centered h1, .module h2, .module--centered h2, .module h3, .module--centered h3 {
     margin-top: 0; }
-  .module--news {
+  .module--news, .module--vote {
     background-color: #106fcf;
-    background: url("../img/bg_3.png");
     background-size: cover;
     color: white; }
-    .module--news a {
+    .module--news a, .module--vote a {
       color: white; }
-    .module--news .info {
+    .module--news .info, .module--vote .info {
       align-self: baseline; }
+  .module--news {
+    background: url("../img/bg_3.png"); }
+  .module--vote {
+    background: url("../img/canova_bg.jpg"); }
   .module--sign-up-main {
     border: 5px solid #53a2f2;
     border-width: 0 5px 0 0;
@@ -612,6 +615,8 @@ footer {
     border-radius: 3px;
     margin: 1% 1% 0 0;
     transition: 0.1s; }
+    .candidate-list .candidate.featured {
+      border-right: 4px solid #F43737; }
     .candidate-list .candidate__content {
       height: 100px;
       position: relative; }
@@ -806,3 +811,11 @@ footer {
 .article-type {
   text-transform: uppercase;
   letter-spacing: 2px; }
+
+.candidate-showcase .btn-secondary {
+  margin-bottom: 40px; }
+.candidate-showcase h2 {
+  margin-bottom: 0; }
+.candidate-showcase .office {
+  padding-bottom: 20px;
+  display: block; }

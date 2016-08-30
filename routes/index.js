@@ -56,6 +56,11 @@ router.get('/candidates', function(req, res) {
   res.render('candidates/index', { title: 'Our Revolution - Candidates', data: candidates, active: {candidates: true}});
 });
 
+/* GET Candidates page. */
+router.get('/candidates/martin-quezeda', function(req, res) {
+  res.redirect('/candidates/martin-quezada');
+});
+
 router.get('/candidates/:name', function(req, res) {
   name=req.params.name || false;
 

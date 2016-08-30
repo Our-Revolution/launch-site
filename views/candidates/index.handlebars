@@ -7,7 +7,7 @@
     <div>
       <ul class="candidate-list">
       {{#each data}}
-        <li class="candidate clearfix">
+        <li class="candidate clearfix {{#if this.featured}}featured{{/if}}">
           <a href="{{#if this.office}}/candidates/{{@key}}{{/if}}">
             <div class="candidate__photo" style="background-image: url('/img/candidates/profile/{{@key}}.jpg')"></div>
             <div class="candidate__content">
