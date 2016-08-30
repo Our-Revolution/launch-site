@@ -371,14 +371,19 @@ body {
 
   &--vote {
     background: url('../img/canova_bg.jpg');
+    border-radius: 0 3px 3px 0;
+
+    @media (max-width:767px) {
+      border-radius: 0 0 3px 3px;
+    }
   }
 
   &--sign-up-main {
-    border: 5px solid #53a2f2;
+    border: 5px solid darken($blue, 20);
     border-width: 0 5px 0 0;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
 
-    @media (max-width:991px) {
+    @media (max-width:767px) {
       border-width: 0 0 5px 0;
     }
   }
@@ -391,6 +396,10 @@ body {
 
     input {
       color: #333;
+    }
+
+    @media (max-width:767px) {
+      border-radius: 0 0 3px 3px;
     }
   }
 
@@ -438,6 +447,11 @@ body {
     margin-bottom: 0;
     flex: 0 0 100px;
     max-width: 100%;
+    border-radius: 0 0 0 3px;
+
+    @media (max-width:767px) {
+      border-radius: 0;
+    }
   }
 
   &--two-thirds--full {

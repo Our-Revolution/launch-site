@@ -275,12 +275,16 @@ footer {
   .module--news {
     background: url("../img/bg_3.png"); }
   .module--vote {
-    background: url("../img/canova_bg.jpg"); }
+    background: url("../img/canova_bg.jpg");
+    border-radius: 0 3px 3px 0; }
+    @media (max-width: 767px) {
+      .module--vote {
+        border-radius: 0 0 3px 3px; } }
   .module--sign-up-main {
-    border: 5px solid #53a2f2;
+    border: 5px solid #106fcf;
     border-width: 0 5px 0 0;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); }
-    @media (max-width: 991px) {
+    @media (max-width: 767px) {
       .module--sign-up-main {
         border-width: 0 0 5px 0; } }
   .module--volunteer {
@@ -289,6 +293,9 @@ footer {
     border-radius: 0 3px 3px 0; }
     .module--volunteer input {
       color: #333; }
+    @media (max-width: 767px) {
+      .module--volunteer {
+        border-radius: 0 0 3px 3px; } }
   .module--video {
     display: block !important;
     background: #106fcf;
@@ -320,7 +327,11 @@ footer {
     align-self: flex-end;
     margin-bottom: 0;
     flex: 0 0 100px;
-    max-width: 100%; }
+    max-width: 100%;
+    border-radius: 0 0 0 3px; }
+    @media (max-width: 767px) {
+      .module--small-bottom {
+        border-radius: 0; } }
   .module--two-thirds--full {
     width: 66%;
     float: left; }
