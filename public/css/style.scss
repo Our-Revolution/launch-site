@@ -346,9 +346,8 @@ body {
     margin-top: 0;
   }
 
-  &--news {
+  &--news, &--vote {
     background-color: darken($blue, 20);
-    background: url('../img/bg_3.png');
     background-size: cover;
     color: white;
 
@@ -364,6 +363,14 @@ body {
     .info {
       align-self: baseline;
     }
+  }
+
+  &--news {
+    background: url('../img/bg_3.png');
+  }
+
+  &--vote {
+    background: url('../img/canova_bg.jpg');
   }
 
   &--sign-up-main {
@@ -927,6 +934,10 @@ footer {
     margin: 1% 1% 0 0;
     transition: 0.1s;
 
+    &.featured {
+      border-right: 4px solid $red;
+    }
+
     &__content {
       height: 100px;
       position: relative;
@@ -1242,4 +1253,19 @@ footer {
 .article-type {
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+.candidate-showcase {
+  .btn-secondary {
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  .office {
+    padding-bottom: 20px;
+    display: block;
+  }
 }
