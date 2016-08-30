@@ -755,42 +755,6 @@ footer {
 .issues__nav {
   transition: 0.25s;
   margin-left: -15px; }
-  .issues__nav .glyphicon-chevron-down {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-    position: absolute;
-    z-index: 999;
-    width: 40px;
-    text-align: center;
-    bottom: 0;
-    height: 40px;
-    line-height: 40px;
-    cursor: pointer; }
-  .issues__nav .glyphicon-remove {
-    display: none; }
-  .issues__nav a, .issues__nav li {
-    position: relative; }
-
-.nav-toggle {
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  line-height: 40px;
-  margin: auto;
-  width: 40px;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.1);
-  z-index: 9;
-  border-radius: 0 3px 3px 0;
-  cursor: pointer; }
-  .nav-toggle:hover {
-    background: rgba(0, 0, 0, 0.3); }
-
-.solution-list > li {
-  margin: 20px 10px; }
 
 @media (max-width: 991px) {
   .issues__content {
@@ -799,21 +763,41 @@ footer {
       padding: 40px;
       margin: 40px -40px -40px; }
 
-  .issues__nav {
-    height: 40px;
-    overflow: hidden;
-    margin-bottom: 10px;
-    margin: 10px -15px; }
-    .issues__nav .glyphicon-chevron-down {
-      display: block; }
-
-  .issues__nav.expanded {
-    height: auto;
-    max-height: 9999px;
-    overflow: hidden;
-    display: block; }
-    .issues__nav.expanded .glyphicon-chevron-down {
-      transform: rotateX(180deg); } }
+  ul.issues__nav {
+    margin-right: -15px;
+    position: absolute;
+    z-index: 10;
+    background: #53A2F2;
+    /* left: 0; */
+    width: 100%;
+    left: -210%;
+    right: 110%;
+    top: 70px;
+    padding: 0;
+    border-radius: 3px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    height: 300px;
+    overflow-y: scroll; }
+    ul.issues__nav > li {
+      max-width: 300px;
+      margin: auto;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      margin: 10px auto; }
+      ul.issues__nav > li:last-child {
+        border-bottom: 0; }
+      ul.issues__nav > li a {
+        background: transparent;
+        color: white;
+        border-radius: 0;
+        font-weight: bolder; }
+        ul.issues__nav > li a:hover, ul.issues__nav > li a:focus, ul.issues__nav > li a:active {
+          background: rgba(0, 0, 0, 0.1);
+          color: white;
+          border-radius: 3px; }
+    ul.issues__nav.expanded {
+      left: 15px;
+      right: 15px;
+      width: auto; } }
 .page-heading--press {
   padding-top: 140px; }
   .page-heading--press h1 {
@@ -830,3 +814,27 @@ footer {
 .candidate-showcase .office {
   padding-bottom: 20px;
   display: block; }
+
+.toggle-nav {
+  position: relative;
+  margin-left: -15px;
+  width: auto;
+  margin-bottom: 10px;
+  background: #2488ee;
+  padding: 20px;
+  padding-right: 40px;
+  margin-right: -15px;
+  border-radius: 3px;
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: 0.25s; }
+  .toggle-nav__text {
+    margin-right: 40px; }
+  .toggle-nav__icon {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    font-size: 20px; }
+  .toggle-nav:hover {
+    background: #106fcf; }

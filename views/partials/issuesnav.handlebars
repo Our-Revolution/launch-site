@@ -1,6 +1,5 @@
+<div class="toggle-nav hidden-md hidden-lg" id="toggle-nav">Issues <i class="glyphicon glyphicon-menu-hamburger toggle-nav__icon"></i></div>
 <ul class="nav nav-pills nav-stacked issues__nav">
-  <div class="glyphicon glyphicon-remove"></div>
-  <div class="glyphicon glyphicon-chevron-down"></div>
   {{#each issues}}
     <li role="presentation"><a href="/issues/{{this.slug}}">{{this.name}}</a></span></li>
   {{/each}}

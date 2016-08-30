@@ -1152,53 +1152,53 @@ footer {
   transition: 0.25s;
   margin-left: -15px;
 
-  .glyphicon-chevron-down {
-    display: none;
-    position: absolute;
-    right:0;
-    top: 0;
-    position: absolute;
-    z-index: 999;
-    width: 40px;
-    text-align: center;
-    bottom: 0;
-    height: 40px;
-    line-height: 40px;
-    cursor: pointer;
-  }
-
-  .glyphicon-remove {
-    display: none;
-  }
-
-  a, li {
-    position: relative;
-  }
-}
-
-.nav-toggle {
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  line-height: 40px;
-  margin: auto;
-  width: 40px;
-  text-align: center;
-  background: rgba(0,0,0,0.1);
-  z-index: 9;
-  border-radius: 0 3px 3px 0;
-  cursor: pointer;
-
-  &:hover {
-    background: rgba(0,0,0,0.3);
-  }
-}
-
-.solution-list {
-  > li {
-    margin: 20px 10px;
-  }
+//   .glyphicon-chevron-down {
+//     display: none;
+//     position: absolute;
+//     right:0;
+//     top: 0;
+//     position: absolute;
+//     z-index: 999;
+//     width: 40px;
+//     text-align: center;
+//     bottom: 0;
+//     height: 40px;
+//     line-height: 40px;
+//     cursor: pointer;
+//   }
+//
+//   .glyphicon-remove {
+//     display: none;
+//   }
+//
+//   a, li {
+//     position: relative;
+//   }
+// }
+//
+// .nav-toggle {
+//   position: absolute;
+//   right: 0;
+//   top: 0;
+//   bottom: 0;
+//   line-height: 40px;
+//   margin: auto;
+//   width: 40px;
+//   text-align: center;
+//   background: rgba(0,0,0,0.1);
+//   z-index: 9;
+//   border-radius: 0 3px 3px 0;
+//   cursor: pointer;
+//
+//   &:hover {
+//     background: rgba(0,0,0,0.3);
+//   }
+// }
+//
+// .solution-list {
+//   > li {
+//     margin: 20px 10px;
+//   }
 }
 
 @media (max-width: 991px) {
@@ -1211,22 +1211,70 @@ footer {
     }
   }
 
-  .issues__nav {
-    height: 40px;
-    overflow: hidden;
-    margin-bottom: 10px;
-    margin: 10px -15px;
+  ul.issues__nav {
+    margin-right: -15px;
+    position: absolute;
+    z-index: 10;
+    background: $blue;
+    /* left: 0; */
+    width: 100%;
+    left: -210%;
+    right: 110%;
+    top: 70px;
+    padding: 0;
+    // border: 1px solid #eee;
+    border-radius: 3px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    height: 300px;
+    overflow-y: scroll;
 
-    .glyphicon-chevron-down {
-      display: block;
+    > li {
+      max-width: 300px;
+      margin: auto;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      margin: 10px auto;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      a {
+        background: transparent;
+        color: white;
+        border-radius: 0;
+        font-weight: bolder;
+
+        &:hover, &:focus, &:active {
+          background: rgba(0,0,0,0.1);
+          color: white;
+          border-radius: 3px;
+        }
+      }
+    }
+
+    &.expanded {
+      left: 15px;
+      right: 15px;
+      width: auto;
     }
   }
 
+  // .issues__nav {
+  //   height: 40px;
+  //   overflow: hidden;
+  //   margin-bottom: 10px;
+  //   margin: 10px -15px;
+  //
+  //   .glyphicon-chevron-down {
+  //     display: block;
+  //   }
+  // }
+
   .issues__nav.expanded {
-    height:auto;
-    max-height: 9999px;
-    overflow: hidden;
-    display: block;
+    // height:auto;
+    // max-height: 9999px;
+    // overflow: hidden;
+    // display: block;
     // position: absolute;
     // border-radius: 3px;
     // padding-top: 60px;
@@ -1243,9 +1291,9 @@ footer {
     // /* padding: 7.5px; */
     // margin: 7.5px;
 
-    .glyphicon-chevron-down {
-      transform: rotateX(180deg);
-    }
+    // .glyphicon-chevron-down {
+    //   transform: rotateX(180deg);
+    // }
 
     // .expanded {
     //   max-height: 2000px !important;
@@ -1281,5 +1329,36 @@ footer {
   .office {
     padding-bottom: 20px;
     display: block;
+  }
+}
+
+.toggle-nav {
+  position: relative;
+  margin-left: -15px;
+  width: auto;
+  margin-bottom: 10px;
+  background: darken($blue, 10);
+  padding: 20px;
+  padding-right:40px;
+  margin-right: -15px;
+  border-radius: 3px;
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: 0.25s;
+
+  &__text {
+    margin-right: 40px;
+  }
+
+  &__icon {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    font-size: 20px;
+  }
+
+  &:hover {
+    background: darken($blue, 20);
   }
 }
