@@ -350,6 +350,7 @@ body {
     background-color: darken($blue, 20);
     background-size: cover;
     color: white;
+    border-radius: 0 3px 3px 0;
 
     a {
       color: white;
@@ -362,6 +363,10 @@ body {
 
     .info {
       align-self: baseline;
+    }
+
+    @media (max-width:767px) {
+      border-radius: 0 0 3px 3px;
     }
   }
 
