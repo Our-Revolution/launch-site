@@ -350,6 +350,7 @@ body {
     background-color: darken($blue, 20);
     background-size: cover;
     color: white;
+    border-radius: 0 3px 3px 0;
 
     a {
       color: white;
@@ -362,6 +363,10 @@ body {
 
     .info {
       align-self: baseline;
+    }
+
+    @media (max-width:767px) {
+      border-radius: 0 0 3px 3px;
     }
   }
 
@@ -1344,7 +1349,6 @@ footer {
   border-radius: 3px;
   color: white;
   font-weight: bolder;
-  cursor: pointer;
   transition: 0.25s;
 
   &__text {
@@ -1356,9 +1360,10 @@ footer {
     right: 15px;
     top: 20px;
     font-size: 20px;
-  }
+    cursor: pointer;
 
-  &:hover {
-    background: darken($blue, 20);
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }

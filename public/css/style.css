@@ -267,11 +267,15 @@ footer {
   .module--news, .module--vote {
     background-color: #106fcf;
     background-size: cover;
-    color: white; }
+    color: white;
+    border-radius: 0 3px 3px 0; }
     .module--news a, .module--vote a {
       color: white; }
     .module--news .info, .module--vote .info {
       align-self: baseline; }
+    @media (max-width: 767px) {
+      .module--news, .module--vote {
+        border-radius: 0 0 3px 3px; } }
   .module--news {
     background: url("../img/bg_3.png"); }
   .module--vote {
@@ -827,7 +831,6 @@ footer {
   border-radius: 3px;
   color: white;
   font-weight: bolder;
-  cursor: pointer;
   transition: 0.25s; }
   .toggle-nav__text {
     margin-right: 40px; }
@@ -835,6 +838,7 @@ footer {
     position: absolute;
     right: 15px;
     top: 20px;
-    font-size: 20px; }
-  .toggle-nav:hover {
-    background: #106fcf; }
+    font-size: 20px;
+    cursor: pointer; }
+    .toggle-nav__icon:hover {
+      opacity: 0.8; }
