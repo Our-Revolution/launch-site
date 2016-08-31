@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 gulp.task('sass', function () {
   return sass('./public/css/**/*.scss')
     .pipe(autoprefixer({
-        browsers: ['last 2 versions'],
+        browsers: ['last 2 versions','iOS 7', 'iOS 8'],
         cascade: false
     }))
     .pipe(gulp.dest('./public/css'))
