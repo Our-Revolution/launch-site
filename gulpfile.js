@@ -2,13 +2,25 @@ var gulp = require('gulp'),
   nodemon = require('gulp-nodemon'),
   plumber = require('gulp-plumber'),
   livereload = require('gulp-livereload'),
-  sass = require('gulp-ruby-sass');
+  sass = require('gulp-ruby-sass'),
+  imagemin = require('gulp-imagemin'),
+  autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('sass', function () {
   return sass('./public/css/**/*.scss')
+    .pipe(autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false
+    }))
     .pipe(gulp.dest('./public/css'))
     .pipe(livereload());
 });
+
+gulp.task('images', () =>
+    gulp.src('./public/images/**/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('./public/img'))
+);
 
 gulp.task('watch', function() {
   gulp.watch('./public/css/*.scss', ['sass']);
