@@ -112,7 +112,7 @@
           $(this).closest('ul').toggleClass('expanded');
         })
 
-        $('#toggle-nav').on('click touchstart', function(e) {
+        $('.toggle-nav__icon').on('click touchstart', function(e) {
           e.preventDefault();
           $('.issues__nav').toggleClass('expanded');
           if($('.toggle-nav__icon').hasClass('glyphicon-menu-hamburger')) {
@@ -130,7 +130,7 @@
   {{#if active.initiatives}}
     <script>
       $(document).ready(function() {
-        $('#toggle-nav').on('click touchstart', function(e) {
+        $('.toggle-nav__icon').on('click touchstart', function(e) {
           e.preventDefault();
           $('.issues__nav').toggleClass('expanded');
           if($('.toggle-nav__icon').hasClass('glyphicon-menu-hamburger')) {
