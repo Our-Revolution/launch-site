@@ -240,6 +240,7 @@ footer {
     transition: 0.25s; }
     .navbar .logo:hover {
       -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
       transform: scale(1.1); }
 
   .navbar {
@@ -595,6 +596,7 @@ footer {
       color: white;
       text-decoration: none;
       -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
       transform: scale(1.05); }
     .action-list__action .action__link {
       color: white;
@@ -712,6 +714,7 @@ footer {
     .candidate-list .candidate:hover {
       opacity: 0.9;
       -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
       transform: scale(1.05); }
     .candidate-list .candidate a {
       color: #333; }
