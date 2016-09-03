@@ -7,7 +7,7 @@ var gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('sass', function () {
-  return sass('./public/css/**/*.scss')
+  return sass('./public/css/style.scss')
     .pipe(autoprefixer({
         browsers: ['last 2 versions','iOS 7', 'iOS 8', 'ie 9-11'],
         cascade: false
@@ -23,7 +23,7 @@ gulp.task('images', () =>
 );
 
 gulp.task('watch', function() {
-  gulp.watch('./public/css/*.scss', ['sass']);
+  gulp.watch('./public/css/**/*.scss', ['sass']);
 });
 
 gulp.task('develop', function () {

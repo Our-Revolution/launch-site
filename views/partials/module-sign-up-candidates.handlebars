@@ -1,0 +1,46 @@
+<section class="module-container clearfix">
+
+  <div class="module--centered col-md-4">
+    <div class="module__content">
+      <p>Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+      <div class="module--small-bottom">
+        <a href="#" class="btn btn-secondary btn-block">Get Involved</a>
+      </div>
+    </div>
+    <div class="module__content">
+      <p>Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+      <div class="module--small-bottom">
+        <a href="#" class="btn btn-secondary btn-block">Get Involved</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="module--centered module--news col-md-8">
+    <div class="module__content">
+      <div class="sign-up-form">
+        <h2>Join us for the future of our political movement.</h2>
+
+        <form action="/signup" method="POST" enctype="application/x-www-form-urlencoded">
+        {{#if error}}
+          <div class="alert alert-danger" role="alert">{{error}}</div>
+        {{/if}}
+
+          <span class="form-group email">
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" class="email" placeholder="you@example.com">
+          </span>
+
+          <span class="form-group zip">
+            <label for="zip">Zip Code</label>
+            <input type="text" name="zip" id="zip" class="zip" placeholder="90210">
+          </span>
+
+          <span class="form-group submit">
+            <button class="btn btn-primary btn-block">Sign Up</button>
+          </span>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</section>

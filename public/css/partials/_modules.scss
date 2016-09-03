@@ -1,0 +1,208 @@
+// Modules
+.module-container {
+  background: white;
+  border-radius: 3px;
+  margin: 10px 0;
+  height: 600px;
+  display: flex;
+  padding: 0;
+
+  &--video {
+    display: block;
+  }
+}
+
+.module {
+  height: 100%;
+
+  h1, h2, h3 {
+    margin-top: 0;
+  }
+
+  &--news, &--vote {
+    background-color: darken($blue, 20);
+    background-size: cover;
+    color: white;
+    border-radius: 0 3px 3px 0;
+
+    a {
+      color: white;
+    //
+    //   &:hover, &:focus {
+    //     text-decoration: none;
+    //     color: $blue;
+    //   }
+    }
+
+    .info {
+      align-self: baseline;
+    }
+
+    @media (max-width:767px) {
+      border-radius: 0 0 3px 3px;
+    }
+  }
+
+  &--news {
+    background: url('../img/bg_3.png');
+  }
+
+  &--vote {
+    background: url('../img/canova_bg.jpg');
+    border-radius: 0 3px 3px 0;
+
+    @media (max-width:767px) {
+      border-radius: 0 0 3px 3px;
+    }
+  }
+
+  &--sign-up-main {
+    border: 5px solid darken($blue, 20);
+    border-width: 0 5px 0 0;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+
+    @media (max-width:767px) {
+      border-width: 0 0 5px 0;
+    }
+  }
+
+  &--volunteer {
+    // background: url('../img/bg_4.png');
+    background: darken($blue, 20);
+    color: white;
+    border-radius: 0 3px 3px 0;
+
+    input {
+      color: #333;
+    }
+
+    @media (max-width:767px) {
+      border-radius: 0 0 3px 3px;
+    }
+  }
+
+  &--video {
+    display: block !important;
+    background: darken($blue, 20);
+    background-size: cover;
+    border-radius: 0 3px 3px 0;
+
+    .module__content {
+      max-width: 100%;
+      padding:0;
+    }
+  }
+
+  &--centered {
+    @extend .module;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  &__content {
+    padding: 30px;
+    max-width: 600px;
+    margin: auto;
+
+    &-flex {
+      @extend .module__content;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+    }
+  }
+
+  &--small-bottom {
+    background: $blue;
+    width: 100%;
+    align-self: flex-end;
+    margin-bottom: 0;
+    flex: 0 0 100px;
+    max-width: 100%;
+    border-radius: 0 0 0 3px;
+
+    @media (max-width:767px) {
+      border-radius: 0;
+    }
+  }
+
+  &--two-thirds--full {
+    width: 66%;
+    float: left;
+  }
+
+  &--one-third--full {
+    width: 34%;
+    float: left;
+    background: #f5f5f5;
+    height: 100%;
+  }
+}
+
+// Video Stuff
+@media (max-width: 991px) {
+  .module-container--video {
+    .module--video {
+      padding: 20px;
+      border-radius: 0 0 3px 3px;
+    }
+
+    .module--centered {
+      display: block;
+      height: auto;
+    }
+
+    .video-wrapper {
+      margin-top: 10px;
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding-bottom: 45%;
+    }
+  }
+}
+
+@media (max-width: 991px) and (max-width: 768px) {
+  .module-container .sign-up-form .form-group {
+    margin-bottom: 10px;
+
+    &.email {
+      width: 60%;
+    }
+
+    &.zip {
+      width: 36%;
+      margin-right: 0;
+    }
+
+    &.submit {
+      display: block;
+      width: 100%;
+    }
+
+  }
+}
+
+@media (max-width: 767px) {
+  .module-container {
+    height: auto;
+    flex-flow: row wrap;
+
+    .module--centered {
+      flex: 0 0 100%;
+    }
+  }
+
+  .navbar .btn-donate {
+    display: block;
+    width: 100%;
+    float: none !important;
+  }
+}
