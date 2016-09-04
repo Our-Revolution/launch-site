@@ -4,10 +4,12 @@ var gulp = require('gulp'),
   livereload = require('gulp-livereload'),
   sass = require('gulp-ruby-sass'),
   imagemin = require('gulp-imagemin'),
-  autoprefixer = require('gulp-autoprefixer');
+  autoprefixer = require('gulp-autoprefixer'),
+  sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('sass', function () {
-  return sass('./public/css/style.scss')
+  return sass('./public/css/style.scss', {sourcemap: true})
+    .pipe(sourcemaps.write())
     .pipe(autoprefixer({
         browsers: ['last 2 versions','iOS 7', 'iOS 8', 'ie 9-11'],
         cascade: false
