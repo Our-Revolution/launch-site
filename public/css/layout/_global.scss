@@ -15,7 +15,7 @@ body {
     font-size: 16px;
   }
 
-  @media (max-width: 767px) {
+  @include until($medium) {
     padding-top: 50px;
   }
 }
