@@ -22,26 +22,26 @@
     {{#if data.website}}
       <div class="candidate-action-bar clearfix">
         {{#if data.primary_cta_enabled}}
-          <a href="{{data.primary_cta_link}}" class="btn btn-donate">{{data.primary_cta}}</a>
+          <a href="{{data.primary_cta_link}}" onclick="trackOutboundLink('{{data.primary_cta_link}}'); return false;" class="btn btn-donate">{{data.primary_cta}}</a>
         {{/if}}
 
         {{#if data.secondary_cta}}
-          <a href="{{data.secondary_cta_link}}" class="btn btn-primary">{{data.secondary_cta}}</a>
+          <a href="{{data.secondary_cta_link}}" onclick="trackOutboundLink('{{data.secondary_cta_link}}'); return false;" class="btn btn-primary">{{data.secondary_cta}}</a>
         {{/if}}
 
         {{#if data.website}}
-          <a href="{{data.website}}" class="btn btn-secondary">Website</a>
+          <a href="{{data.website}}" onclick="trackOutboundLink('{{data.website}}'); return false;" class="btn btn-secondary">Website</a>
         {{/if}}
 
         <div class="pull-right">
           {{#if data.twitter}}
-            <a href="{{data.twitter}}">
+            <a href="{{data.twitter}}" onclick="trackOutboundLink('{{data.twitter}}'); return false;">
               <img alt="Twitter" src="/img/icons/twitter.svg" class="social-icon">
             </a>
           {{/if}}
 
           {{#if data.facebook}}
-            <a href="{{data.facebook}}">
+            <a href="{{data.facebook}}" onclick="trackOutboundLink('{{data.facebook}}'); return false;">
               <img alt="Facebeook" src="/img/icons/facebook.svg" class="social-icon">
             </a>
           {{/if}}
@@ -70,7 +70,7 @@
           {{data.bio}}
 
           {{#if data.polling_locator}}
-            <a href="{{data.polling_locator}}" class="btn btn-block btn-secondary">Find Polling Place</a>
+            <a href="{{data.polling_locator}}" onclick="trackOutboundLink('{{data.polling_locator}}'); return false;" class="btn btn-block btn-secondary">Find Polling Place</a>
           {{/if}}
         </p>
       </div>
