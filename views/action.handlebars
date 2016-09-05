@@ -1,52 +1,56 @@
 <div class="row row--main">
   <div class="container">
-    <section class="module-container clearfix">
+    <section class="module-container">
 
-      <div class="module--centered module--sign-up-main col-md-4">
-        <div class="module__content">
-          <h2>Stop the TPP</h2>
-          <p>Together we can stop the disastrous Trans-Pacific Partnership</p>
-          <a href="/stop-the-tpp" class='btn btn-secondary'>Take Action</a>
+      <div class="module-col third">
+        <div class="module full centered white">
+          <div class="module__content text-center">
+            <h2>Stop the TPP</h2>
+            <p>Together we can stop the disastrous Trans-Pacific Partnership</p>
+            <a href="/stop-the-tpp" class='btn btn-secondary btn-block'>Take Action</a>
+          </div>
         </div>
       </div>
 
-      <div class="module--centered module--volunteer col-md-8">
-        <div class="module__content volunteer-form">
-          <h2>Volunteer for the future of our political movement.</h2>
+      <div class="module-col two-thirds">
+        <div class="module full centered dark-blue">
+          <div class="module__content volunteer-form">
+            <h2>Volunteer for the future of our political movement.</h2>
 
-          <form action="/volunteer-signup" method="POST" enctype="application/x-www-form-urlencoded">
-            {{#if error}}
-              <div class="alert alert-danger" role="alert">{{error}}</div>
-            {{/if}}
-          	<span class="form-group email">
-          		<label for="email">Email Address</label>
-          		<input type="email" name="email" id="email" class="email" placeholder="you@example.com">
-          	</span>
+            <form action="/volunteer-signup" method="POST" enctype="application/x-www-form-urlencoded">
+              {{#if error}}
+                <div class="alert alert-danger" role="alert">{{error}}</div>
+              {{/if}}
+            	<span class="form-group email">
+            		<label for="email">Email Address</label>
+            		<input type="email" name="email" id="email" class="email" placeholder="you@example.com">
+            	</span>
 
-            <span class="form-group first-name">
-          		<label for="first-name">First Name</label>
-          		<input type="text" name="firstName" id="first-name" class="first-name" placeholder="Jane">
-          	</span>
+              <span class="form-group first-name">
+            		<label for="first-name">First Name</label>
+            		<input type="text" name="firstName" id="first-name" class="first-name" placeholder="Jane">
+            	</span>
 
-            <span class="form-group last-name">
-          		<label for="last-name">Last Name</label>
-          		<input type="text" name="lastName" id="last-name" class="last-name" placeholder="Doe">
-          	</span>
+              <span class="form-group last-name">
+            		<label for="last-name">Last Name</label>
+            		<input type="text" name="lastName" id="last-name" class="last-name" placeholder="Doe">
+            	</span>
 
-          	<span class="form-group zip">
-          		<label for="zip">Zip Code</label>
-          		<input type="text" name="zip" id="zip" class="zip" placeholder="90210">
-          	</span>
+            	<span class="form-group zip">
+            		<label for="zip">Zip Code</label>
+            		<input type="text" name="zip" id="zip" class="zip" placeholder="90210">
+            	</span>
 
-            <span class="form-group phone">
-          		<label for="phone">Phone Number</label>
-          		<input type="tel" name="phone" id="phone" class="phone" placeholder="5554576142">
-          	</span>
+              <span class="form-group phone">
+            		<label for="phone">Phone Number</label>
+            		<input type="tel" name="phone" id="phone" class="phone" placeholder="5554576142">
+            	</span>
 
-            <span class="form-group submit">
-            	<button class="btn btn-primary btn-block">Join the Fight</button>
-            </span>
-          </form>
+              <span class="form-group submit">
+              	<button class="btn btn-primary btn-block">Join the Fight</button>
+              </span>
+            </form>
+          </div>
         </div>
       </div>
 
