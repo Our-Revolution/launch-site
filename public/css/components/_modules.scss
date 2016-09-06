@@ -124,6 +124,7 @@
 .module-col {
   display: flex;
   flex-direction: column;
+  height: 100%;
 
   &.third {
     width: 34%;
@@ -142,6 +143,7 @@
 
   @include until($medium) {
     width: 100% !important;
+    flex-flow: row wrap;
   }
 }
 
@@ -159,14 +161,14 @@
 
   &.fill {
     height: auto;
-    flex: 1;
+    flex: auto;
     min-height: 200px;
   }
 
   &.top {
     height: auto;
     align-self: flex-start;
-    flex: 0 0 75px;
+    flex: 0 0 auto;
   }
 
   &.bottom {
