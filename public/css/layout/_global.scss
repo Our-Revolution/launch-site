@@ -57,6 +57,11 @@ h4, h1 {
 
     &__content {
       text-align: left;
+      flex: auto;
+    }
+
+    &__link {
+      flex: 0 0 100px;
     }
 
   }
