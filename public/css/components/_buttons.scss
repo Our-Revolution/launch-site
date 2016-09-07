@@ -114,3 +114,33 @@
   border: none;
   outline: none;
 }
+
+.btn-outline,
+.btn-outline:visited {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  outline: none;
+  border-radius: 0;
+}
+
+.btn-outline:hover,
+.btn-outline:active:hover,
+.btn-outline.active:hover {
+  background-color: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid white;
+  outline: none;
+  border-radius: 0;
+}
+
+.btn-outline:focus,
+.btn-outline.focus,
+.btn-outline:active,
+.btn-outline.active {
+  background-color: rgba(255,255,255,0.4);
+  color: white;
+  border: 1px solid white;
+  outline: none;
+  border-radius: 0;
+}
