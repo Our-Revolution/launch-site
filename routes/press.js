@@ -14,5 +14,10 @@ router.get('/our-revolution-announces-second-round-of-endorsements', function(re
   res.render('press/our-revolution-announces-second-round-of-endorsements', { title: 'Our Revolution', active: {home: true} });
 });
 
+router.get('/founding-statement-of-our-revolution-board', function(req, res) {
+  article = req.params.article;
+
+  res.render('press/founding-statement-of-our-revolution-board', { title: 'Our Revolution', active: {home: true} });
+});
 
 module.exports = router;
