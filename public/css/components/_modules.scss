@@ -51,10 +51,21 @@
   &.dark-blue {
     background: darken($blue, 30);
     color: white;
+
+    &-transparent {
+      @extend .dark-blue;
+      background: transparentize(darken($blue, 30), 0.5);
+    }
   }
 
   &.white {
     background: white;
+  }
+
+  &.crowd {
+    background-image: url('../img/bg_3.png');
+    background-size: cover;
+    color: white;
   }
 
   &.connolly {
@@ -106,6 +117,10 @@
       flex: 1;
       max-width: 100%;
     }
+  }
+
+  &__button {
+    margin-top: 10px;
   }
 
   &--small-bottom {

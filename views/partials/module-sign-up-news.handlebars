@@ -1,45 +1,45 @@
 <section class="module-container clearfix">
 
-  <div class="module--centered module--sign-up-main col-md-4">
-    <div class="module__content-flex">
-      <div class="sign-up-form">
-        <h2>Join us for the future of our political movement.</h2>
+  <div class="module-col third">
+    <div class="module fill centered white border-right">
+      <div class="module__content">
+        <div class="sign-up-form small">
+          <h2>Join us for the future of our political movement.</h2>
 
-        <form action="/signup" method="POST" enctype="application/x-www-form-urlencoded">
-        {{#if error}}
-          <div class="alert alert-danger" role="alert">{{error}}</div>
-        {{/if}}
+          <form action="/signup" method="POST" enctype="application/x-www-form-urlencoded">
+          {{#if error}}
+            <div class="alert alert-danger" role="alert">{{error}}</div>
+          {{/if}}
 
-          <span class="form-group email">
-            <label for="email">Email Address</label>
-            <input type="email" name="email" id="email" class="email" placeholder="you@example.com">
-          </span>
+            <span class="form-group email">
+              <label for="email">Email Address</label>
+              <input type="email" name="email" id="email" class="email" placeholder="you@example.com">
+            </span>
 
-          <span class="form-group zip">
-            <label for="zip">Zip Code</label>
-            <input type="text" name="zip" id="zip" class="zip" placeholder="90210">
-          </span>
+            <span class="form-group zip">
+              <label for="zip">Zip Code</label>
+              <input type="text" name="zip" id="zip" class="zip" placeholder="90210">
+            </span>
 
-          <span class="form-group submit">
-            <button class="btn btn-primary btn-block">Join the Fight</button>
-          </span>
-        </form>
+            <span class="form-group submit">
+              <button class="btn btn-primary btn-block">Join the Fight</button>
+            </span>
+          </form>
+        </div>
       </div>
-    </div>
-
-    <div class="module__content module--small-bottom">
-      <a href="https://www.youtube.com/watch?v=Kp4tFcwkjhQ" class="btn btn-dark btn-block">Watch the Launch Event <span class="glyphicon glyphicon-chevron-right"></a>
     </div>
   </div>
 
-  <div class="module--centered module--news col-md-8">
-    <div class="module__content">
-      <div class="info">
+  <div class="module-col two-thirds">
+    <div class="module fill centered crowd" id="news-module-home">
+      <div class="module__content">
+        <div class="info">
 
-        <span class="article-type">Press Release</span>
-        <h1>Our Revolution Announces Formation of Board</h1>
+          <span class="article-type">Press Release</span>
+          <h1 class="module__heading">Founding Statement of Our Revolution Board of Directors</h1>
 
-        <a href="/press/our-revolution-announces-formation-of-board" class="btn btn-secondary btn-block">Read More</a>
+          <a href="/press/founding-statement-of-our-revolution-board" class="btn btn-secondary btn-block module__button">Read More</a>
+        </div>
       </div>
     </div>
   </div>
