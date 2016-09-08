@@ -83,6 +83,10 @@ router.get('/stop-the-tpp', function(req, res) {
   res.render('stop-the-tpp', { title: 'Our Revolution - Stop the TPP', active: {action: true} });
 });
 
+router.get('/stop-tpp-now', function(req, res) {
+  res.render('stop-the-tpp', { title: 'Our Revolution - Stop the TPP', active: {action: true} });
+});
+
 /* GET Privacy Policy page. */
 
 router.get('/privacy-policy', function(req, res) {
