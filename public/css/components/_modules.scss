@@ -32,6 +32,15 @@
   &.align-bottom {
     display: flex;
     align-items: flex-end;
+  }
+
+  &.align-left {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &.align-middle {
+    display: flex;
     justify-content: center;
   }
 
@@ -50,7 +59,6 @@
 
   &.connolly {
     background-image: url('../img/bg_connolly.jpg');
-    // background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3)), url('../img/bg_connolly.jpg');
     background-position: center;
     background-size: cover;
     color: white;
@@ -58,7 +66,6 @@
 
   &.jehlen {
     background-image: url('../img/bg_jehlen.jpg');
-    // background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3)), url('../img/bg_jehlen.jpg');
     background-position: center;
     background-size: cover;
     color: white;
@@ -66,6 +73,10 @@
 
   &.border-left {
     border-left: 5px solid lighten($blue, 10);
+  }
+
+  &.border-right {
+    border-right: 5px solid lighten($blue, 10);
   }
 
   &--video {
@@ -89,6 +100,11 @@
       align-items: center;
       justify-content: center;
       align-content: center;
+    }
+
+    &.full {
+      flex: 1;
+      max-width: 100%;
     }
   }
 

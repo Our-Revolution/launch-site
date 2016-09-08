@@ -11,7 +11,7 @@ gulp.task('sass', function () {
   return sass('./public/css/style.scss', {sourcemap: true})
     .pipe(sourcemaps.write())
     .pipe(autoprefixer({
-        browsers: ['last 2 versions','iOS 7', 'iOS 8', 'ie 9-11'],
+        browsers: ['last 2 versions','iOS 7', 'iOS 8', 'ie 9-11', 'android 4.3'],
         cascade: false
     }))
     .pipe(gulp.dest('./public/css'))
