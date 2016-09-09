@@ -1,6 +1,8 @@
+{{>notification-bar}}
+
 <div class="row row--main home">
   <div class="container">
-    {{>module-sign-up-candidates}}
+    {{>module-sign-up-news}}
   </div>
 </div>
 
@@ -16,21 +18,21 @@
         <div class="col-md-12">
           <ul class="action-list">
             <li class="action-list__action col-md-4">
-              <a class="action__link" href="/action">
+              <a class="action__link" id="action-secondary-link" href="/action">
                 <h3>Take Action</h3>
                 <p class="action__description">Volunteer today and help continue our political revolution through grassroots organization.</p>
                 <span class="glyphicon glyphicon-chevron-right hidden-md hidden-sm"></span>
               </a>
             </li>
             <li class="action-list__action col-md-4">
-              <a class="action__link" href="/issues">
+              <a class="action__link" id="issues-secondary-link" href="/issues">
                 <h3>Learn About the Issues</h3>
                 <p class="action__description">Learn about the important issues facing our country today, and what you can do to fix them.</p>
                 <span class="glyphicon glyphicon-chevron-right hidden-md hidden-sm"></span>
               </a>
             </li>
             <li class="action-list__action col-md-4">
-              <a class="action__link" href="/candidates">
+              <a class="action__link" id="candidates-secondary-link" href="/candidates">
                 <h3>Explore Our Candidates</h3>
                 <p class="action__description">Find out who will continue the political revolution, and what you can do to help them win.</p>
                 <span class="glyphicon glyphicon-chevron-right hidden-md hidden-sm"></span>
@@ -45,30 +47,30 @@
 
 <div class="row row--dark">
   <div class="container">
-    <section class="home-section--news col-md-10 col-md-offset-1">
+    <section class="home-section--news col-md-10 col-md-offset-1" id="news-section">
       <h2 class="section-heading">In the News</h2>
       <div class="col-md-4 content">
         <div class="news-item">
-          <a href="/press/our-revolution-announces-second-round-of-endorsements"><h4 class="content__heading">Our Revolution Announces Second Round of Endorsements</h4></a>
+          <a href="/press/our-revolution-on-ma-primary-wins"><h4 class="content__heading">Our Revolution on Massachusetts Primary Wins</h4></a>
           <div class="attribution"><strong>Press Release</strong></div>
-          <p class="content__copy">Our Revolution on Wednesday announced their support for seven candidates running for positions in state legislatures and congressional seats around the country...</p>
-          <a href="/press/our-revolution-announces-second-round-of-endorsements" class="content__btn btn btn-secondary">Read <span class="glyphicon glyphicon-chevron-right"></span></a>
+          <p class="content__copy">Our Revolution on Friday congratulated State Sen. Patricia Jehlen and Mike Connolly, candidates endorsed by the organization, for their Massachusetts primary victories...</p>
+          <a href="/press/our-revolution-on-ma-primary-wins" class="content__btn btn btn-secondary">Read <span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
       </div>
       <div class="col-md-4 content">
         <div class="news-item">
-          <a href="/press/our-revolution-announces-formation-of-board"><h4 class="content__heading">Our Revolution Announces Formation of Board</h4></a>
+          <a href="/press/founding-statement-of-our-revolution-board"><h4 class="content__heading">Founding Statement of Our Revolution Board of Directors</h4></a>
           <div class="attribution"><strong>Press Release</strong></div>
-          <p class="content__copy">Our Revolution on Monday announced the formation of its board. The diverse coalition of eleven former elected officials, organizational leaders and grassroots activists join the board to continue the work they started as volunteers...</p>
-          <a href="/press/our-revolution-announces-formation-of-board" class="content__btn btn btn-secondary">Read <span class="glyphicon glyphicon-chevron-right"></span></a>
+          <p class="content__copy">Our Revolution on Wednesday released the following "founding statement," adopted unanimously by all 11 board members...</p>
+          <a href="/press/founding-statement-of-our-revolution-board" class="content__btn btn btn-secondary">Read <span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
       </div>
       <div class="col-md-4 content">
         <div class="news-item">
-          <a href="http://www.bustle.com/articles/177968-what-is-our-revolution-bernie-sanders-new-organization-is-keeping-the-movement-going" onclick="trackOutboundLink('http://www.bustle.com/articles/177968-what-is-our-revolution-bernie-sanders-new-organization-is-keeping-the-movement-going'); return false;" target="_blank"><h4 class="content__heading">What Is "Our Revolution"? Bernie Sanders' New Organization Is Keeping The Movement Going</h4></a>
-          <div class="attribution">Amée Latour | <strong>Bustle</strong></div>
-          <p class="content__copy">Sen. Bernie Sanders said time and again throughout his presidential primary bid that the movement it sparked must continue beyond his campaign...</p>
-          <a href="http://www.bustle.com/articles/177968-what-is-our-revolution-bernie-sanders-new-organization-is-keeping-the-movement-going" onclick="trackOutboundLink('http://www.bustle.com/articles/177968-what-is-our-revolution-bernie-sanders-new-organization-is-keeping-the-movement-going'); return false;" target="_blank" class="content__btn btn btn-secondary">Read <span class="glyphicon glyphicon-chevron-right"></span></a>
+          <a href="/press/our-revolution-announces-second-round-of-endorsements" id="our-revolution-announces-second-round-of-endorsements-link"><h4 class="content__heading">Our Revolution Announces Second Round of Endorsements</h4></a>
+          <div class="attribution"><strong>Press Release</strong></div>
+          <p class="content__copy">Our Revolution on Wednesday announced its support for seven candidates running for positions in state legislatures and congressional seats around the country...</p>
+          <a href="/press/our-revolution-announces-second-round-of-endorsements" class="content__btn btn btn-secondary" id="our-revolution-announces-second-round-of-endorsements-button">Read <span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
       </div>
     </section>

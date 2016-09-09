@@ -30,6 +30,43 @@ h4, h1 {
   font-weight: 700;
 }
 
+.notification-banner {
+  padding: 10px;
+  background: $red;
+  color: white;
+  text-align: center;
+  font-weight: bolder;
+
+  &__link {
+    font-weight: bolder;
+    margin-left: 10px;
+
+    &.btn {
+      height: 30px;
+      padding: 4px 5px;
+    }
+  }
+
+  @include until($medium) {
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+    }
+
+    &__content {
+      text-align: left;
+      flex: auto;
+    }
+
+    &__link {
+      flex: 0 0 100px;
+    }
+
+  }
+}
+
 .sub-heading {
   text-transform: uppercase;
   letter-spacing: 2px;

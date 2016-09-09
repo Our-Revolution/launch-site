@@ -16,11 +16,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav navbar-nav--centered">
-        <li class="{{#if active.about}}active{{/if}} about"><a href="/about">About</a></li>
-        <li class="{{#if active.action}}active{{/if}} action"><a href="/action">Take Action</a></li>
-        <li class="{{#if active.issues}}active{{/if}} issues"><a href="/issues">Issues</a></li>
-        <li class="{{#if active.candidates}}active{{/if}} candidates"><a href="/candidates">Candidates</a></li>
-        <li class="{{#if active.initiatives}}active{{/if}} initiatives"><a href="/ballot-initiatives">Ballot Initiatives</a></li>
+        <li class="{{#if active.about}}active{{/if}} about"><a href="/about" id="about-nav-link">About</a></li>
+        <li class="{{#if active.action}}active{{/if}} action"><a href="/action" id="action-nav-link">Take Action</a></li>
+        <li class="{{#if active.issues}}active{{/if}} issues"><a href="/issues" id="issues-nav-link">Issues</a></li>
+        <li class="{{#if active.candidates}}active{{/if}} candidates"><a href="/candidates" id="candidates-nav-link">Candidates</a></li>
+        <li class="{{#if active.initiatives}}active{{/if}} initiatives"><a href="/ballot-initiatives" id="initiatives-nav-link">Ballot Initiatives</a></li>
       </ul>
       <a href="https://secure.actblue.com/contribute/page/ourrevolution?refcode=main-nav&amount=27.00" class="pull-right btn btn-donate navbar-btn" onclick="trackOutboundLink('https://secure.actblue.com/contribute/page/ourrevolution?refcode=main-nav&amount=27.00'); return false;">Donate</a>
     </div><!-- /.navbar-collapse -->
