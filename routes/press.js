@@ -20,4 +20,11 @@ router.get('/founding-statement-of-our-revolution-board', function(req, res) {
   res.render('press/founding-statement-of-our-revolution-board', { title: 'Our Revolution', active: {home: true} });
 });
 
+router.get('/our-revolution-on-ma-primary-wins', function(req, res) {
+  article = req.params.article;
+
+  res.render('press/our-revolution-on-ma-primary-wins', { title: 'Our Revolution', active: {home: true} });
+});
+
+
 module.exports = router;
