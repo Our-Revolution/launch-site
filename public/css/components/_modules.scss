@@ -231,6 +231,10 @@
     height: auto;
     flex: auto;
     min-height: 150px;
+
+    @include until($small) {
+      min-height: 200px;
+    };
   }
 
   &.top {
