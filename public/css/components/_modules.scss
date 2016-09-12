@@ -44,6 +44,11 @@
     justify-content: center;
   }
 
+  &.align-center {
+    display: flex;
+    align-items: center;
+  }
+
   &.blue {
     background: $blue;
   }
@@ -82,6 +87,27 @@
     color: white;
   }
 
+  &.vassell {
+    background-image: url('../img/bg_vassell.jpg');
+    background-position: right center;
+    background-size: cover;
+    color: white;
+  }
+
+  &.calkin {
+    background-image: url('../img/bg_calkin.jpg');
+    background-position: right center;
+    background-size: cover;
+    color: white;
+  }
+
+  &.eramo {
+    background-image: url('../img/bg_eramo.jpg');
+    background-position: right center;
+    background-size: cover;
+    color: white;
+  }
+
   &.border-left {
     border-left: 5px solid lighten($blue, 10);
   }
@@ -116,6 +142,13 @@
     &.full {
       flex: 1;
       max-width: 100%;
+    }
+
+    &.align-left {
+      width: 100%;
+      text-align: left;
+      max-width: 100%;
+      padding: 30pxf;
     }
   }
 
@@ -193,7 +226,7 @@
   &.fill {
     height: auto;
     flex: auto;
-    min-height: 200px;
+    min-height: 150px;
   }
 
   &.top {
