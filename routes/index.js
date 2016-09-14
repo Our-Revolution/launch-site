@@ -80,11 +80,11 @@ router.get('/candidates/:name', function(req, res) {
 /* GET stop-tpp-now page. */
 
 router.get('/stop-the-tpp', function(req, res) {
-  res.render('stop-the-tpp', { title: 'Our Revolution - Stop the TPP', active: {action: true} });
+  res.render('stop-the-tpp', { title: 'Our Revolution - Stop the TPP', active: {action: true, revere: true} });
 });
 
 router.get('/stop-tpp-now', function(req, res) {
-  res.render('stop-the-tpp', { title: 'Our Revolution - Stop the TPP', active: {action: true} });
+  res.render('stop-the-tpp', { title: 'Our Revolution - Stop the TPP', active: {action: true, revere: true} });
 });
 
 /* GET Privacy Policy page. */

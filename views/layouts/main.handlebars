@@ -170,5 +170,130 @@
     </script>
   {{/unless}}
 
+  <script>
+    window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+
+      t._e = [];
+      t.ready = function(f) {
+        t._e.push(f);
+      };
+
+      return t;
+    }(document, "script", "twitter-wjs"));
+  </script>
+
+  {{#if ENV_DEVELOPMENT}}
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '166373960471187',
+          xfbml      : true,
+          version    : 'v2.7'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+  {{/if}}
+
+  {{#unless ENV_DEVELOPMENT}}
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '166371677138082',
+          xfbml      : true,
+          version    : 'v2.7'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+  {{/unless}}
+
+  {{#if active.revere}}
+    <script src="/js/smooth-scroll.min.js"></script>
+    <script>
+      smoothScroll.init();
+    </script>
+
+    <!-- <script type="text/javascript">
+      (function() {
+        var isSecure;
+
+        isSecure = function() {
+          return window.location.protocol === 'https:';
+        };
+
+        $(document).ready(function() {
+          $('#revmsg-CallSignupForm').attr('action', 'javascript:void(0);');
+
+          $('#revmsg-CallSignupForm').submit(function(e) {
+            var info, revereCalling, s;
+
+            info = {
+              phone: $('#phone').val(),
+              campaign_line: $('#campaign_line').val()
+            };
+
+            if ($('#name').length > 0 && $('#name').val() !== '') {
+              info.name = $('#name').val();
+            }
+
+            if ($('#zip').length > 0 && $('#zip').val() !== '') {
+              info.zip = $('#zip').val();
+            }
+
+            if ($('#email').length > 0 && $('#email').val() !== '') {
+              info.email = $('#email').val();
+            }
+
+            s = isSecure() ? 's' : '';
+
+            revereCalling = 'http' + s + '://' + 'phone.reverehq.com/outgoing/';
+
+            $.get(revereCalling, info, function(data) {
+              if (data.err) {
+                $('#revmsg-click-to-call #revmsg-CallSignupForm .err').html(data.message);
+
+                $('#revmsg-click-to-call #revmsg-CallSignupForm .err').show();
+              } else {
+                if($('#revmsghtml').length > 0 && $('#revmsghtml').val() !== '' && $('#revmsghtml').val() != window.location && $('#always_redirect').val() == 'true') {
+                  window.location = 'http://'+$('#revmsghtml').val();
+                } else {
+                  $('#revmsg-click-to-call .success').html(data.message);
+
+                  $('#revmsg-CallSignupForm').hide();
+
+                  $('#revmsg-click-to-call .success').show();
+                }
+              }
+            });
+
+            return false;
+          });
+        });
+      }).call(this);
+    </script> -->
+  {{/if}}
+
   </body>
 </html>
