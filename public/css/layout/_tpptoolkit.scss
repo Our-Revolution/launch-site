@@ -90,6 +90,8 @@
     li {
       display: inline-block;
       margin: 0 40px 0 0;
+      height: 30px;
+      line-height: 30px;
     }
 
     @include until($small) {
@@ -133,6 +135,11 @@
       display: inline-block;
       float: left;
       margin: 20px 40px 20px 20px;
+    }
+
+    &__content {
+      flex: auto;
+      text-align: center;
     }
 
     h3 {
