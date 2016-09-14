@@ -161,11 +161,11 @@
 
           <div class="row social-buttons clearfix">
             <div class="col-md-6">
-              <a class="btn btn-twitter btn-block" href="https://twitter.com/intent/retweet?tweet_id=772507959385530368">Share on Twitter <span class="twitter-icon"></span></a>
+              <a class="btn btn-twitter btn-block" href="https://twitter.com/intent/retweet?tweet_id=772507959385530368" onclick="trackOutboundLink('https://twitter.com/intent/retweet?tweet_id=772507959385530368'); return false;">Share on Twitter <span class="twitter-icon"></span></a>
             </div>
 
             <div class="col-md-6">
-              <a class="btn btn-facebook btn-block" onClick="FB.ui({method: 'share', href: 'https://www.facebook.com/PoliticalRevolution/photos/a.1219104214808459.1073741828.1194419550610259/1230462040339343/?type=3&theater',}, function(response){});">Share on Facebook <span class="facebook-icon"></span></a>
+              <a class="btn btn-facebook btn-block" onClick="FB.ui({method: 'share', href: 'https://www.facebook.com/PoliticalRevolution/photos/a.1219104214808459.1073741828.1194419550610259/1230462040339343/?type=3&theater',}, function(response){trackOutboundLink('https://www.facebook.com/PoliticalRevolution/photos/a.1219104214808459.1073741828.1194419550610259/1230462040339343/?type=3&theater'); return false;});">Share on Facebook <span class="facebook-icon"></span></a>
             </div>
           </div>
 
