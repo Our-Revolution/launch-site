@@ -80,7 +80,7 @@ router.get('/candidates/:name', function(req, res) {
 /* GET stop-tpp-now page. */
 
 router.get('/stop-the-tpp', function(req, res) {
-  res.render('stop-the-tpp', { title: 'Our Revolution - Stop the TPP', active: {action: true, revere: true}, meta: {description:'Join our push to stop the disastrous Trans-Pacific Partnership.'} });
+  res.redirect('/stop-tpp-now');
 });
 
 router.get('/stop-tpp-now', function(req, res) {
