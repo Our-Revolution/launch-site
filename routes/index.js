@@ -66,7 +66,9 @@ router.get('/candidates/:name', function(req, res) {
 
   function isCandidate(value) {
     if (value in candidates) {
-      return true;
+      if (candidates[value].show) {
+        return true;
+      }
     }
   }
 
