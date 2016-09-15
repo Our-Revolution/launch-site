@@ -6,25 +6,7 @@
         <div class="sign-up-form small">
           <h2>Join us for the future of our political movement.</h2>
 
-          <form action="/signup" method="POST" enctype="application/x-www-form-urlencoded">
-          {{#if error}}
-            <div class="alert alert-danger" role="alert">{{error}}</div>
-          {{/if}}
-
-            <span class="form-group email">
-              <label for="email">Email Address</label>
-              <input type="email" name="email" id="email" class="email" placeholder="you@example.com">
-            </span>
-
-            <span class="form-group zip">
-              <label for="zip">Zip Code</label>
-              <input type="text" name="zip" id="zip" class="zip" placeholder="90210">
-            </span>
-
-            <span class="form-group submit">
-              <button class="btn btn-secondary btn-block">Join the Fight</button>
-            </span>
-          </form>
+          {{>signupform}}
         </div>
       </div>
     </div>
