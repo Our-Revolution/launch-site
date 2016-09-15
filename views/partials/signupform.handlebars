@@ -1,15 +1,33 @@
-<form action="/signup" method="POST" enctype="application/x-www-form-urlencoded">
-  <span class="form-group email">
-    <label for="email">Email Address</label>
-    <input type="email" name="email" id="email" class="email" placeholder="you@example.com">
-  </span>
+{{#if this.url}}
+  <form action="{{url}}?source=ourrevolution.com/{{this.source}}" method="POST">
+    <span class="form-group email">
+      <label for="email">Email Address</label>
+      <input type="email" name="email" id="email" class="email" placeholder="you@example.com">
+    </span>
 
-  <span class="form-group zip ">
-    <label for="zip">Zip Code</label>
-    <input type="text" name="zip" id="zip" class="zip" placeholder="90210">
-  </span>
+    <span class="form-group zip ">
+      <label for="zip">Zip Code</label>
+      <input type="text" name="zip" id="zip" class="zip" placeholder="90210">
+    </span>
 
-  <span class="form-group submit">
-    <button class="btn btn-primary btn-block">Join</button>
-  </span>
-</form>
+    <span class="form-group submit">
+      <button class="btn btn-primary btn-block">Join</button>
+    </span>
+  </form>
+{{else}}
+  <form action="https://ourrevolution-bernie16.bsd.net/page/s/join" method="POST">
+    <span class="form-group email">
+      <label for="email">Email Address</label>
+      <input type="email" name="email" id="email" class="email" placeholder="you@example.com">
+    </span>
+
+    <span class="form-group zip ">
+      <label for="zip">Zip Code</label>
+      <input type="text" name="zip" id="zip" class="zip" placeholder="90210">
+    </span>
+
+    <span class="form-group submit">
+      <button class="btn btn-primary btn-block">Join</button>
+    </span>
+  </form>
+{{/if}}

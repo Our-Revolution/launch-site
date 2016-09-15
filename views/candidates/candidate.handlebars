@@ -45,18 +45,6 @@
               <img alt="Facebeook" src="/img/icons/facebook.svg" class="social-icon">
             </a>
           {{/if}}
-
-          <!-- {{#if data.instagram}}
-            <a href="{{data.instagram}}">
-              <img alt="Instagram" src="/img/icons/instagram.svg" class="social-icon">
-            </a>
-          {{/if}} -->
-  <!--
-          {{#if data.youtube}}
-          <a href="{{data.youtube}}">
-            <img alt="YouTube" src="/img/icons/youtube.svg" class="social-icon">
-          </a>
-          {{/if}} -->
         </div>
       </div>
     {{/if}}
@@ -79,7 +67,7 @@
     <div class="candidate-sign-up sign-up-form clearfix">
       <div class="col-md-6 col-md-offset-3">
         <h3>Join the fight to get {{data.name}} elected.</h3>
-        {{>signupform}}
+        {{>signupform source=data.slug url="https://ourrevolution-bernie16.bsd.net/page/s/join"}}
       </div>
     </div>
   </div>
