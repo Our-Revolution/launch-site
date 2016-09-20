@@ -1,0 +1,47 @@
+<section class="module-container clearfix">
+
+  <div class="module-col third">
+    <div class="module fill centered white border-right">
+      <div class="module__content">
+        <div class="sign-up-form small">
+          <h2>Join us for the future of our political movement.</h2>
+
+          <form action="/signup" method="POST" enctype="application/x-www-form-urlencoded">
+          {{#if error}}
+            <div class="alert alert-danger" role="alert">{{error}}</div>
+          {{/if}}
+
+            <span class="form-group email">
+              <label for="email">Email Address</label>
+              <input type="email" name="email" id="email" class="email" placeholder="you@example.com">
+            </span>
+
+            <span class="form-group zip">
+              <label for="zip">Zip Code</label>
+              <input type="text" name="zip" id="zip" class="zip" placeholder="90210">
+            </span>
+
+            <span class="form-group submit">
+              <button class="btn btn-primary btn-block">Join the Fight</button>
+            </span>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="module-col two-thirds">
+    <div class="module fill centered crowd" id="news-module-home">
+      <div class="module__content">
+        <div class="info">
+
+          <span class="article-type">Press Release</span>
+          <h1 class="module__heading">Our Revolution Statement on Rhode Island and New York Primary Wins</h1>
+
+          <a href="/press/our-revolution-statement-on-ri-and-ny" class="btn btn-secondary btn-block module__button">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

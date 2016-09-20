@@ -44,6 +44,11 @@
     justify-content: center;
   }
 
+  &.align-center {
+    display: flex;
+    align-items: center;
+  }
+
   &.blue {
     background: $blue;
   }
@@ -68,6 +73,22 @@
     color: white;
   }
 
+  &.tpp-bg {
+    background: $blue url('../img/tpp_bg.png');
+    background-size: cover;
+    color: white;
+    font-weight: bolder;
+
+    .module__heading {
+      text-shadow: 0 0 5px rgba(0,0,0,1);
+    }
+
+    .article-type {
+      font-weight: bolder;
+      text-shadow: 0 0 5px rgba(0,0,0,1);
+    }
+  }
+
   &.connolly {
     background-image: url('../img/bg_connolly.jpg');
     background-position: center;
@@ -78,6 +99,27 @@
   &.jehlen {
     background-image: url('../img/bg_jehlen.jpg');
     background-position: center;
+    background-size: cover;
+    color: white;
+  }
+
+  &.vassell {
+    background-image: url('../img/bg_vassell.jpg');
+    background-position: right center;
+    background-size: cover;
+    color: white;
+  }
+
+  &.calkin {
+    background-image: url('../img/bg_calkin.jpg');
+    background-position: right center;
+    background-size: cover;
+    color: white;
+  }
+
+  &.eramo {
+    background-image: url('../img/bg_eramo.jpg');
+    background-position: right center;
     background-size: cover;
     color: white;
   }
@@ -116,6 +158,17 @@
     &.full {
       flex: 1;
       max-width: 100%;
+    }
+
+    &.align-left {
+      width: 100%;
+      text-align: left;
+      max-width: 100%;
+      padding: 30px;
+    }
+
+    &.max-70 {
+      max-width: 70%;
     }
   }
 
@@ -193,7 +246,11 @@
   &.fill {
     height: auto;
     flex: auto;
-    min-height: 200px;
+    min-height: 150px;
+
+    @include until($small) {
+      min-height: 200px;
+    };
   }
 
   &.top {

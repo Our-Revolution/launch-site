@@ -1,0 +1,65 @@
+<section class="module-container">
+  <div class="module-col third">
+    <div class="module full centered white border-right">
+      <div class="module__content">
+        <div class="sign-up-form small">
+          <h2 class="module__heading">Join us for the future of our political movement.</h2>
+
+          <form action="/signup" method="POST" enctype="application/x-www-form-urlencoded">
+          {{#if error}}
+            <div class="alert alert-danger" role="alert">{{error}}</div>
+          {{/if}}
+
+            <span class="form-group email">
+              <label for="email">Email Address</label>
+              <input type="email" name="email" id="email" class="email" placeholder="you@example.com">
+            </span>
+
+            <span class="form-group zip">
+              <label for="zip">Zip Code</label>
+              <input type="text" name="zip" id="zip" class="zip" placeholder="90210">
+            </span>
+
+            <span class="form-group submit">
+              <button class="btn btn-secondary btn-block">Sign Up</button>
+            </span>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="module-col two-thirds crowd-bg">
+    <div class="module top centered dark-blue">
+      <div class="module__content align-left">
+        <h3 class='module__heading text-left'>Primaries Today</h3>
+      </div>
+    </div>
+
+    <div class="module fill align-left align-center eramo" id="eramo-module">
+      <div class="module__content max-70">
+        <span class="sub-heading">NY State Assembly</span>
+        <p>Help Eramo win his primary today.</p>
+        <a href="https://ourrevolution-bernie16.bsd.net/page/content/AEphonebank/" target="_blank" class="btn btn-primary">Phonebank</a>
+        <a href="https://nyc.pollsitelocator.com/search" target="_blank" class="btn btn-secondary">Find Polling Place</a>
+      </div>
+    </div>
+
+    <div class="module fill align-left align-center blue calkin" id="connolly-module">
+      <div class="module__content max-70">
+        <span class="sub-heading">RI State Senate</span>
+        <p>Vote for Jeanine Calkin today.</p>
+        <a href="https://vote.sos.ri.gov/" target="_blank" class="btn btn-secondary">Find Polling Place</a>
+      </div>
+    </div>
+
+    <div class="module fill align-left align-center vassell" id="vassell-module">
+      <div class="module__content max-70">
+        <span class="sub-heading">RI State House</span>
+        <p>Vote for Ranglin-Vassell today.</p>
+        <a href="https://vote.sos.ri.gov/" target="_blank" class="btn btn-secondary">Find Polling Place</a>
+      </div>
+    </div>
+  </div>
+
+</section>
