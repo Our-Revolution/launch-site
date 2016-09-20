@@ -82,21 +82,7 @@
     <section class="home-section--sign-up col-md-6 col-md-offset-3 sign-up-form">
       <h2>Join us for the future of our political movement.</h2>
 
-      <form action="/signup" method="POST">
-      	<span class="form-group email">
-      		<label for="email">Email Address</label>
-      		<input type="email" name="email" id="email" class="email" placeholder="you@example.com">
-      	</span>
-
-      	<span class="form-group zip ">
-      		<label for="zip">Zip Code</label>
-      		<input type="text" name="zip" id="zip" class="zip" placeholder="90210">
-      	</span>
-
-        <span class="form-group submit">
-        	<button class="btn btn-primary btn-block">Submit</button>
-        </span>
-      </form>
+      {{>signupform source="-secondary" url="https://ourrevolution-bernie16.bsd.net/page/s/join"}}
     </section>
   </div>
 </div>
@@ -106,16 +92,7 @@
     <section class="home-section--donate col-md-6 col-md-offset-3">
       <h3>Donate to Our Revolution</h3>
       <p>Our Revolution is a non-profit that runs off of funds from contributors like you. Help us continue this movement.</p>
-      <form id="quick-donate" class="quick-donate" action="https://secure.actblue.com/contribute/page/ourrevolution?amount=15" method="GET">
-        <button type="button" class="btn btn-default btn-amount" value="15">$15</button>
-        <button type="button" class="btn btn-primary btn-amount" value="27">$27</button>
-        <button type="button" class="btn btn-default btn-amount" value="50">$50</button>
-        <button type="button" class="btn btn-default btn-amount" value="100">$100</button>
-        <input type="text" placeholder="$___" class="input-amount">
-        <button class="btn btn-continue btn-secondary" id="donate-continue" type="submit">Continue <span class="glyphicon glyphicon-chevron-right"></span></button>
-        <input type="hidden" name="amount" id="amount">
-        <input type="hidden" name="refcode" id="refcode" value="home-bottom-donate">
-      </form>
+      {{>donateform}}
     </section>
   </div>
 </div>
