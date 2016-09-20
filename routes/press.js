@@ -38,4 +38,10 @@ router.get('/our-revolution-statement-on-ri-and-ny', function(req, res) {
   res.render('press/our-revolution-statement-on-ri-and-ny', { title: 'Our Revolution', active: {home: true} });
 });
 
+router.get('/our-revolution-announces-latest-round-of-endorsements', function(req, res) {
+  article = req.params.article;
+
+  res.render('press/our-revolution-announces-latest-round-of-endorsements', { title: 'Our Revolution', active: {home: true} });
+});
+
 module.exports = router;
