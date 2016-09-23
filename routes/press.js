@@ -44,4 +44,10 @@ router.get('/our-revolution-announces-latest-round-of-endorsements', function(re
   res.render('press/our-revolution-announces-latest-round-of-endorsements', { title: 'Our Revolution', active: {home: true} });
 });
 
+router.get('/our-revolution-statement-on-shootings', function(req, res) {
+  article = req.params.article;
+
+  res.render('press/our-revolution-statement-on-shootings', { title: 'Our Revolution', active: {home: true} });
+});
+
 module.exports = router;
