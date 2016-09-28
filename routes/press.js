@@ -56,4 +56,10 @@ router.get('/josh-fox-and-our-revolution-team-up', function(req, res) {
   res.render('press/josh-fox-and-our-revolution-team-up', { title: 'Our Revolution', active: {home: true} });
 });
 
+router.get('/our-revolution-announces-more-endorsements', function(req, res) {
+  article = req.params.article;
+
+  res.render('press/our-revolution-announces-more-endorsements', { title: 'Our Revolution', active: {home: true} });
+});
+
 module.exports = router;
