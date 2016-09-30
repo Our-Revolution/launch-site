@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="container">
+    <div class="page-sub-nav">
+      <a href="/ballot-initiatives"><span class="glyphicon glyphicon-chevron-left"></span></a> Our initiatives / {{data.state}} / {{data.title}}{{#if data.name}}: {{data.name}}{{/if}}
+    </div>
+
+    <div class="page-heading">
+      <div>
+        <h1>{{data.vote}} on {{data.title}}{{#if data.name}}: {{data.name}}{{/if}}</h1>
+        <span>{{data.state}}</span>
+      </div>
+    </div>
+
+    {{#if data.cta}}
+      <div class="candidate-action-bar clearfix">
+        <a href="{{data.cta_link}}" onclick="trackOutboundLink('{{data.cta_link}}'); return false;" class="btn btn-primary" target="_blank">{{data.cta}}</a>
+      </div>
+    {{/if}}
+
+    <div class="candidate-content clearfix">
+      <div class="col-md-6 col-md-offset-3">
+        <p class="candidate-bio">
+          {{data.description}}
+
+          {{#if data.cta}}
+            <a class="btn btn-primary btn-block" href="{{data.cta_link}}">{{data.cta}}</a>
+          {{/if}}
+        </p>
+      </div>
+    </div>
+
+    <div class="candidate-sign-up sign-up-form clearfix">
+      <div class="col-md-6 col-md-offset-3">
+        <h3>Join the fight for {{data.title}}.</h3>
+        {{>signupform source=data.slug url="https://go.ourrevolution.com/page/s/initiatives-signup"}}
+      </div>
+    </div>
+  </div>
+</div>
