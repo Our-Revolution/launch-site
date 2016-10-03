@@ -10,8 +10,6 @@ router.get('/', function(req, res) {
 router.get('/:name', function(req, res) {
   name=req.params.name || false;
 
-  console.log(name);
-
   function isInitiative(value) {
     if (value in initiatives) {
       if (initiatives[value].show) {
@@ -19,8 +17,6 @@ router.get('/:name', function(req, res) {
       }
     }
   }
-
-  console.log(isInitiative(name));
 
   if (isInitiative(name)) {
 
