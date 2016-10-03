@@ -1104,4 +1104,17 @@ footer {
     }
   }
 
+  @include until($small) {
+    .filter__search, .form-inline {
+      width: 100%;
+      float: none;
+      display: block;
+    }
+
+    .filter__sort {
+      width: 100%;
+      text-align: right;
+    }
+  }
+
 }
