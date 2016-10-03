@@ -11,27 +11,69 @@
       </div>
     </div>
 
-    {{#if data.cta}}
-      <div class="candidate-action-bar clearfix">
-        <a href="{{data.cta_link}}" onclick="trackOutboundLink('{{data.cta_link}}'); return false;" class="btn btn-primary" target="_blank">{{data.cta}}</a>
-      </div>
-    {{/if}}
-
     <div class="candidate-content clearfix">
       <div class="col-md-6 col-md-offset-3">
         <p class="candidate-bio">
           {{data.description}}
 
           {{#if data.cta}}
-            <a class="btn btn-primary btn-block" href="{{data.cta_link}}">{{data.cta}}</a>
+            <a class="btn btn-primary btn-block" href="{{data.cta_link}}" target="_blank" onclick="trackOutboundLink('{{data.cta_link}}'); return false;">{{data.cta}}</a>
           {{/if}}
         </p>
       </div>
+
+      {{#if localInitiatives}}
+      <div class="col-md-10 col-md-offset-1">
+        <h2>Other Initiatives in {{data.state}}</h2>
+        <ul class="card-list third list">
+          {{#each localInitiatives}}
+            {{#if this.show}}
+              <li class="card clearfix {{#if this.featured}}featured{{/if}}">
+                <a href="/ballot-initiatives/{{this.slug}}" {{#if this.featured}}is-featured="true"{{/if}} {{#unless this.featured}}is-featured="false"{{/unless}}>
+                  <div class="card__content full">
+                    <div>
+                      <span class="icon {{this.category}} category">{{this.category}}</span>
+                      <span class="card__item bold"><span class="uppercase vote">{{this.vote}}</span> on <span class="title">{{this.title}}</span></span>
+                      <span class="card__item name">{{this.name}}</span>
+                    </div>
+                    <span class="card__item bottom bold state">{{this.state}}</span>
+                  </div>
+                </a>
+              </li>
+            {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+      {{/if}}
+
+      {{#if similarInitiatives}}
+        <div class="col-md-10 col-md-offset-1">
+          <h2>Similar Initiatives</h2>
+          <ul class="card-list third list">
+            {{#each similarInitiatives}}
+              {{#if this.show}}
+                <li class="card clearfix {{#if this.featured}}featured{{/if}}">
+                  <a href="/ballot-initiatives/{{this.slug}}" {{#if this.featured}}is-featured="true"{{/if}} {{#unless this.featured}}is-featured="false"{{/unless}}>
+                    <div class="card__content full">
+                      <div>
+                        <span class="icon {{this.category}} category">{{this.category}}</span>
+                        <span class="card__item bold"><span class="uppercase vote">{{this.vote}}</span> on <span class="title">{{this.title}}</span></span>
+                        <span class="card__item name">{{this.name}}</span>
+                      </div>
+                      <span class="card__item bottom bold state">{{this.state}}</span>
+                    </div>
+                  </a>
+                </li>
+              {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+      {{/if}}
     </div>
 
     <div class="candidate-sign-up sign-up-form clearfix">
       <div class="col-md-6 col-md-offset-3">
-        <h3>Join the fight for {{data.title}}.</h3>
+        <h3>Join the fight for {{data.title}}: {{data.name}}.</h3>
         {{>signupform source=data.slug url="https://go.ourrevolution.com/page/s/initiatives-signup"}}
       </div>
     </div>

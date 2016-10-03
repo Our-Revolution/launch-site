@@ -5,13 +5,19 @@
     </div>
 
     <div class="page-sub-nav filter clearfix">
-      <input type="search" class="filter__search" placeholder="Search by Name or State...">
+      <form class="form-inline pull-left">
+        <div class="form-group">
+          <label for="fuzzy-search" class="sr-only">Filter By:</label><input type="search" class="filter__search fuzzy-search" id="fuzzy-search" onkeyup="fuzzySearch(this);" placeholder="Search by Name or State...">
+        </div>
+      </form>
 
       <div class="filter__sort pull-right">
         Sort By:
-        <div class="btn-group" role="group" aria-label="Sort By:">
-          <button type="button" class="btn btn-default">State</button>
-          <button type="button" class="btn btn-default">Category</button></div>
+        <div class="btn-group sort-buttons" role="group" aria-label="Sort By:">
+          <!-- <button type="button" class="btn btn-default active asc" sort-by="featured">Featured <span class="caret"></span></button> -->
+          <button type="button" class="btn btn-default" sort-by="state">State <span class="caret"></span></button>
+          <button type="button" class="btn btn-default" sort-by="category">Category <span class="caret"></span></button>
+        </div>
       </div>
     </div>
 
@@ -19,16 +25,20 @@
       {{> initiativesnav }}
     </div>
 
-    <div class="col-md-9">
-      <ul class="card-list third">
+    <div class="col-md-9" id="initiatives-list">
+      <div class="no-result text-center"><h3>No Matching Initiatives Found</h4></div>
+      <ul class="card-list third list">
       {{#each data}}
         {{#if this.show}}
           <li class="card clearfix {{#if this.featured}}featured{{/if}}">
-            <a href="/ballot-initiatives/{{@key}}">
+            <a href="/ballot-initiatives/{{@key}}" {{#if this.featured}}is-featured="true"{{/if}} {{#unless this.featured}}is-featured="false"{{/unless}}>
               <div class="card__content full">
-                <span class="card__item bold smaller">{{this.vote}} on {{this.title}}</span>
-                <span class="card__item">{{this.name}}</span>
-                <span class="card__item bottom">{{this.state}}</span>
+                <div>
+                  <span class="icon {{this.category}} category">{{this.category}}</span>
+                  <span class="card__item bold"><span class="uppercase vote">{{this.vote}}</span> on <span class="title">{{this.title}}</span></span>
+                  <span class="card__item name">{{this.name}}</span>
+                </div>
+                <span class="card__item bottom bold state">{{this.state}}</span>
               </div>
             </a>
           </li>
@@ -37,3 +47,125 @@
     </div>
   </div>
 </div>
+
+<script src="/components/list.js/dist/list.min.js"></script>
+<script src="/components/list.fuzzysearch.js/dist/list.fuzzysearch.min.js"></script>
+
+<script>
+  var sortingBy = "featured";
+  var sortingAsc = true;
+
+  var options = {
+      valueNames: [
+        'state',
+        'name',
+        'title',
+        'vote',
+        'category',
+        { name: 'featured', data: 'is-featured' }
+      ],
+      plugins: [
+        ListFuzzySearch()
+      ]
+  };
+
+  var initiativesList = new List('initiatives-list', options);
+
+  function fuzzySearch(e) {
+    initiativesList.fuzzySearch.search(e.value);
+  }
+
+  function sort(sortBy) {
+
+    if (sortingBy === sortBy) {
+      if (sortingAsc) {
+        initiativesList.sort(sortBy, { order: 'desc'});
+        sortingAsc = false;
+      }
+      else {
+        initiativesList.sort(sortBy, { order: 'asc'});
+        sortingAsc = true;
+      }
+    } else {
+      initiativesList.sort(sortBy, { order: 'asc'});
+      sortingAsc = true;
+    }
+
+    sortingBy = sortBy;
+  }
+
+  function filter(category) {
+    if (category) {
+      initiativesList.filter(function (item) {
+        if(category == item._values.category)
+          return true;
+        else
+          return false;
+      });
+    } else {
+      initiativesList.filter();
+    }
+  }
+
+  var self = this;
+
+  $("#initiatives-nav").on("click", function(e) {
+    e.preventDefault();
+
+    if($("#initiatives-nav").hasClass("expanded")) {
+      $("#initiatives-nav").removeClass("expanded");
+      $('.toggle-nav__icon').removeClass('glyphicon-remove');
+      $('.toggle-nav__icon').addClass('glyphicon-menu-hamburger');
+    }
+
+    $("#fuzzy-search").val("");
+    initiativesList.fuzzySearch.search();
+
+    var category = $(e.target).closest("li").attr("category");
+
+    // set active state
+    $($(this).find("li")).each(function (e) {
+      $(this).removeClass("active");
+    })
+
+    $(e.target).closest("li").toggleClass("active");
+
+    //filter
+    self.filter(category);
+  });
+
+  initiativesList.on("updated", function(list) {
+    if (list.matchingItems.length > 0) {
+      $('.no-result').hide()
+    } else {
+      $('.no-result').show()
+    }
+  })
+
+  $(".sort-buttons").on("click", function(e) {
+    var btn = $(e.target).closest(".btn");
+    var sortByData = btn.attr("sort-by");
+
+    console.log(sortByData);
+
+    sort(sortByData);
+
+    if (sortingBy == sortByData) {
+      $(".sort-buttons .btn").each(function(e) {
+        $(this).removeClass("active");
+        $(this).removeClass("asc");
+        $(this).removeClass("desc");
+      });
+      btn.toggleClass("active");
+
+      if (sortingAsc) {
+        btn.addClass("asc");
+        btn.removeClass("desc");
+      } else {
+        btn.addClass("desc");
+        btn.removeClass("asc");
+      }
+    }
+  })
+
+</script>

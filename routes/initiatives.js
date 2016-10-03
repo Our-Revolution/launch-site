@@ -22,9 +22,26 @@ router.get('/:name', function(req, res) {
 
   console.log(isInitiative(name));
 
-
   if (isInitiative(name)) {
-    res.render('initiatives/initiative', { title: "Our Revolution - " + initiatives[name].name, data: initiatives[name], active: {initiatives: true}});
+
+    var similarInitiatives, initialCategory, localInitiatives;
+    similarInitiatives = [];
+    localInitiatives = []
+    initialCategory = initiatives[name].category;
+
+    for (var key in initiatives) {
+      var initiative = initiatives[key];
+
+      if (initiative.category == initialCategory) {
+        similarInitiatives.push(initiative);
+      }
+
+      if (initiative.state == initiatives[name].state) {
+        localInitiatives.push(initiative);
+      }
+    }
+
+    res.render('initiatives/initiative', { title: "Our Revolution - " + initiatives[name].name, data: initiatives[name],  similarInitiatives: similarInitiatives, localInitiatives: localInitiatives, active: {initiatives: true}});
   } else {
     res.redirect('/ballot-initiatives');
   }
