@@ -5,16 +5,16 @@
     </div>
 
     <div>
-      <ul class="candidate-list">
+      <ul class="card-list">
       {{#each data}}
         {{#if this.show}}
-          <li class="candidate clearfix {{#if this.featured}}featured{{/if}}">
+          <li class="card clearfix {{#if this.featured}}featured{{/if}}">
             <a href="{{#if this.office}}/candidates/{{@key}}{{/if}}">
-              <div class="candidate__photo" style="background-image: url('/img/candidates/profile/{{@key}}.jpg')"></div>
-              <div class="candidate__content">
-                <span class="candidate__name">{{this.name}}</span>
-                <span class="candidate__location">{{this.state_initials}} {{this.district}}</span>
-                <span class="candidate__office">{{this.office}}</span>
+              <div class="card__photo" style="background-image: url('/img/candidates/profile/{{@key}}.jpg')"></div>
+              <div class="card__content">
+                <span class="card__item">{{this.name}}</span>
+                <span class="card__item bold smaller">{{this.state}} {{this.district}}</span>
+                <span class="card__item bottom">{{this.office}}</span>
               </div>
             </a>
           </li>

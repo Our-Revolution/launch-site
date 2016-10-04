@@ -1,0 +1,69 @@
+{{#if this.url}}
+  <form action="{{this.url}}?source={{this.source}}" method="POST">
+    {{#if error}}
+      <div class="alert alert-danger" role="alert">{{error}}</div>
+    {{/if}}
+    <span class="form-group email">
+      <label for="email">Email Address</label>
+      <input type="email" name="email" id="email" class="email" placeholder="you@example.com" required>
+    </span>
+
+    <span class="form-group first-name">
+      <label for="first-name">First Name</label>
+      <input type="text" name="firstname" id="firstname" class="firstname" placeholder="Jane" required>
+    </span>
+
+    <span class="form-group last-name">
+      <label for="last-name">Last Name</label>
+      <input type="text" name="lastname" id="lastname" class="lastname" placeholder="Doe" required>
+    </span>
+
+    <span class="form-group zip">
+      <label for="zip">Zip Code</label>
+      <input type="text" name="zip" id="zip" class="zip" placeholder="05402" required>
+    </span>
+
+    <span class="form-group phone">
+      <label for="phone">Phone Number</label>
+      <input type="tel" name="phone" id="phone" class="phone" placeholder="5554576142" required>
+    </span>
+
+    <span class="form-group submit">
+      <button class="btn btn-primary btn-block">Join the Fight</button>
+    </span>
+  </form>
+{{else}}
+  <form action="https://go.ourrevolution.com/page/s/volunteer?source=ourrevolution.com/action" method="POST">
+    {{#if error}}
+      <div class="alert alert-danger" role="alert">{{error}}</div>
+    {{/if}}
+    <span class="form-group email">
+      <label for="email">Email Address</label>
+      <input type="email" name="email" id="email" class="email" placeholder="you@example.com" required>
+    </span>
+
+    <span class="form-group first-name">
+      <label for="first-name">First Name</label>
+      <input type="text" name="firstname" id="firstname" class="firstname" placeholder="Jane" required>
+    </span>
+
+    <span class="form-group last-name">
+      <label for="last-name">Last Name</label>
+      <input type="text" name="lastname" id="lastname" class="lastname" placeholder="Doe" required>
+    </span>
+
+    <span class="form-group zip">
+      <label for="zip">Zip Code</label>
+      <input type="text" name="zip" id="zip" class="zip" placeholder="05402" required>
+    </span>
+
+    <span class="form-group phone">
+      <label for="phone">Phone Number</label>
+      <input type="tel" name="phone" id="phone" class="phone" placeholder="5554576142" required>
+    </span>
+
+    <span class="form-group submit">
+      <button class="btn btn-primary btn-block">Join the Fight</button>
+    </span>
+  </form>
+{{/if}}

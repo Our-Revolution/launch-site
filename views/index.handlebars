@@ -1,8 +1,8 @@
-{{>notification-bar}}
+<!-- {{>notification-bar}} -->
 
 <div class="row row--main home">
   <div class="container">
-    {{>module-sign-up-news}}
+    {{>module-sign-up-news-phonebank}}
   </div>
 </div>
 
@@ -51,26 +51,26 @@
       <h2 class="section-heading">In the News</h2>
       <div class="col-md-4 content">
         <div class="news-item">
-          <a href="/press/our-revolution-statement-on-ri-and-ny"><h4 class="content__heading">Our Revolution Statement on Rhode Island and New York Primary Wins</h4></a>
+          <a href="/press/our-revolution-announces-more-endorsements"><h4 class="content__heading">Our Revolution Announces Latest Round of Endorsements</h4></a>
           <div class="attribution"><strong>Press Release</strong></div>
-          <p class="content__copy">Our Revolution on Wednesday congratulated Marcia Ranglin-Vassell and Jeanine Calkin of Rhode Island and Anthony Eramo of New York on their primary victories...</p>
-          <a href="/press/our-revolution-statement-on-ri-and-ny" class="content__btn btn btn-secondary">Read <span class="glyphicon glyphicon-chevron-right"></span></a>
+          <p class="content__copy">Our Revolution on Wednesday announced its support for nine candidates running for positions in local and state legislatures and congressional seats around the country. The organization previously endorsed 87 progressive candidates.</p>
+          <a href="/press/our-revolution-announces-more-endorsements" class="content__btn btn btn-secondary">Read <span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
       </div>
       <div class="col-md-4 content">
         <div class="news-item">
-          <a href="/press/our-revolution-announces-next-round-of-endorsements" id="our-revolution-announces-second-next-of-endorsements-link"><h4 class="content__heading">Our Revolution Announces Next Round of Endorsements</h4></a>
-          <div class="attribution"><strong>Press Release</strong></div>
-          <p class="content__copy">Our Revolution on Tuesday announced its support for nine candidates running for positions in local and state legislatures and congressional seats around the country...</p>
-          <a href="/press/our-revolution-announces-next-round-of-endorsements" class="content__btn btn btn-secondary" id="our-revolution-announces-next-round-of-endorsements-button">Read <span class="glyphicon glyphicon-chevron-right"></span></a>
+          <a href="/press/our-revolution-statement-on-shootings" id="our-revolution-statement-on-shootings-link"><h4 class="content__heading">Our Revolution Statement on Tulsa and Charlotte Police Shootings</h4></a>
+          <div class="attribution"><strong>Statement</strong></div>
+          <p class="content__copy">Keith Lamont Scott was a father of seven. Terence Crutcher was a father of four. They are just the two latest Black men in this country that have become hashtags—their names and faces shared by people around the country as we try to make sense of our feelings of grief, and of rage.</p>
+          <a href="/press/our-revolution-statement-on-shootings" class="content__btn btn btn-secondary" id="our-revolution-statement-on-shootings-button">Read <span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
       </div>
       <div class="col-md-4 content">
         <div class="news-item">
-          <a href="/press/our-revolution-on-ma-primary-wins"><h4 class="content__heading">Our Revolution on Massachusetts Primary Wins</h4></a>
+          <a href="/press/josh-fox-and-our-revolution-team-up"><h4 class="content__heading">Josh Fox and Our Revolution Team Up on #ClimateRevolution Rallies</h4></a>
           <div class="attribution"><strong>Press Release</strong></div>
-          <p class="content__copy">Our Revolution on Friday congratulated State Sen. Patricia Jehlen and Mike Connolly, candidates endorsed by the organization, for their Massachusetts primary victories...</p>
-          <a href="/press/our-revolution-on-ma-primary-wins" class="content__btn btn btn-secondary">Read <span class="glyphicon glyphicon-chevron-right"></span></a>
+          <p class="content__copy">Academy award-nominated documentary filmmaker Josh Fox and Our Revolution on Wednesday announced a series of #ClimateRevolution rallies, scheduled to take place in cities, towns and campuses across America this fall.</p>
+          <a href="/press/josh-fox-and-our-revolution-team-up" class="content__btn btn btn-secondary">Read <span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
       </div>
     </section>
@@ -82,21 +82,7 @@
     <section class="home-section--sign-up col-md-6 col-md-offset-3 sign-up-form">
       <h2>Join us for the future of our political movement.</h2>
 
-      <form action="/signup" method="POST">
-      	<span class="form-group email">
-      		<label for="email">Email Address</label>
-      		<input type="email" name="email" id="email" class="email" placeholder="you@example.com">
-      	</span>
-
-      	<span class="form-group zip ">
-      		<label for="zip">Zip Code</label>
-      		<input type="text" name="zip" id="zip" class="zip" placeholder="90210">
-      	</span>
-
-        <span class="form-group submit">
-        	<button class="btn btn-primary btn-block">Submit</button>
-        </span>
-      </form>
+      {{>signupform source="-secondary" url="https://go.ourrevolution.com/page/s/join"}}
     </section>
   </div>
 </div>
@@ -106,16 +92,7 @@
     <section class="home-section--donate col-md-6 col-md-offset-3">
       <h3>Donate to Our Revolution</h3>
       <p>Our Revolution is a non-profit that runs off of funds from contributors like you. Help us continue this movement.</p>
-      <form id="quick-donate" class="quick-donate" action="https://secure.actblue.com/contribute/page/ourrevolution?amount=15" method="GET">
-        <button type="button" class="btn btn-default btn-amount" value="15">$15</button>
-        <button type="button" class="btn btn-primary btn-amount" value="27">$27</button>
-        <button type="button" class="btn btn-default btn-amount" value="50">$50</button>
-        <button type="button" class="btn btn-default btn-amount" value="100">$100</button>
-        <input type="text" placeholder="$___" class="input-amount">
-        <button class="btn btn-continue btn-secondary" id="donate-continue" type="submit">Continue <span class="glyphicon glyphicon-chevron-right"></span></button>
-        <input type="hidden" name="amount" id="amount">
-        <input type="hidden" name="refcode" id="refcode" value="home-bottom-donate">
-      </form>
+      {{>donateform}}
     </section>
   </div>
 </div>

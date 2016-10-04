@@ -89,6 +89,39 @@
     }
   }
 
+  &.lucy-and-bernie {
+    background: $blue url('../img/lucy-and-bernie.jpg');
+    background-size: cover;
+    background-position: bottom center;
+    color: white;
+    font-weight: bolder;
+
+    .module__heading {
+      text-shadow: 0 0 5px rgba(0,0,0,1);
+    }
+
+    .article-type {
+      font-weight: bolder;
+      text-shadow: 0 0 5px rgba(0,0,0,1);
+    }
+  }
+
+  &.flag-bg {
+    background: black url('../img/bg_flag.jpg');
+    background-size: cover;
+    color: white;
+    font-weight: bolder;
+
+    .module__heading {
+      text-shadow: 0 0 5px rgba(0,0,0,1);
+    }
+
+    .article-type {
+      font-weight: bolder;
+      text-shadow: 0 0 5px rgba(0,0,0,1);
+    }
+  }
+
   &.connolly {
     background-image: url('../img/bg_connolly.jpg');
     background-position: center;

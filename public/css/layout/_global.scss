@@ -7,7 +7,7 @@ html {
 body {
   font-family: 'Lato', sans-serif;
   padding-top: 80px;
-  margin-bottom: 250px;
+  margin-bottom: 280px;
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
@@ -67,10 +67,57 @@ h4, h1 {
   }
 }
 
+.email {
+  p {
+    font-size: 18px;
+  }
+
+  img {
+    display: block;
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 20px 0;
+  }
+
+  .inset {
+    background: #f5f5f5;
+    border-radius: 3px;
+    padding: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+
+    .btn {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    font-weight: bolder;
+    text-decoration: underline;
+  }
+
+  .btn {
+    margin: 20px auto;
+    display: block;
+    width: 275px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 18px;
+    height: 45px;
+    text-decoration: none;
+  }
+}
+
 .sub-heading {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 12px;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 .row--dark {
@@ -110,6 +157,73 @@ h4, h1 {
   p {
     max-width: 600px;
   }
+}
+
+.icon {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: top right;
+  opacity: 0.4;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+
+  path {
+  fill: red;
+  }
+
+  &.animal-rights {
+    background-image: url("../images/icons/initiatives/animal-rights.svg");
+  }
+
+  &.corporate-tax {
+    background-image: url("../images/icons/initiatives/corporate-tax.svg");
+  }
+
+  &.death-penalty {
+    background-image: url("../images/icons/initiatives/death-penalty.svg");
+  }
+
+  &.education {
+    background-image: url("../images/icons/initiatives/education.svg");
+  }
+
+  &.election-reform {
+    background-image: url("../images/icons/initiatives/election-reform.svg");
+  }
+
+  &.environment {
+    background-image: url("../images/icons/initiatives/environment.svg");
+  }
+
+  &.health-care {
+    background-image: url("../images/icons/initiatives/healthcare.svg");
+  }
+
+  &.labor {
+    background-image: url("../images/icons/initiatives/labor-1.svg");
+  }
+
+  &.labor-2 {
+    background-image: url("../images/icons/initiatives/labor-2.svg");
+  }
+
+  &.marijuana {
+    background-image: url("../images/icons/initiatives/marijuana.svg");
+  }
+
+  &.minimum-wage {
+    background-image: url("../images/icons/initiatives/minimum-wage.svg");
+  }
+
+  &.money-in-politics {
+    background-image: url("../images/icons/initiatives/money-in-politics.svg");
+  }
+
+}
+
+.no-result {
+  display: none;
 }
 
 .dark {
@@ -559,12 +673,55 @@ footer {
     margin-top: 10px;
   }
 }
-.candidate-list {
+.card-list {
   list-style-type: none;
   margin: 0 0 1% 0;
   padding: 0;
 
-  .candidate {
+  &.third {
+    margin: 0 -15px 10px;
+
+    .card {
+      width: 32.3%;
+      margin: 0 1% 1% 0;
+
+      &:nth-child(even) {
+        margin-right: 1%;
+      }
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+
+      @include until($medium) {
+        width: 49%;
+        margin-right: 1%;
+
+        &:nth-child(3n) {
+          margin-right: 1%;
+        }
+
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+      };
+
+      @include until($small) {
+        width: 100%;
+        margin-right: 0%;
+
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+      };
+    }
+  }
+
+  .card {
     width: 23.5%;
     height: 100px;
     background: #f5f5f5;
@@ -573,6 +730,14 @@ footer {
     border-radius: 3px;
     margin: 1% 1% 0 0;
     transition: 0.1s;
+
+    .icon {
+      width: 25px;
+      height: 25px;
+      display: block;
+      float: right;
+      margin-left: 10px;
+    }
 
     &.featured {
       border-right: 4px solid $red;
@@ -594,12 +759,6 @@ footer {
       line-height: 12px;
     }
 
-    &__office {
-      position: absolute;
-      left: 10px;
-      bottom: 10px;
-    }
-
     &:hover {
       opacity: 0.9;
       transform: scale(1.05);
@@ -610,7 +769,7 @@ footer {
     }
   }
 
-  .candidate__photo {
+  .card__photo {
     display: inline-block;
     border-radius: 3px 0 0 3px;
     height: 100px;
@@ -620,32 +779,48 @@ footer {
     background-position: center;
   }
 
-  .candidate__name {
+  .card__item {
     display: block;
+    line-height: 1.25em;
+
+    &.bold {
+      font-weight: bolder;
+    }
+
+    &.smaller {
+      font-size: 12px;
+      line-height: 12px;
+    }
+
+    &.bottom {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+    }
   }
 
-  .candidate__office {
-    display: block;
-  }
-
-  .candidate__content {
+  .card__content {
     width: calc(100% - 100px);
     float: right;
     padding: 10px;
+
+    &.full {
+      width: 100%;
+    }
   }
 }
 
 @media (max-width: 1199px) {
-  .candidate-list {
-    .candidate {
+  .card-list {
+    .card {
       width: 32%;
     }
   }
 }
 
 @media (max-width: 991px) {
-  .candidate-list {
-    .candidate {
+  .card-list {
+    .card {
       width: 49%;
 
       &:nth-child(even) {
@@ -656,8 +831,8 @@ footer {
 }
 
 @media (max-width: 767px) {
-  .candidate-list {
-    .candidate {
+  .card-list {
+    .card {
       width: 100%;
       margin-right: 0;
     }
@@ -694,6 +869,10 @@ footer {
 
   a {
     color: #333;
+  }
+
+  &.filter {
+    margin-bottom: 10px;
   }
 }
 
@@ -771,6 +950,15 @@ footer {
 .issues__nav {
   transition: 0.25s;
   margin-left: -15px;
+
+  .icon {
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+    display: inline-block;
+    background-position: center center;
+    margin-right: 10px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -891,4 +1079,42 @@ footer {
       opacity: 0.8;
     }
   }
+}
+
+//Initiatives
+.page-sub-nav.filter {
+
+  .filter__search {
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 30px;
+    width: 250px;
+  }
+
+  .sort-buttons {
+    .desc {
+      .caret {
+        transform: rotateZ(180deg);
+      }
+    }
+
+    .btn {
+      padding: 5px 10px;
+      height: 30px;
+    }
+  }
+
+  @include until($small) {
+    .filter__search, .form-inline {
+      width: 100%;
+      float: none;
+      display: block;
+    }
+
+    .filter__sort {
+      width: 100%;
+      text-align: right;
+    }
+  }
+
 }

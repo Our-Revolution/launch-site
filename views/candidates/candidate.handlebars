@@ -45,18 +45,6 @@
               <img alt="Facebeook" src="/img/icons/facebook.svg" class="social-icon">
             </a>
           {{/if}}
-
-          <!-- {{#if data.instagram}}
-            <a href="{{data.instagram}}">
-              <img alt="Instagram" src="/img/icons/instagram.svg" class="social-icon">
-            </a>
-          {{/if}} -->
-  <!--
-          {{#if data.youtube}}
-          <a href="{{data.youtube}}">
-            <img alt="YouTube" src="/img/icons/youtube.svg" class="social-icon">
-          </a>
-          {{/if}} -->
         </div>
       </div>
     {{/if}}
@@ -78,27 +66,8 @@
 
     <div class="candidate-sign-up sign-up-form clearfix">
       <div class="col-md-6 col-md-offset-3">
-        <form action="/signup" method="POST" enctype="application/x-www-form-urlencoded">
-          <h3>Join the fight to get {{data.name}} elected.</h3>
-
-          {{#if error}}
-            <div class="alert alert-danger" role="alert">{{error}}</div>
-          {{/if}}
-
-          <span class="form-group email">
-            <label for="email">Email Address</label>
-            <input type="email" name="email" id="email" class="email" placeholder="you@example.com">
-          </span>
-
-          <span class="form-group zip">
-            <label for="zip">Zip Code</label>
-            <input type="text" name="zip" id="zip" class="zip" placeholder="90210">
-          </span>
-
-          <span class="form-group submit">
-            <button class="btn btn-primary btn-block">Join</button>
-          </span>
-        </form>
+        <h3>Join the fight to get {{data.name}} elected.</h3>
+        {{>signupform source=data.slug url="https://go.ourrevolution.com/page/s/candidates-signup"}}
       </div>
     </div>
   </div>
