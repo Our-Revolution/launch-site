@@ -61,6 +61,10 @@ router.get('/candidates/martin-quezeda', function(req, res) {
   res.redirect('/candidates/martin-quezada');
 });
 
+router.get('/candidates/elizabeth-thompson', function(req, res) {
+  res.redirect('/candidates/elizabeth-thomson');
+});
+
 router.get('/candidates/:name', function(req, res) {
   name=req.params.name || false;
 
