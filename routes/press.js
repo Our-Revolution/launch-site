@@ -68,5 +68,10 @@ router.get('/our-revolution-announces-final-round-of-endorsements', function(req
   res.render('press/our-revolution-announces-final-round-of-endorsements', { title: 'Our Revolution', active: {home: true} });
 });
 
+router.get('/our-revolution-statement-on-shailene-woodley-arrest', function(req, res) {
+  article = req.params.article;
+
+  res.render('press/our-revolution-statement-on-shailene-woodley-arrest', { title: 'Our Revolution', meta: {description: "Our Revolution stands with board member Shailene Woodley following her arrest at Standing Rock Reservation protesting the Dakota Access Pipeline."}, active: {home: true} });
+});
 
 module.exports = router;
