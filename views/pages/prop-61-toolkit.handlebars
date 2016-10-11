@@ -9,9 +9,9 @@
           <div class="main-ctas row" id="main-ctas">
             <div class="col-md-4 cta">
               <h4 class="cta-header">1. Sign up to Phone Bank</h4>
-              <div class="cta-body">
+              <div class="cta-body sign-up feature">
                 <div class="sign-up-form block">
-                  <form>
+                  <form id="primary-form">
                     <span class="form-group email">
                       <label for="email">Email Address</label>
                       <input type="email" name="email" id="email" class="email" placeholder="you@example.com" required>
@@ -27,18 +27,25 @@
                     </span>
                   </form>
                 </div>
+
+                <div class="success text-center">
+                  <div class="glyphicon glyphicon-ok-sign"></div>
+                  <p>Thanks for signing up to phone bank! You will receive an email with info on how to get started soon.</p>
+
+                  <p><strong>Help spread the word now by sharing our video.</strong></p>
+                </div>
               </div>
             </div>
 
             <div class="col-md-4 cta">
               <h4 class="cta-header">2. Share Our Video</h4>
-              <div class="cta-body">
+              <div class="cta-body video">
                 <div class="video-share text-center" id="share-cta">
                   <div class="video-share-content">
                     <div class="share-icons text-center">
                       <div class="uppercase">Share:</div>
-                      <a href="#" class="twitter-icon">Share on Twitter</a>
-                      <a href="#" class="facebook-icon">Share on Facebook</a>
+                      <a href="https://twitter.com/intent/retweet?tweet_id=784202079212441600" class="twitter-icon primary-share">Retweet</a>
+                      <a href="#" class="facebook-icon facebook-share primary-share">Share on Facebook</a>
                     </div>
                   </div>
                 </div>
@@ -47,7 +54,7 @@
 
             <div class="col-md-4 cta">
               <h4 class="cta-header">3. Host a Phone Bank</h4>
-              <div class="cta-body block">
+              <div class="cta-body host block">
                 <div class="host-an-event" id="host-cta">
                   <a href="https://go.ourrevolution.com/page/event/create" target="_blank" class="btn btn-block btn-donate">Host an Event <span class="glyphicon glyphicon-chevron-right"></span></a>
                 </div>
@@ -103,7 +110,7 @@
           <p>Sign up to phone bank so we can reach as many voters as possible.</p>
 
           <div class="sign-up-form">
-            <form>
+            <form id="secondary-form">
               <span class="form-group email">
                 <label for="email">Email Address</label>
                 <input type="email" name="email" id="email" class="email" placeholder="you@example.com" required>
@@ -118,6 +125,14 @@
                 <button class="btn btn-primary btn-block">Sign Up</button>
               </span>
             </form>
+          </div>
+
+          <div class="success text-center green">
+            <p>Thanks for signing up to phone bank! You will receive an email with info on how to get started soon.</p>
+
+            <p><strong>Help spread the word now by sharing our video.</strong></p>
+
+            <a data-scroll href="#share"><span class="glyphicon glyphicon-chevron-down"></span></a>
           </div>
         </section>
       </div>
@@ -136,16 +151,16 @@
 
           <div class="row social-buttons clearfix">
             <div class="col-md-6">
-              <a class="btn btn-twitter btn-block" href="https://twitter.com/intent/retweet?tweet_id=776054178934161411" onclick="ga('send', 'social', 'Twitter', 'share', 'https://twitter.com/intent/retweet?tweet_id=776054178934161411');">Share on Twitter <span class="twitter-icon"></span></a>
+              <a class="btn btn-twitter btn-block" href="https://twitter.com/intent/retweet?tweet_id=784202079212441600">Share on Twitter <span class="twitter-icon"></span></a>
             </div>
 
             <div class="col-md-6">
-              <a class="btn btn-facebook btn-block" onClick="FB.ui({method: 'share', href: 'https://www.facebook.com/PoliticalRevolution/photos/p.1246120298773517/1246120298773517/?type=3&theater',}, function(response){ga('send', 'social', 'Facebook', 'share', 'https://www.facebook.com/PoliticalRevolution/photos/p.1246120298773517/1246120298773517/?type=3&theater');});">Share on Facebook <span class="facebook-icon"></span></a>
+              <a class="btn btn-facebook btn-block facebook-share" href="#">Share on Facebook <span class="facebook-icon"></span></a>
             </div>
           </div>
 
           <div class="social-preview">
-            <img src="/img/stop-tpp/i_took_a_stand.png">
+            <img src="/img/prop-61/thumbnail.jpg">
           </div>
         </section>
       </div>
@@ -225,33 +240,166 @@
 </div>
 
 <script>
+  // Twitter API
+  window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+
+    return t;
+  }(document, "script", "twitter-wjs"));
+
+  // Facebook API
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '166371677138082',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+(function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_US/sdk.js";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));
+
+ var numPrimaryShares = 0;
+
+  // Twitter share events
+  twttr.ready(
+    function(twttr) {
+      twttr.events.bind(
+        'click',
+        function (ev) {
+          if ($(ev.target).hasClass('primary-share')) {
+            numPrimaryShares++;
+
+            $(ev.target).find('twitter-icon').css("opacity", 0.6);
+
+            $('.cta-body.video').addClass('feature');
+            $('.cta-body.host').addClass('feature');
+
+            if(numPrimaryShares >= 2) {
+              $('.cta-body.video').removeClass('feature');
+              $('.cta-body.video').addClass('complete');
+            }
+
+          }
+
+          ga('send', 'social', 'Twitter', 'share', 'twitterurl');
+        }
+      );
+    }
+  );
+
+  // Facbeook Share events
+  $('.facebook-share').on('click', function(e) {
+    e.preventDefault();
+
+    FB.ui(
+      {
+        method: 'share',
+        href: 'https://www.facebook.com/PoliticalRevolution/posts/1260023410716539',
+      },
+      // callback
+      function(response) {
+        if (response && !response.error_message) {
+          if($(e.target).hasClass('primary-share')) {
+            numPrimaryShares++;
+
+            if(numPrimaryShares >= 2) {
+              $('.cta-body.video').removeClass('feature');
+              $('.cta-body.video').addClass('complete');
+            }
+          }
+
+          ga('send', 'social', 'Facebook', 'share', 'https://www.facebook.com/PoliticalRevolution/posts/1260023410716539');
+        } else {
+          //failure
+        }
+      }
+    );
+  });
 
   $(document).ready(function() {
-    console.log('ready');
     // https://go.ourrevolution.com/page/s/prop-61-toolkit?source=toolkit-primary
 
-    $('form').on('submit', function(e) {
+    $('#primary-form').on('submit', function(e) {
       e.preventDefault();
+      var self = this;
 
-      var values = {}
-      $.each($(this).serializeArray(), function(i, field) {
-        values[field.name] = field.value;
+      $(this).closest('.sign-up-form').fadeOut(400, function() {
+        $(self).parent().next('.success').fadeIn();
+
+        window.setTimeout(function () {
+          $('.cta-body.sign-up').removeClass('feature');
+          $('.cta-body.sign-up').addClass('complete');
+          $('.cta-body.video').addClass('feature');
+        }, 800)
       });
 
-      $.ajax({
-        method: 'POST',
-        url: "https://go.ourrevolution.com/page/sapi/prop-61-toolkit",
-        data: values,
-        dataType: 'jsonp'
-      })
-      .done(function(data) {
-        console.log('Success');
-        console.log(data);
-      })
-      .fail(function(data) {
-        console.log('Failed');
-        console.log(data);
-      })
+      // var values = {}
+      // $.each($(this).serializeArray(), function(i, field) {
+      //   values[field.name] = field.value;
+      // });
+      //
+      // $.ajax({
+      //   method: 'POST',
+      //   url: "https://go.ourrevolution.com/page/sapi/prop-61-toolkit",
+      //   data: values,
+      //   dataType: 'jsonp'
+      // })
+      // .done(function(data) {
+      //   console.log('Success');
+      //   console.log(data);
+      // })
+      // .fail(function(data) {
+      //   console.log('Failed');
+      //   console.log(data);
+      // })
+
+    })
+
+    $('#secondary-form').on('submit', function(e) {
+      e.preventDefault();
+      var self = this;
+
+      $(this).closest('.sign-up-form').fadeOut(400, function() {
+        $(self).parent().next('.success').fadeIn();
+      });
+
+      // var values = {}
+      // $.each($(this).serializeArray(), function(i, field) {
+      //   values[field.name] = field.value;
+      // });
+      //
+      // $.ajax({
+      //   method: 'POST',
+      //   url: "https://go.ourrevolution.com/page/sapi/prop-61-toolkit",
+      //   data: values,
+      //   dataType: 'jsonp'
+      // })
+      // .done(function(data) {
+      //   console.log('Success');
+      //   console.log(data);
+      // })
+      // .fail(function(data) {
+      //   console.log('Failed');
+      //   console.log(data);
+      // })
 
     })
 

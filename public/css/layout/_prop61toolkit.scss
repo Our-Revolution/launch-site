@@ -15,6 +15,20 @@
       max-width: 700px;
       margin: auto;
     }
+
+    &.row {
+      @include until($medium){
+        padding: 40px 0 0;
+
+        h1 {
+          font-size: 40px;
+        }
+
+        h2 {
+          font-size: 20px;
+        }
+      }
+    }
   }
 
   .cta-header {
@@ -44,6 +58,21 @@
     padding: 20px;
     color: #0c56a0;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    opacity: 0.6;
+    transition: 0.25s;
+
+    &.feature, &:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    &.complete {
+      &:hover {
+        opacity: 0.6;
+        transform: scale(1);
+      }
+      opacity: 0.6;
+    }
 
     @include clearfix();
 
@@ -62,12 +91,32 @@
     }
   }
 
+  .success {
+    display: none;
+
+    &.green {
+      background: $green;
+      padding: 30px;
+      border-radius: 3px;
+      color: white;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+
+    .glyphicon {
+      font-size: 5em;
+    }
+  }
+
   .video-share-content {
-    background: url('../img/prop-61/thumbnail.png') center no-repeat;
-    background-size: 100% auto;
+    background: url('../img/prop-61/thumbnail.jpg') center no-repeat;
+    background-size: cover;
     border-radius: 3px;
     color: white;
-    height: 100px;
+    height: 150px;
     width: 100%;
 
     display: flex;
@@ -81,6 +130,11 @@
     margin: auto;
     width: 60px;
     vertical-align: middle;
+
+    .uppercase {
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
   }
 
   .twitter-icon {
