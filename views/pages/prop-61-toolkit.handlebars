@@ -212,7 +212,7 @@
 
           <a href="/ballot-initiatives/california-prop-61" class="btn-giant clearfix">
             <div class="btn-giant__content">
-              <h2><strong>4. Learn More About Prop 61</strong></h2>
+              <h2><strong>Learn More About Prop 61</strong></h2>
               <p>The future of prescription drug costs in America comes down to this: Do we have the guts to stand up to drug companies who are ripping us off?</p>
             </div>
 
@@ -241,7 +241,8 @@
       $.ajax({
         method: 'POST',
         url: "https://go.ourrevolution.com/page/sapi/prop-61-toolkit",
-        data: values
+        data: values,
+        dataType: 'jsonp'
       })
       .done(function(data) {
         console.log('Success');
