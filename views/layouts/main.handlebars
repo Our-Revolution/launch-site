@@ -27,7 +27,13 @@
     <meta property="og:description" content="{{meta.description}}" />
     <meta property="og:url" content="{{meta.url}}" />
     <meta property="og:site_name" content="Our Revolution" />
-    <meta property="og:image" content="https://ourrevolution.com/img/fb.png" />
+    {{#if meta.image}}
+      <meta property="og:image" content="{{meta.image}}" />
+    {{/if}}
+
+    {{#unless meta.image}}
+      <meta property="og:image" content="https://ourrevolution.com/img/fb.png" />
+    {{/unless}}
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:title" content="{{title}}"/>
     <meta name="twitter:description" content="{{meta.description}}"/>
