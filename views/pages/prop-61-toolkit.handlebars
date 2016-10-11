@@ -11,7 +11,7 @@
               <h4 class="cta-header">1. Sign up to Phone Bank</h4>
               <div class="cta-body sign-up feature">
                 <div class="sign-up-form block">
-                  <form id="primary-form">
+                  <form id="primary-form" class="primary-form">
                     <span class="form-group email">
                       <label for="email">Email Address</label>
                       <input type="email" name="email" id="email" class="email" placeholder="you@example.com" required>
@@ -26,15 +26,19 @@
                       <button class="btn btn-primary btn-block">Join</button>
                     </span>
                   </form>
-                </div>
 
-                <div class="success text-center">
-                  <div class="glyphicon glyphicon-ok-sign"></div>
-                  <p>Thanks for signing up to phone bank! You will receive an email with info on how to get started soon.</p>
+                  <div class="success text-center">
+                    <div class="glyphicon glyphicon-ok-sign"></div>
+                    <p>Thanks for signing up to phone bank! You will receive an email with info on how to get started soon.</p>
 
-                  <p><strong>Help spread the word now by sharing our video.</strong></p>
+                    <p><strong>Help spread the word now by sharing our video.</strong></p>
+                  </div>
+
+                  <div class="error text-center">
+                    <p>Please make sure all fields are filled correctly.</p>
+                  </div>
                 </div>
-              </div>
+                </div>
             </div>
 
             <div class="col-md-4 cta">
@@ -44,8 +48,8 @@
                   <div class="video-share-content">
                     <div class="share-icons text-center">
                       <div class="uppercase">Share:</div>
-                      <a href="https://twitter.com/intent/retweet?tweet_id=784202079212441600" class="twitter-icon primary-share">Retweet</a>
-                      <a href="#" class="facebook-icon facebook-share primary-share">Share on Facebook</a>
+                      <a href="https://twitter.com/intent/retweet?tweet_id=784202079212441600" class="twitter-icon-round primary-share">Retweet</a>
+                      <a href="#" class="facebook-icon-round facebook-share primary-share">Share on Facebook</a>
                     </div>
                   </div>
                 </div>
@@ -56,7 +60,7 @@
               <h4 class="cta-header">3. Host a Phone Bank</h4>
               <div class="cta-body host block">
                 <div class="host-an-event" id="host-cta">
-                  <a href="https://go.ourrevolution.com/page/event/create" target="_blank" class="btn btn-block btn-donate">Host an Event <span class="glyphicon glyphicon-chevron-right"></span></a>
+                  <a href="https://go.ourrevolution.com/page/event/create?source=prop-61-toolkit-primary" target="_blank" class="btn btn-block btn-donate" onClick="trackOutboundLink('https://go.ourrevolution.com/page/event/create?source=prop-61-toolkit-primary'); return false;">Host an Event <span class="glyphicon glyphicon-chevron-right"></span></a>
                 </div>
               </div>
             </div>
@@ -125,14 +129,18 @@
                 <button class="btn btn-primary btn-block">Sign Up</button>
               </span>
             </form>
-          </div>
 
-          <div class="success text-center green">
-            <p>Thanks for signing up to phone bank! You will receive an email with info on how to get started soon.</p>
+            <div class="success text-center green">
+              <p>Thanks for signing up to phone bank! You will receive an email with info on how to get started soon.</p>
 
-            <p><strong>Help spread the word now by sharing our video.</strong></p>
+              <p><strong>Help spread the word now by sharing our video.</strong></p>
 
-            <a data-scroll href="#share"><span class="glyphicon glyphicon-chevron-down"></span></a>
+              <a data-scroll href="#share"><span class="glyphicon glyphicon-chevron-down"></span></a>
+            </div>
+
+            <div class="error text-center">
+              <p>Please make sure all fields are filled correctly.</p>
+            </div>
           </div>
         </section>
       </div>
@@ -175,7 +183,7 @@
 
           <p>Hosting a phone bank is one of the most effective things you can do to help our fight for Prop 61.</p>
 
-          <a href="https://go.ourrevolution.com/page/event/create" target="_blank" class="btn btn-donate">Host an Event <span class="glyphicon glyphicon-chevron-right"></span></a>
+          <a href="https://go.ourrevolution.com/page/event/create?source=prop-61-toolkit-secondary" target="_blank" class="btn btn-donate" onclick="trackOutboundLink('https://go.ourrevolution.com/page/event/create?source=prop-61-toolkit-secondary'); return false;">Host an Event <span class="glyphicon glyphicon-chevron-right"></span></a>
         </section>
       </div>
     </div>
@@ -190,27 +198,27 @@
           <p>Print and share these flyers and fact sheets to help spread the word about Prop 61.</p>
 
           <div class="row flyers" id="flyers">
-            <a href="/img/prop-61/docs/1016_Prop61_UnionMember_Flyer_FINAL.pdf" target="_blank" class="col-xs-4 col-sm-4 flyer">
+            <a href="/img/prop-61/docs/1016_Prop61_UnionMember_Flyer_FINAL.pdf" onclick="trackOutboundLink('/img/prop-61/docs/1016_Prop61_UnionMember_Flyer_FINAL.pdf'); return false;" target="_blank" class="col-xs-4 col-sm-4 flyer">
               <span class="flyer__title">English</span>
               <img src="/img/prop-61/thumbnails/1016_en.jpg">
             </a>
-            <a href="/img/prop-61/docs/1016_Prop61_UnionMember_Flyer_spanish.pdf" target="_blank" class="col-xs-4 col-sm-4 flyer">
+            <a href="/img/prop-61/docs/1016_Prop61_UnionMember_Flyer_spanish.pdf" onclick="trackOutboundLink('/img/prop-61/docs/1016_Prop61_UnionMember_Flyer_spanish.pdf'); return false;" target="_blank" class="col-xs-4 col-sm-4 flyer">
               <span class="flyer__title">Español</span>
               <img src="/img/prop-61/thumbnails/1016_es.jpg">
             </a>
-            <a href="/img/prop-61/docs/Drug-Price-Relief-Act-Fact-Sheet-FINAL.pdf" target="_blank" class="col-xs-4 col-sm-4 flyer">
+            <a href="/img/prop-61/docs/Drug-Price-Relief-Act-Fact-Sheet-FINAL.pdf" onclick="trackOutboundLink('/img/prop-61/docs/Drug-Price-Relief-Act-Fact-Sheet-FINAL.pdf'); return false;" target="_blank" class="col-xs-4 col-sm-4 flyer">
               <span class="flyer__title">Fact Sheet</span>
               <img src="/img/prop-61/thumbnails/drug-price.jpg">
             </a>
-            <a href="/img/prop-61/docs/LABOR-FED-HANDOUT-REVAMPED.pdf" target="_blank" class="col-xs-4 col-sm-4 flyer">
+            <a href="/img/prop-61/docs/LABOR-FED-HANDOUT-REVAMPED.pdf" onclick="trackOutboundLink('/img/prop-61/docs/LABOR-FED-HANDOUT-REVAMPED.pdf'); return false;" target="_blank" class="col-xs-4 col-sm-4 flyer">
               <span class="flyer__title">Labor</span>
               <img src="/img/prop-61/thumbnails/labor-fed.jpg">
             </a>
-            <a href="/img/prop-61/docs/PHARMA-6-Misleading Arguments-FINAL.pdf" target="_blank" class="col-xs-4 col-sm-4 flyer">
+            <a href="/img/prop-61/docs/PHARMA-6-Misleading-Arguments-FINAL.pdf" onclick="trackOutboundLink('/img/prop-61/docs/PHARMA-6-Misleading-Arguments-FINAL.pdf'); return false;" target="_blank" class="col-xs-4 col-sm-4 flyer">
               <span class="flyer__title">Lies</span>
               <img src="/img/prop-61/thumbnails/pharma.jpg">
             </a>
-            <a href="/img/prop-61/docs/VoteVets-Fights-PHARMA LIES-0916statementbug.pdf" target="_blank" class="col-xs-4 col-sm-4 flyer">
+            <a href="/img/prop-61/docs/VoteVets-Fights-PHARMA-LIES-0916statementbug.pdf" onclick="trackOutboundLink('/img/prop-61/docs/VoteVets-Fights-PHARMA-LIES-0916statementbug.pdf'); return false;" target="_blank" class="col-xs-4 col-sm-4 flyer">
               <span class="flyer__title">Veterans</span>
               <img src="/img/prop-61/thumbnails/votevets.jpg">
             </a>
@@ -287,7 +295,7 @@
           if ($(ev.target).hasClass('primary-share')) {
             numPrimaryShares++;
 
-            $(ev.target).find('twitter-icon').css("opacity", 0.6);
+            $(ev.target).find('twitter-icon-round').css("opacity", 0.6);
 
             $('.cta-body.video').addClass('feature');
             $('.cta-body.host').addClass('feature');
@@ -337,69 +345,58 @@
   $(document).ready(function() {
     // https://go.ourrevolution.com/page/s/prop-61-toolkit?source=toolkit-primary
 
-    $('#primary-form').on('submit', function(e) {
+    $('form').on('submit', function(e) {
       e.preventDefault();
       var self = this;
 
-      $(this).closest('.sign-up-form').fadeOut(400, function() {
-        $(self).parent().next('.success').fadeIn();
-
-        window.setTimeout(function () {
-          $('.cta-body.sign-up').removeClass('feature');
-          $('.cta-body.sign-up').addClass('complete');
-          $('.cta-body.video').addClass('feature');
-        }, 800)
+      var values = {}
+      $.each($(this).serializeArray(), function(i, field) {
+        values[field.name] = field.value;
       });
 
-      // var values = {}
-      // $.each($(this).serializeArray(), function(i, field) {
-      //   values[field.name] = field.value;
-      // });
-      //
-      // $.ajax({
-      //   method: 'POST',
-      //   url: "https://go.ourrevolution.com/page/sapi/prop-61-toolkit",
-      //   data: values,
-      //   dataType: 'jsonp'
-      // })
-      // .done(function(data) {
-      //   console.log('Success');
-      //   console.log(data);
-      // })
-      // .fail(function(data) {
-      //   console.log('Failed');
-      //   console.log(data);
-      // })
+      var url = "https://go.ourrevolution.com/page/sapi/prop-61-toolkit"
 
-    })
+      if ($(self).hasClass('primary-form')) {
+        url = "https://go.ourrevolution.com/page/sapi/prop-61-toolkit?source=toolkit-primary";
+      } else {
+        url = "https://go.ourrevolution.com/page/sapi/prop-61-toolkit?source=toolkit-secondary";
+      }
 
-    $('#secondary-form').on('submit', function(e) {
-      e.preventDefault();
-      var self = this;
+      $.ajax({
+        method: 'POST',
+        url: url,
+        data: values,
+        crossDomain: true
+      })
+      .done(function(data) {
+        console.log('Success');
+        console.log($(self));
+        if ($(self).hasClass('primary-form')) {
+          $(self).closest('form').fadeOut(400, function() {
+            $(self).parent().find('.error').fadeOut();
+            $(self).parent().find('.success').fadeIn();
 
-      $(this).closest('.sign-up-form').fadeOut(400, function() {
-        $(self).parent().next('.success').fadeIn();
-      });
+            window.setTimeout(function () {
+              $('.cta-body.sign-up').removeClass('feature');
+              $('.cta-body.sign-up').addClass('complete');
+              $('.cta-body.video').addClass('feature');
+            }, 800)
+          });
+          ga('send', 'event', 'Sign Up', 'submit', 'Prop 61 Toolkit Primary Signup');
+        } else {
+          $(self).closest('form').fadeOut(400, function() {
+            $(self).parent().find('.error').fadeOut();
+            $(self).parent().find('.success').fadeIn();
+          });
 
-      // var values = {}
-      // $.each($(this).serializeArray(), function(i, field) {
-      //   values[field.name] = field.value;
-      // });
-      //
-      // $.ajax({
-      //   method: 'POST',
-      //   url: "https://go.ourrevolution.com/page/sapi/prop-61-toolkit",
-      //   data: values,
-      //   dataType: 'jsonp'
-      // })
-      // .done(function(data) {
-      //   console.log('Success');
-      //   console.log(data);
-      // })
-      // .fail(function(data) {
-      //   console.log('Failed');
-      //   console.log(data);
-      // })
+          ga('send', 'event', 'Sign Up', 'submit', 'Prop 61 Toolkit Secondary Signup');
+        }
+      })
+      .fail(function(data) {
+        console.log('Failed');
+        console.log(data);
+        $(self).parent().find('.error').fadeIn();
+      })
 
     })
 
