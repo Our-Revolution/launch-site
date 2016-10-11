@@ -33,5 +33,10 @@ router.get('/check-registration', function(req, res) {
     description: "Voter registration deadlines are coming up fast - make sure you're registered to vote.", url: "https://ourrevolution.com/page/check-registration"}});
 });
 
+router.get('/prop-61-toolkit', function(req, res) {
+
+  res.render('pages/prop-61-toolkit', { title: 'Our Revolution - Prop 61 Toolkit', meta: {
+    description: "Together we can stop drug companies from overcharging by billions of dollars each year for life-saving drugs. ", url: "https://ourrevolution.com/page/prop-61-toolkit"}, active: {revere: true, action: true}});
+});
 
 module.exports = router;
