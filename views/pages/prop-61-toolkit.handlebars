@@ -367,8 +367,6 @@
         crossDomain: true
       })
       .done(function(data) {
-        console.log('Success');
-        console.log($(self));
         if ($(self).hasClass('primary-form')) {
           $(self).closest('form').fadeOut(400, function() {
             $(self).parent().find('.error').fadeOut();
@@ -391,8 +389,6 @@
         }
       })
       .fail(function(data) {
-        console.log('Failed');
-        console.log(data);
         $(self).parent().find('.error').fadeIn();
       })
 
