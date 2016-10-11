@@ -343,8 +343,6 @@
   });
 
   $(document).ready(function() {
-    // https://go.ourrevolution.com/page/s/prop-61-toolkit?source=toolkit-primary
-
     $('form').on('submit', function(e) {
       e.preventDefault();
       var self = this;
@@ -354,12 +352,12 @@
         values[field.name] = field.value;
       });
 
-      var url = "https://go.ourrevolution.com/page/sapi/prop-61-toolkit"
+      var url = "https://go.ourrevolution.com/page/sapi/join-the-fight-for-prop-61"
 
       if ($(self).hasClass('primary-form')) {
-        url = "https://go.ourrevolution.com/page/sapi/prop-61-toolkit?source=toolkit-primary";
+        url = "https://go.ourrevolution.com/page/sapi/join-the-fight-for-prop-61?source=toolkit-primary";
       } else {
-        url = "https://go.ourrevolution.com/page/sapi/prop-61-toolkit?source=toolkit-secondary";
+        url = "https://go.ourrevolution.com/page/sapi/join-the-fight-for-prop-61?source=toolkit-secondary";
       }
 
       $.ajax({
