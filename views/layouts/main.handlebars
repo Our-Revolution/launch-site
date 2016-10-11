@@ -42,7 +42,13 @@
     <meta name="twitter:title" content="{{title}}"/>
     <meta name="twitter:description" content="{{meta.description}}"/>
     <meta name="twitter:site" content="@OurRevolution"/>
-    <meta name="twitter:image" content="https://ourrevolution.com/img/fb.png"/>
+    {{#if meta.image}}
+      <meta name="twitter:image" content="{{meta.image}}"/>
+    {{/if}}
+
+    {{#unless meta.image}}
+      <meta name="twitter:image" content="https://ourrevolution.com/img/fb.png"/>
+    {{/unless}}
   {{/if}}
 
   <meta name="google-site-verification" content="ULKRcIZysCOsq4SLKSbW7ymdJ93OyRWwSMZpBfBPJN0" />
