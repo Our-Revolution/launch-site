@@ -36,7 +36,7 @@ router.get('/check-registration', function(req, res) {
 router.get('/prop-61-toolkit', function(req, res) {
 
   res.render('pages/prop-61-toolkit', { title: 'Our Revolution - Prop 61 Toolkit', meta: {
-    description: "Together we can stop drug companies from overcharging by billions of dollars each year for life-saving drugs. ", url: "https://ourrevolution.com/page/prop-61-toolkit", image: "https://ourrevolution.com/img/prop-61-fb.png"}, active: {revere: true, action: true}});
+    description: "Together we can stop drug companies from overcharging by billions of dollars each year for life-saving drugs. ", url: "https://ourrevolution.com/page/prop-61-toolkit", image: "https://ourrevolution.com/img/prop-61-fb.png", app_id:"166371677138082"}, active: {revere: true, action: true}});
 });
 
 module.exports = router;
