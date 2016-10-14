@@ -7,7 +7,7 @@ html {
 body {
   font-family: 'Lato', sans-serif;
   padding-top: 80px;
-  margin-bottom: 280px;
+  margin-bottom: 300px;
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
@@ -1024,6 +1024,31 @@ footer {
 .page-heading--press {
   @extend .page-heading;
   padding-top: 140px;
+  position: relative;
+
+  &.shailene-bg-pr {
+    background: $blue url('../img/shailene.jpg') center;
+    background-size: cover;
+    padding-top: 200px;
+
+    text-shadow: 0 0 3px  rgba(0,0,0,1);
+    font-weight: bolder;
+  }
+
+  .attribution {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: none;
+    a {
+      color: white;
+    }
+  }
+
 
   h1 {
     margin-top: 0;
