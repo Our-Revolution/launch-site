@@ -524,6 +524,36 @@ h4, h1 {
   }
 }
 
+.about-action-bar {
+  margin-bottom: 10px;
+}
+
+.board-section {
+  .bylaws {
+    display: none;
+  }
+
+  &.bylaws {
+    .bylaws {
+      display: block;
+    }
+
+    .board {
+      display: none;
+    }
+  }
+
+  &.statement {
+    .bylaws {
+      display: none;
+    }
+
+    .board {
+      display: block;
+    }
+  }
+}
+
 // Take Action
 .action-list {
   list-style-type: none;
