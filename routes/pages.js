@@ -45,4 +45,10 @@ router.get('/dakota-access-filmmaker', function(req, res) {
     description: "Sign our petition for the government to drop all charges against Deia Schlosberg, a filmmaker and journalist who was arrested just for filming a protest.", url: "https://ourrevolution.com/page/dakota-access-filmmaker"}});
 });
 
+router.get('/bylaws', function(req, res) {
+
+  res.render('pages/bylaws', { title: 'Our Revolution - Bylaws', meta: {
+    description: "Bylaws of Our Revolution", url: "https://ourrevolution.com/page/bylaws"}});
+});
+
 module.exports = router;
