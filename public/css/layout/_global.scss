@@ -67,6 +67,42 @@ h4, h1 {
   }
 }
 
+.twitter-icon {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  background: url('../img/stop-tpp/twitter-icon.svg') center center no-repeat;
+  float: left;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include text-indent();
+}
+
+.facebook-icon {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  background: url('../img/stop-tpp/facebook-icon.svg') center center no-repeat;
+  float: left;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include text-indent();
+}
+
+.press-share {
+  margin-bottom: 30px;
+
+  .btn {
+    margin-bottom: 10px;
+  }
+}
+
 .email {
   p {
     font-size: 18px;
