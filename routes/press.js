@@ -80,5 +80,10 @@ router.get('/our-revolution-substantive-discussion', function(req, res) {
   res.render('press/our-revolution-substantive-discussion', { title: 'Our Revolution - Give the Voters What They Want: A Substantive Discussion', meta: {description: "One of the most valuable lessons Sen. Bernie Sanders and his presidential campaign taught us was that it's possible to have substantive debates and inspire people to engage in the political process-- and it can be done with respect and dignity.", url:"https://ourrevolution.com/press/our-revolution-substantive-discussion"}, active: {home: true} });
 });
 
+router.get('/our-revolution-reacts-final-presidential-debate', function(req, res) {
+  article = req.params.article;
+
+  res.render('press/our-revolution-reacts-final-presidential-debate', {active: {home: true}});
+});
 
 module.exports = router;
