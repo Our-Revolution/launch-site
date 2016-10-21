@@ -79,7 +79,7 @@
   }
 
   function filter(category) {
-    if (category) {
+    if (category && category != 'all') {
       initiativesList.filter(function (item) {
         if(category == item._values.category)
           return true;
