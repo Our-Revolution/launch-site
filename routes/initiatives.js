@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/:name', function(req, res) {
-  name=req.params.name || false;
+  var name=req.params.name || false;
 
   function isInitiative(value) {
     if (value in initiatives) {
