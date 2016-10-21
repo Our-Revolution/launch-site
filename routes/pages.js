@@ -39,4 +39,16 @@ router.get('/prop-61-toolkit', function(req, res) {
     description: "Together we can stop drug companies from overcharging by billions of dollars each year for life-saving drugs. ", url: "https://ourrevolution.com/page/prop-61-toolkit", image: "https://ourrevolution.com/img/prop-61-fb.png", app_id:"166371677138082"}, active: {revere: true, action: true}});
 });
 
+router.get('/dakota-access-filmmaker', function(req, res) {
+
+  res.render('pages/dakota-access-filmmaker', { title: 'Our Revolution - 45 years in prison for filming a pipeline protest?', meta: {
+    description: "Sign our petition for the government to drop all charges against Deia Schlosberg, a filmmaker and journalist who was arrested just for filming a protest.", url: "https://ourrevolution.com/page/dakota-access-filmmaker"}});
+});
+
+router.get('/bylaws', function(req, res) {
+
+  res.render('pages/bylaws', { title: 'Our Revolution - Bylaws', meta: {
+    description: "Bylaws of Our Revolution", url: "https://ourrevolution.com/page/bylaws"}});
+});
+
 module.exports = router;

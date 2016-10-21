@@ -74,4 +74,16 @@ router.get('/our-revolution-statement-on-shailene-woodley-arrest', function(req,
   res.render('press/our-revolution-statement-on-shailene-woodley-arrest', { title: 'Our Revolution', meta: {description: "Our Revolution stands with board member Shailene Woodley following her arrest at Standing Rock Reservation protesting the Dakota Access Pipeline.", url:"https://ourrevolution.com/press/our-revolution-statement-on-shailene-woodley-arrest"}, active: {home: true} });
 });
 
+router.get('/our-revolution-substantive-discussion', function(req, res) {
+  article = req.params.article;
+
+  res.render('press/our-revolution-substantive-discussion', { title: 'Our Revolution - Give the Voters What They Want: A Substantive Discussion', meta: {description: "One of the most valuable lessons Sen. Bernie Sanders and his presidential campaign taught us was that it's possible to have substantive debates and inspire people to engage in the political process-- and it can be done with respect and dignity.", url:"https://ourrevolution.com/press/our-revolution-substantive-discussion"}, active: {home: true} });
+});
+
+router.get('/our-revolution-reacts-final-presidential-debate', function(req, res) {
+  article = req.params.article;
+
+  res.render('press/our-revolution-reacts-final-presidential-debate', {active: {home: true}});
+});
+
 module.exports = router;
