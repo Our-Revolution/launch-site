@@ -172,10 +172,12 @@
     $("#fuzzy-search").val("");
     initiativesList.fuzzySearch.search();
 
-    var category = $(e.target).closest("li").attr("category");
+    var category = $(e.target).closest("li").attr("category") || false;
 
-    setActive(category);
-    self.filter(category);
+    if (category) {
+      setActive(category);
+      self.filter(category);
+    }
   });
 
   initiativesList.on("updated", function(list) {
