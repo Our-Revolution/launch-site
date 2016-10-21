@@ -28,12 +28,14 @@ router.get('/:name', function(req, res) {
     for (var key in initiatives) {
       var initiative = initiatives[key];
 
-      if (initiative.category == initialCategory) {
-        similarInitiatives.push(initiative);
-      }
+      if (initiative.slug != name) {
+        if (initiative.category == initialCategory) {
+          similarInitiatives.push(initiative);
+        }
 
-      if (initiative.state == initiatives[name].state) {
-        localInitiatives.push(initiative);
+        if (initiative.state == initiatives[name].state) {
+          localInitiatives.push(initiative);
+        }
       }
     }
 
