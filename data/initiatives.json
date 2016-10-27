@@ -279,6 +279,20 @@
     "cta_link": "http://www.rcvmaine.com/",
     "slug": "maine-question-5"
   },
+  "maine-question-2": {
+    "featured": "",
+    "show": "TRUE",
+    "category": "education",
+    "state": "Maine",
+    "state_initials": "ME",
+    "title": "Question 2",
+    "name": "Stand Up for Students",
+    "vote": "Yes",
+    "description": "Question 2, Stand Up for Students, would increase funding for public education services, not administration, by adding a 3% surcharge on household incomes over $200,000.  Estimates are that this would generate more than $150 million annually.\n\nMaine's wealthiest residents have enjoyed two recent tax cuts.  Many towns have had to increase property taxes or cut education and other services as a result.  This ballot measure would allow restoration of these programs by taxing high income households rather than property tax increases which can hurt seniors and others.\n\nHigh income families would pay the 3% surcharge only on their annual income over $200,000.  They can afford to do it and support good public education for all of us!",
+    "cta": "Join the Fight & Learn More",
+    "cta_link": "standupforstudentsmaine.org",
+    "slug": "maine-question-2"
+  },
   "massachusetts-measure-2": {
     "featured": "",
     "show": "TRUE",
