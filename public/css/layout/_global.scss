@@ -1100,6 +1100,15 @@ footer {
     text-shadow: 0 0 3px  rgba(0,0,0,1);
     font-weight: bolder;
   }
+  
+  &.dapl-bg-pr {
+    background: $blue url('../img/dapl_module_1.png') center;
+    background-size: cover;
+    padding-top: 200px;
+
+    text-shadow: 0 0 3px  rgba(0,0,0,1);
+    font-weight: bolder;
+  }
 
   .attribution {
     position: absolute;
