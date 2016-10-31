@@ -86,4 +86,10 @@ router.get('/our-revolution-reacts-final-presidential-debate', function(req, res
   res.render('press/our-revolution-reacts-final-presidential-debate', {active: {home: true}});
 });
 
+router.get('/our-revolution-stands-with-dakota-access-pipeline-protestors', function(req, res) {
+  article = req.params.article;
+
+  res.render('press/our-revolution-stands-with-dakota-access-pipeline-protestors', { title: 'Our Revolution Stands with Dakota Access Pipeline Protesters', meta: {description: "Our Revolution on Thursday released the following statements after law enforcement moved in to remove Dakota Access Pipeline protesters. According to the Associated Press, officers were dressed in riot gear-- and some were armed-- as they moved in with trucks, police cars, Humvees, buses, and helicopters.", url:"https://ourrevolution.com/press/our-revolution-stands-with-dakota-access-pipeline-protestors"}, active: {home: true} });
+});
+
 module.exports = router;
