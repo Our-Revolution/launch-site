@@ -45,18 +45,18 @@ app.use('/ballot-initiatives', initiatives);
 
 var routes = [];
 
-app._router.stack.forEach(function(middleware){
-    if(middleware.route){ // routes registered directly on the app
-        routes.push(middleware.route.path);
-    } else if(middleware.name === 'router'){ // router middleware 
-        middleware.handle.stack.forEach(function(handler){
-            route = handler.route.path;
-            route && routes.push(route);
-        });
-    }
-});
-
-console.log(routes);
+// app._router.stack.forEach(function(middleware){
+//     if(middleware.route){ // routes registered directly on the app
+//         routes.push(middleware.route.path);
+//     } else if(middleware.name === 'router'){ // router middleware 
+//         middleware.handle.stack.forEach(function(handler){
+//             route = handler.route.path;
+//             route && routes.push(route);
+//         });
+//     }
+// });
+// 
+// console.log(routes);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
