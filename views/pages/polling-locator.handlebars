@@ -1,0 +1,207 @@
+<div class="container-app">
+  <div class="locator__sidebar" id="results">
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix"><h1>Polling Locator</h1></div>
+      
+      <div class="panel-body">
+        <form>
+          <div class="form-group">
+            <label for="address">Adress</label>
+            <input type="address" id="address" class="form-control" placeholder="Enter full registered voting address">
+          </div>
+          <button type="submit" class="btn btn-secondary btn-block">Search</button>
+        </form>
+        
+        <div class="locator__home-address"></div>
+      </div>
+      
+      <div class="locator__results list-group">
+        <div class="locator__early-vote-sites list-group-item hidden">
+          <h4>Your early vote site:</h4>
+          
+          <div class="locator__address">
+          </div>
+        </div>
+        
+        <div class="locator__hours list-group-item hidden">
+          <h4>Early voting hours:</h4>
+          
+          <ul class="locator__hours-list">
+          </ul>
+        </div>
+        
+        <div class="locator__drop-off-locations list-group-item hidden">
+          <h4>Your drop-off location:</h4>
+          
+          <div class="locator__address">
+          </div>
+        </div>
+        
+        <div class="locator__hours list-group-item hidden">
+          <h4>Drop-off hours:</h4>
+          
+          <ul class="locator__hours-list">
+          </ul>
+        </div>
+        
+        <div class="locator__polling-location list-group-item hidden">
+          <h4>Your polling location:</h4>
+          
+          <div class="locator__address">
+          </div>
+        </div>
+        
+        <div class="locator__hours list-group-item hidden">
+          <h4>Election hours:</h4>
+          
+          <ul class="locator__hours-list">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="locator__map" id="map"></div>
+</div> 
+
+
+<script>
+  function lookup(address, callback) {
+    gapi.client.setApiKey('AIzaSyAVOeLs_sV8HAU6DqhinyZ6LPpr4YJi4Vs');
+    
+    var electionId = 5000;
+    
+    var req = gapi.client.request({
+        'path' : '/civicinfo/v2/voterinfo',
+        'params' : {'electionId' : electionId, 'address' : address, 'officialOnly': false}
+    });
+    req.execute(callback);
+  }
+
+  function renderResults(response, rawReponse) {
+    console.log(response);
+    
+    var results = [], pollingAddress, site;
+    
+    if (!response || response.error) {
+      alert('Something went wrong.');
+    }
+    
+    var normalizedAddress = response.normalizedInput.line1 + ' ' +
+        response.normalizedInput.city + ', ' +
+        response.normalizedInput.state + ' ' +
+        response.normalizedInput.zip;
+    
+    if (response.dropOffLocations) {
+      site = response.dropOffLocations[0].address;
+    } else if (response.earlyVoteSites) {
+      site = response.earlyVoteSites[0].address;
+    } else if (response.pollingLocations) {
+      site = response.pollingLocations[0].address;
+    } else {
+      site = null;
+    }
+    
+    if (site) {
+      pollingAddress = site.line1 + ' ' +
+        site.city + ', ' +
+        site.state + ' ' +
+        site.zip;
+
+      codeAdress(pollingAddress);
+      updateData(response);
+    } else {
+      alert('No polling places found.');
+    }
+    
+  }
+  
+  var map, geocoder;
+  
+  function initMap(center) {
+    var mapOptions = {
+      zoom: 15,
+      center: center
+    }
+    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    
+    var marker = new google.maps.Marker({
+        map: map,
+        position: center
+    });
+  }
+  
+  function codeAdress(address) {
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == 'OK') {
+        initMap(results[0].geometry.location);
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
+  
+  function updateData(response) {
+    var data;
+    $('.locator__drop-off-locations .locator__address').html('');
+    $('.locator__early-vote-sites .locator__address').html('');
+    $('.locator__polling-location .locator__address').html('');
+    
+    $('.locator__drop-off-locations').addClass('hidden');
+    $('.locator__early-vote-sites').addClass('hidden');
+    $('.locator__polling-location').addClass('hidden');
+    
+    if (response.dropOffLocations) {
+      data = response.dropOffLocations[0];
+      $('.locator__drop-off-locations .locator__address').html('');
+      
+      for (var key in data.address) {
+        if (data.address.hasOwnProperty(key)) {
+          $('.locator__drop-off-locations .locator__address').append('<p>' + data.address[key] + '</p>');
+        }
+      }
+      
+      $('.locator__drop-off-locations').removeClass('hidden');
+    }
+    if (response.earlyVoteSites) {
+      data = response.earlyVoteSites[0];
+      $('.locator__early-vote-sites .locator__address').html('')
+      
+      for (var key in data.address) {
+        if (data.address.hasOwnProperty(key)) {
+          $('.locator__early-vote-sites .locator__address').append('<p>' + data.address[key] + '</p>');
+        }
+      }
+      
+      $('.locator__early-vote-sites').removeClass('hidden');
+    }
+    
+    if (response.pollingLocations) {
+      data = response.pollingLocations[0];
+      $('.locator__polling-location .locator__address').html('');
+      
+      for (var key in data.address) {
+        if (data.address.hasOwnProperty(key)) {
+          $('.locator__polling-location .locator__address').append('<p>' + data.address[key] + '</p>');
+        }
+      }
+      
+      $('.locator__polling-location').removeClass('hidden');
+    } else {
+      site = null;
+    }
+  }
+  
+  $('form').on('submit', function(e) {
+    e.preventDefault();
+    
+    var addressInput = $('#address').val();
+    lookup(addressInput, renderResults);
+  })
+</script>
+
+<script src="https://apis.google.com/js/client.js"></script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVOeLs_sV8HAU6DqhinyZ6LPpr4YJi4Vs">
+    </script>
