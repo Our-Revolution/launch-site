@@ -12,7 +12,15 @@
           <button type="submit" class="btn btn-secondary btn-block">Search</button>
         </form>
         
-        <div class="locator__home-address"></div>
+        <div class="alert alert-danger hidden" id="error"></div>
+        
+        <div class="locator__home-address">
+        
+          <div class="locator__heading"><h4>Polling info for:</h4></div>
+          
+          <div class="locator__address"></div>
+        
+        </div>
       </div>
       
       <div class="locator__results list-group">
@@ -66,6 +74,8 @@
 
 
 <script>
+  var map, geocoder, placeSearch, autocomplete;
+  
   function lookup(address, callback) {
     gapi.client.setApiKey('AIzaSyAVOeLs_sV8HAU6DqhinyZ6LPpr4YJi4Vs');
     
@@ -78,45 +88,56 @@
     req.execute(callback);
   }
 
-  function renderResults(response, rawReponse) {
-    console.log(response);
-    
-    var results = [], pollingAddress, site;
+  function renderResults(response, rawReponse) {    
+    var results = [], pollingAddress, primarySite, dropOff, earlyVote, electionDay;
     
     if (!response || response.error) {
-      alert('Something went wrong.');
-    }
-    
-    var normalizedAddress = response.normalizedInput.line1 + ' ' +
-        response.normalizedInput.city + ', ' +
-        response.normalizedInput.state + ' ' +
-        response.normalizedInput.zip;
-    
-    if (response.dropOffLocations) {
-      site = response.dropOffLocations[0].address;
-    } else if (response.earlyVoteSites) {
-      site = response.earlyVoteSites[0].address;
-    } else if (response.pollingLocations) {
-      site = response.pollingLocations[0].address;
+      
+      renderError("We couldn't find polling information for that location. Please contact your county elections board.");
+      
     } else {
-      site = null;
-    }
-    
-    if (site) {
-      pollingAddress = site.line1 + ' ' +
-        site.city + ', ' +
-        site.state + ' ' +
-        site.zip;
+      
+      var normalizedAddress = response.normalizedInput.line1 + ' ' +
+          response.normalizedInput.city + ', ' +
+          response.normalizedInput.state + ' ' +
+          response.normalizedInput.zip;
+      
+      if (response.dropOffLocations) {
+        
+        primarySite = response.dropOffLocations[0].address;
+        dropOff = true;
+        // results.push(response.dropOffLocations);
+        
+      } else if (response.earlyVoteSites) {
+        
+        primarySite = response.earlyVoteSites[0].address;
+        earlyVote = true;
+        // results.push(response.earlyVoteSites);
+        
+      } else if (response.pollingLocations) {
+        
+        primarySite = response.pollingLocations[0].address;
+        electionDay = true;
+        // results.push(response.pollingLocations);
+        
+      } else {
+        primarySite = null;
+      }
+      
+      if (primarySite) {
+        mapAddress = primarySite.line1 + ' ' +
+          primarySite.city + ', ' +
+          primarySite.state + ' ' +
+          primarySite.zip;
 
-      codeAdress(pollingAddress);
-      updateData(response);
-    } else {
-      alert('No polling places found.');
+        codeAdress(mapAddress);
+        updateData(response, normalizedAddress);
+      } else {
+        renderError("We couldn't find polling information for that location. Please contact your county elections board.");
+      }
     }
     
   }
-  
-  var map, geocoder;
   
   function initMap(center) {
     var mapOptions = {
@@ -137,12 +158,12 @@
       if (status == 'OK') {
         initMap(results[0].geometry.location);
       } else {
-        alert('Geocode was not successful for the following reason: ' + status);
+        renderError("We couldn't find polling information for that location. Please contact your county elections board.");
       }
     });
   }
   
-  function updateData(response) {
+  function updateData(response, homeAddress) {
     var data;
     $('.locator__drop-off-locations .locator__address').html('');
     $('.locator__early-vote-sites .locator__address').html('');
@@ -151,6 +172,8 @@
     $('.locator__drop-off-locations').addClass('hidden');
     $('.locator__early-vote-sites').addClass('hidden');
     $('.locator__polling-location').addClass('hidden');
+    
+    $('.locator__home-address .locator__address').html("<p>" + homeAddress + "</p>");
     
     if (response.dropOffLocations) {
       data = response.dropOffLocations[0];
@@ -188,20 +211,34 @@
       }
       
       $('.locator__polling-location').removeClass('hidden');
-    } else {
-      site = null;
     }
   }
   
-  $('form').on('submit', function(e) {
-    e.preventDefault();
+  function renderError(message) {
+    $('#error').html(message);
+    $('#error').removeClass('hidden');
+  }
+  
+  function initAutocomplete() {
+    autocomplete = new google.maps.places.Autocomplete(
+        /** @type {!HTMLInputElement} */(document.getElementById('address')),
+        {types: ['geocode']});
+  }
+  
+  $(document).ready(function() {
+    initAutocomplete();
     
-    var addressInput = $('#address').val();
-    lookup(addressInput, renderResults);
-  })
+    $('form').on('submit', function(e) {
+      e.preventDefault();
+      
+      var addressInput = $('#address').val();
+      lookup(addressInput, renderResults);
+    })
+  });
 </script>
 
 <script src="https://apis.google.com/js/client.js"></script>
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVOeLs_sV8HAU6DqhinyZ6LPpr4YJi4Vs">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVOeLs_sV8HAU6DqhinyZ6LPpr4YJi4Vs&libraries=places">
     </script>
+    
