@@ -53,9 +53,15 @@ router.get('/bylaws', function(req, res) {
 
 router.get('/polling-locator', function(req, res) {
 
-  res.render('pages/polling-locator', { title: 'Our Revolution - Find Your Polling Location', meta: {
-    description: "Make sure you're ready to vote by finding your polling location.", url: "https://ourrevolution.com/page/polling-locator"}, layout:"no-footer"});
+  res.render('pages/polling-widget', { title: 'Our Revolution - Find Your Polling Location', meta: {
+    description: "Make sure you're ready to vote by finding your polling location.", url: "https://ourrevolution.com/page/polling-locator"}});
 });
+
+// router.get('/polling-locator', function(req, res) {
+// 
+//   res.render('pages/polling-locator', { title: 'Our Revolution - Find Your Polling Location', meta: {
+//     description: "Make sure you're ready to vote by finding your polling location.", url: "https://ourrevolution.com/page/polling-locator"}, layout:"no-footer"});
+// });
 
 
 module.exports = router;
