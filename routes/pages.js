@@ -51,17 +51,17 @@ router.get('/bylaws', function(req, res) {
     description: "Bylaws of Our Revolution", url: "https://ourrevolution.com/page/bylaws"}});
 });
 
-// router.get('/polling-locator', function(req, res) {
-// 
-//   res.render('pages/polling-widget', { title: 'Our Revolution - Find Your Polling Location', meta: {
-//     description: "Make sure you're ready to vote by finding your polling location.", url: "https://ourrevolution.com/page/polling-locator"}});
-// });
-
 router.get('/polling-locator', function(req, res) {
 
-  res.render('pages/polling-locator', { title: 'Our Revolution - Find Your Polling Location', meta: {
-    description: "Make sure you're ready to vote by finding your polling location.", url: "https://ourrevolution.com/page/polling-locator"}, layout:"no-footer"});
+  res.render('pages/polling-widget', { title: 'Our Revolution - Find Your Polling Location', meta: {
+    description: "Make sure you're ready to vote by finding your polling location.", url: "https://ourrevolution.com/page/polling-locator"}});
 });
+
+// router.get('/polling-locator', function(req, res) {
+// 
+//   res.render('pages/polling-locator', { title: 'Our Revolution - Find Your Polling Location', meta: {
+//     description: "Make sure you're ready to vote by finding your polling location.", url: "https://ourrevolution.com/page/polling-locator"}, layout:"no-footer"});
+// });
 
 
 module.exports = router;

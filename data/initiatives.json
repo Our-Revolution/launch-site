@@ -474,5 +474,19 @@
     "cta": "Join the Fight & Learn More",
     "cta_link": "http://www.raiseupwa.com/",
     "slug": "washington-initiative-1433"
+  },
+  "washington-initiative-1464": {
+    "featured": "",
+    "show": "TRUE",
+    "category": "election-reform",
+    "state": "Washington",
+    "state_initials": "WA",
+    "title": "Initiative 1464",
+    "name": "Transparency Accountability",
+    "vote": "Yes",
+    "description": "Initiative 1464 would repeal the non-resident sales tax exemption, restrict employment of former public employees and lobbying, revise campaign finance laws and establish “democracy credits” for registered voters and other state residents eligible to contribute to campaigns under state law. Under the \"democracy credit\" system, eligible individuals would receive three credits, each of a $50 value, to donate to qualified campaigns and candidates of their choosing during even-numbered years. It is important that citizens of Washington pass legislative reform that elevates the voice of citizens over corporate greed. Please vote Yes on Initiative 1464.",
+    "cta": "Join the Fight & Learn More",
+    "cta_link": "http://www.yes1464.org/about",
+    "slug": "washington-initiative-1464"
   }
 }
