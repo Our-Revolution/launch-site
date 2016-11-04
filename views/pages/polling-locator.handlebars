@@ -8,7 +8,7 @@
           <div class="form-group">
             <label for="address">Home Address</label>
             <div class="searchbox">
-              <input type="address" id="address" class="form-control" placeholder="Enter full registered voting address" required="true">
+              <input type="address" id="address" class="form-control" placeholder="Enter full registered voting address" required="true" disabled="true">
               <button type="submit" class="btn btn-secondary"><span class="glyphicon glyphicon-search"></span></button>
             </div>
           </div>
@@ -343,6 +343,8 @@
   }
   
   $(document).ready(function() {
+    $('#address').prop('disabled', false);
+    
     initAutocomplete();
     addListeners();
     
