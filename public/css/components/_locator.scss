@@ -9,25 +9,121 @@
 }
 
 .locator__sidebar {
-  max-width: 400px;
+  max-width: 380px;
   min-width: 240px;
   width: 100%;
   border-right: 1px solid #e7e7e7;
   flex: 1;
+  overflow: auto;
+}
+
+.locator__results {
+  margin-bottom: 0;
+  
+  .list-group-item {
+    border-right: 0;
+    padding: 0;
+  }
+}
+
+.locator__panel {
+  border-radius: 0;
+  border-top: 0;
+  border-right: 0;
+  margin-bottom: 0;
+}
+
+.locator__body {
+  padding: 10px 15px;
 }
 
 .locator__map {
   flex: 1;
   min-width: 600px;
-  // background: #999;
+  height: 100%;
+  background: rgb(229, 227, 223);
 }
 
-.locator__address p {
-  margin-bottom: 0;
+.locator__address { 
+  font-size: 16px;
+  
+  .locationName {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .line1 {
+    display: block;
+  }
+  
+  .city, .state, .zip {
+    display: inline-block;
+  }
+  
+  .city::after {
+    content:", ";
+    white-space: pre;
+  }
+  
+  .state {
+    text-transform: uppercase;
+    
+    &::after {
+      content: " ";
+      white-space: pre;
+    }
+  }
+  
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.locator__hours {
+  white-space: pre-wrap;
+  margin: 15px -15px -15px;
+  padding: 15px;
+  background: #f5f5f5;
+  
+  h4 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+  }
 }
 
 .locator__heading {
-  background: #f5f5f5;
-  margin: 20px -15px 10px;
+  background: $blue;
+  color: white;
   padding: 5px 15px;
+  cursor: pointer;
+  transition: 0.25s;
+  
+  .glyphicon {
+    transition: 0.25s;
+  }
+  
+  &.collapsed {
+    .glyphicon {
+      transform: rotate(-90deg);
+    }
+  }
+  
+  &:hover {
+    background: darken($blue, 20);
+  }
+  
+  h4 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+  }
+}
+
+.mt1 {
+  margin-top: 1em;
+}
+
+.mb0 {
+  margin-bottom: 0;
 }

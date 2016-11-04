@@ -1,76 +1,74 @@
 <div class="container-app">
-  <div class="locator__sidebar" id="results">
-    <div class="panel panel-default">
+  <div class="locator__sidebar">
+    <div class="locator__panel panel panel-default">
       <div class="panel-heading clearfix"><h1>Polling Locator</h1></div>
       
       <div class="panel-body">
         <form>
           <div class="form-group">
-            <label for="address">Adress</label>
-            <input type="address" id="address" class="form-control" placeholder="Enter full registered voting address">
+            <label for="address">Home Address</label>
+            <input type="address" id="address" class="form-control" placeholder="Enter full registered voting address" required="true">
           </div>
           <button type="submit" class="btn btn-secondary btn-block">Search</button>
         </form>
         
-        <div class="alert alert-danger hidden" id="error"></div>
-        
-        <div class="locator__home-address">
-        
-          <div class="locator__heading"><h4>Polling info for:</h4></div>
-          
-          <div class="locator__address"></div>
-        
-        </div>
+        <div class="alert alert-danger hidden mt1 mb0" id="error"></div>
       </div>
       
       <div class="locator__results list-group">
-        <div class="locator__early-vote-sites list-group-item hidden">
-          <h4>Your early vote site:</h4>
-          
-          <div class="locator__address">
-          </div>
-        </div>
+      <!-- 
+        <div class="locator__home-address list-group-item hidden">
         
-        <div class="locator__hours list-group-item hidden">
-          <h4>Early voting hours:</h4>
+          <div class="locator__heading"><h4>Your Address</h4></div>
           
-          <ul class="locator__hours-list">
-          </ul>
+          <div class="locator__address"></div>
+        
+        </div> -->
+        
+        <div class="locator__early-vote-sites list-group-item hidden">
+          <div class="locator__heading" data-toggle="collapse" data-target="#early-vote-sites-body" aria-expanded="false" aria-controls="early-vote-sites-body"><h4>Your Early Vote Site <span class="glyphicon glyphicon-chevron-down pull-right"></span></h4> </div>
+          
+          <div class="locator__body collapse in" id="early-vote-sites-body">
+          
+            <div class="locator__address">
+            </div>
+            
+            <div class="locator__hours">
+            </div>
+          </div>
         </div>
         
         <div class="locator__drop-off-locations list-group-item hidden">
-          <h4>Your drop-off location:</h4>
+          <div class="locator__heading" data-toggle="collapse" data-target="#drop-off-locations-body" aria-expanded="false" aria-controls="drop-off-locations-body"><h4>Your Drop-off Locations <span class="glyphicon glyphicon-chevron-down pull-right"></span></h4></div>
           
-          <div class="locator__address">
+          <div class="locator__body collapse in" id="drop-off-locations-body">
+          
+            <div class="locator__address">
+            </div>
+            
+            <div class="locator__hours">
+            </div>
           </div>
-        </div>
-        
-        <div class="locator__hours list-group-item hidden">
-          <h4>Drop-off hours:</h4>
-          
-          <ul class="locator__hours-list">
-          </ul>
         </div>
         
         <div class="locator__polling-location list-group-item hidden">
-          <h4>Your polling location:</h4>
+          <div class="locator__heading" data-toggle="collapse" data-target="#polling-location-body" aria-expanded="false" aria-controls="polling-location-body"><h4>Your Election Day Polling Place <span class="glyphicon glyphicon-chevron-down pull-right"></span></h4></div>
           
-          <div class="locator__address">
+          <div class="locator__body collapse in" id="polling-location-body">
+          
+            <div class="locator__address">
+            </div>
+            
+            <div class="locator__hours">
+            </div>
           </div>
-        </div>
-        
-        <div class="locator__hours list-group-item hidden">
-          <h4>Election hours:</h4>
-          
-          <ul class="locator__hours-list">
-          </ul>
         </div>
       </div>
     </div>
-  </div>
-  
+  </div> 
+
   <div class="locator__map" id="map"></div>
-</div> 
+</div>
 
 
 <script>
@@ -91,6 +89,10 @@
   function renderResults(response, rawReponse) {    
     var results = [], pollingAddress, primarySite, dropOff, earlyVote, electionDay;
     
+    console.debug(response);
+    
+    clearErrors();
+    
     if (!response || response.error) {
       
       renderError("We couldn't find polling information for that location. Please contact your county elections board.");
@@ -106,19 +108,16 @@
         
         primarySite = response.dropOffLocations[0].address;
         dropOff = true;
-        // results.push(response.dropOffLocations);
         
       } else if (response.earlyVoteSites) {
         
         primarySite = response.earlyVoteSites[0].address;
         earlyVote = true;
-        // results.push(response.earlyVoteSites);
         
       } else if (response.pollingLocations) {
         
         primarySite = response.pollingLocations[0].address;
         electionDay = true;
-        // results.push(response.pollingLocations);
         
       } else {
         primarySite = null;
@@ -139,7 +138,7 @@
     
   }
   
-  function initMap(center) {
+  function initMap(center) {    
     var mapOptions = {
       zoom: 15,
       center: center
@@ -163,17 +162,32 @@
     });
   }
   
-  function updateData(response, homeAddress) {
-    var data;
-    $('.locator__drop-off-locations .locator__address').html('');
-    $('.locator__early-vote-sites .locator__address').html('');
-    $('.locator__polling-location .locator__address').html('');
+  function collapse() {
+    $('.list-group-item').not('.hidden').find('.locator__body').slice(1).removeClass('in');
+    $('.list-group-item').not('.hidden').find('.locator__heading').slice(1).addClass('collapsed');
+  }
+  
+  function clearResults() {
+    $('.locator__address').html('');
     
     $('.locator__drop-off-locations').addClass('hidden');
     $('.locator__early-vote-sites').addClass('hidden');
     $('.locator__polling-location').addClass('hidden');
     
+    $('.locator__body').addClass('in');
+  }
+  
+  function clearErrors() {
+    $('#error').addClass('hidden');
+  }
+    
+  function updateData(response, homeAddress) {
+    var data;
+    
+    clearResults();
+    
     $('.locator__home-address .locator__address').html("<p>" + homeAddress + "</p>");
+    $('.locator__home-address').removeClass("hidden");
     
     if (response.dropOffLocations) {
       data = response.dropOffLocations[0];
@@ -181,8 +195,14 @@
       
       for (var key in data.address) {
         if (data.address.hasOwnProperty(key)) {
-          $('.locator__drop-off-locations .locator__address').append('<p>' + data.address[key] + '</p>');
+          $('.locator__drop-off-locations .locator__address').append('<span class="' + key + '"> ' + data.address[key]);
         }
+      }
+      
+      if(data.pollingHours) {
+        var pollingHours = data.pollingHours;
+
+        $('.locator__drop-off-locations .locator__hours').html("<h4>Hours:</h4></p>" + pollingHours + "</p>");
       }
       
       $('.locator__drop-off-locations').removeClass('hidden');
@@ -193,8 +213,14 @@
       
       for (var key in data.address) {
         if (data.address.hasOwnProperty(key)) {
-          $('.locator__early-vote-sites .locator__address').append('<p>' + data.address[key] + '</p>');
+          $('.locator__early-vote-sites .locator__address').append('<span class="' + key + '"> ' + data.address[key]);
         }
+      }
+      
+      if(data.pollingHours) {
+        var pollingHours = data.pollingHours;
+
+        $('.locator__early-vote-sites .locator__hours').html("<h4>Hours:</h4></p>" + pollingHours + "</p>");
       }
       
       $('.locator__early-vote-sites').removeClass('hidden');
@@ -206,12 +232,20 @@
       
       for (var key in data.address) {
         if (data.address.hasOwnProperty(key)) {
-          $('.locator__polling-location .locator__address').append('<p>' + data.address[key] + '</p>');
+          $('.locator__polling-location .locator__address').append('<span class="' + key + '"> ' + data.address[key]);
         }
       }
       
+      if(data.pollingHours) {
+        var pollingHours = data.pollingHours;
+
+        $('.locator__polling-location .locator__hours').html("<h4>Hours:</h4></p>" + pollingHours + "</p>");
+      }
+
       $('.locator__polling-location').removeClass('hidden');
     }
+    
+    collapse();
   }
   
   function renderError(message) {
@@ -223,6 +257,10 @@
     autocomplete = new google.maps.places.Autocomplete(
         /** @type {!HTMLInputElement} */(document.getElementById('address')),
         {types: ['geocode']});
+        
+    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+      $('form').submit();
+    });
   }
   
   $(document).ready(function() {
@@ -230,6 +268,7 @@
     
     $('form').on('submit', function(e) {
       e.preventDefault();
+      collapse();
       
       var addressInput = $('#address').val();
       lookup(addressInput, renderResults);
