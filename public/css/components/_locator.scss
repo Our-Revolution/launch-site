@@ -6,15 +6,82 @@
   left: 0;
   
   display: flex;
+  
+  @include until($medium) {
+    top: 50px;
+    flex-direction: column;
+  }
 }
 
 .locator__sidebar {
   max-width: 380px;
-  min-width: 240px;
+  min-width: 280px;
   width: 100%;
   border-right: 1px solid #e7e7e7;
+  background: #fafafa;
   flex: 1;
   overflow: auto;
+  
+  @include until($medium) {
+    max-width: 100%;
+    flex: none;
+    overflow: initial;
+  }
+}
+
+.locator__form {
+  .form-group {
+    width: 100%;
+    position: relative;
+  }
+  
+  .search-box {
+    position: relative;
+    height: 40px;
+    width: 100%;
+  }
+  
+  label {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  input {
+    // border-radius: 30px 0 0 30px;
+    height: 40px;
+    width: 100% !important;
+    float: left;
+    // font-size: 13px;
+    padding-right: 40px;
+    color: #333;
+  }
+  
+  button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    color: #999;
+    transition: 0.25s;
+    
+    &:hover, &:focus, &.focus {
+      color: $blue;
+      background: transparent;
+      box-shadow: none;
+    }
+    
+    &:active:hover, &.active:hover {
+      color: darken($blue, 20);
+      background: transparent;
+      box-shadow: none;
+    }
+    // @include text-indent();
+  }
+  
 }
 
 .locator__results {
@@ -31,6 +98,12 @@
   border-top: 0;
   border-right: 0;
   margin-bottom: 0;
+  
+  .panel-heading {
+    border-radius: 0;
+    background: darken($blue, 20);
+    color: white;
+  }
 }
 
 .locator__body {
@@ -38,10 +111,17 @@
 }
 
 .locator__map {
-  flex: 1;
-  min-width: 600px;
+  flex: 2;
+  min-width: 400px;
   height: 100%;
   background: rgb(229, 227, 223);
+  position: relative;
+  
+  @include until($medium) {
+    min-width: 0;
+    flex: none;
+    height: 250px;
+  }
 }
 
 .locator__address { 
@@ -92,12 +172,37 @@
   }
 }
 
+.map__heading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 40px;
+  background: $blue;
+  line-height: 40px;
+  color: white;
+  text-indent: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
 .locator__heading {
   background: $blue;
   color: white;
   padding: 5px 15px;
   cursor: pointer;
   transition: 0.25s;
+  position: relative;
+  padding-right: 40px;
+  
+  .expand-button {
+    position: absolute;
+    right: 15px;
+    top: 14px;
+    bottom: 0;
+  }
   
   .glyphicon {
     transition: 0.25s;
@@ -109,7 +214,7 @@
     }
   }
   
-  &:hover {
+  &:hover, &.active {
     background: darken($blue, 20);
   }
   
@@ -126,4 +231,12 @@
 
 .mb0 {
   margin-bottom: 0;
+}
+
+#mobile-indicator {
+  display: none;
+  
+  @include until($medium){
+    display: block;
+  }
 }

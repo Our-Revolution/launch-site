@@ -4,20 +4,22 @@
       <div class="panel-heading clearfix"><h1>Polling Locator</h1></div>
       
       <div class="panel-body">
-        <form>
+        <form class="form-inline locator__form">
           <div class="form-group">
             <label for="address">Home Address</label>
-            <input type="address" id="address" class="form-control" placeholder="Enter full registered voting address" required="true">
+            <div class="searchbox">
+              <input type="address" id="address" class="form-control" placeholder="Enter full registered voting address" required="true">
+              <button type="submit" class="btn btn-secondary"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
           </div>
-          <button type="submit" class="btn btn-secondary btn-block">Search</button>
         </form>
         
-        <div class="alert alert-danger hidden mt1 mb0" id="error"></div>
+        <div class="alert alert-info hidden mt1 mb0" id="error"></div>
       </div>
       
       <div class="locator__results list-group">
-      <!-- 
-        <div class="locator__home-address list-group-item hidden">
+      
+        <!-- <div class="locator__home-address list-group-item hidden">
         
           <div class="locator__heading"><h4>Your Address</h4></div>
           
@@ -26,7 +28,7 @@
         </div> -->
         
         <div class="locator__early-vote-sites list-group-item hidden">
-          <div class="locator__heading" data-toggle="collapse" data-target="#early-vote-sites-body" aria-expanded="false" aria-controls="early-vote-sites-body"><h4>Your Early Vote Site <span class="glyphicon glyphicon-chevron-down pull-right"></span></h4> </div>
+          <div class="locator__heading" data-toggle="collapse" data-target="#early-vote-sites-body" aria-expanded="false" aria-controls="early-vote-sites-body"><h4>Your Early Vote Site</h4> <div class="expand-button"><span class="glyphicon glyphicon-chevron-down pull-right"></span></div></div>
           
           <div class="locator__body collapse in" id="early-vote-sites-body">
           
@@ -39,7 +41,7 @@
         </div>
         
         <div class="locator__drop-off-locations list-group-item hidden">
-          <div class="locator__heading" data-toggle="collapse" data-target="#drop-off-locations-body" aria-expanded="false" aria-controls="drop-off-locations-body"><h4>Your Drop-off Locations <span class="glyphicon glyphicon-chevron-down pull-right"></span></h4></div>
+          <div class="locator__heading" data-toggle="collapse" data-target="#drop-off-locations-body" aria-expanded="false" aria-controls="drop-off-locations-body"><h4>Your Drop-off Locations</h4> <div class="expand-button"><span class="glyphicon glyphicon-chevron-down pull-right"></span></div></div>
           
           <div class="locator__body collapse in" id="drop-off-locations-body">
           
@@ -52,7 +54,7 @@
         </div>
         
         <div class="locator__polling-location list-group-item hidden">
-          <div class="locator__heading" data-toggle="collapse" data-target="#polling-location-body" aria-expanded="false" aria-controls="polling-location-body"><h4>Your Election Day Polling Place <span class="glyphicon glyphicon-chevron-down pull-right"></span></h4></div>
+          <div class="locator__heading" data-toggle="collapse" data-target="#polling-location-body" aria-expanded="false" aria-controls="polling-location-body"><h4>Your Election Day Polling Place</h4> <div class="expand-button"><span class="glyphicon glyphicon-chevron-down pull-right"></span></div></div>
           
           <div class="locator__body collapse in" id="polling-location-body">
           
@@ -68,11 +70,12 @@
   </div> 
 
   <div class="locator__map" id="map"></div>
+  <div id="mobile-indicator"></div>
 </div>
 
 
 <script>
-  var map, geocoder, placeSearch, autocomplete;
+  var map, geocoder, placeSearch, autocomplete, dropOff, earlyVote, electionDay;
   
   function lookup(address, callback) {
     gapi.client.setApiKey('AIzaSyAVOeLs_sV8HAU6DqhinyZ6LPpr4YJi4Vs');
@@ -87,15 +90,13 @@
   }
 
   function renderResults(response, rawReponse) {    
-    var results = [], pollingAddress, primarySite, dropOff, earlyVote, electionDay;
-    
-    console.debug(response);
-    
+    var results = [], pollingAddress, primarySite;
+        
     clearErrors();
     
     if (!response || response.error) {
       
-      renderError("We couldn't find polling information for that location. Please contact your county elections board.");
+      renderError("We don't have polling information for that location yet. Please contact your state elections board, or check back later.");
       
     } else {
       
@@ -107,17 +108,17 @@
       if (response.dropOffLocations) {
         
         primarySite = response.dropOffLocations[0].address;
-        dropOff = true;
+        dropOff = response.dropOffLocations[0].address;
         
       } else if (response.earlyVoteSites) {
         
         primarySite = response.earlyVoteSites[0].address;
-        earlyVote = true;
+        earlyVote = response.earlyVoteSites[0].address;
         
       } else if (response.pollingLocations) {
         
         primarySite = response.pollingLocations[0].address;
-        electionDay = true;
+        electionDay = response.pollingLocations[0].address;
         
       } else {
         primarySite = null;
@@ -132,13 +133,39 @@
         codeAdress(mapAddress);
         updateData(response, normalizedAddress);
       } else {
-        renderError("We couldn't find polling information for that location. Please contact your county elections board.");
+        
+        if (response.state) {
+          if (response.state[0].electionAdministrationBody) {
+            if (response.state[0].electionAdministrationBody.electionInfoUrl) {
+              if (response.mailOnly) {
+                renderError("The registered address you entered is located in a mail-in voting state. This means you can submit your ballot at any official drop box. Contact your <a href='" + response.state[0].electionAdministrationBody.electionInfoUrl +"' target='_blank'>state elections board</a> for more information.");
+              } else {
+                renderError("We don't have polling information for that location yet. Please contact your <a href='" + response.state[0].electionAdministrationBody.electionInfoUrl +"' target='_blank'>state elections board</a>, or check back later.");
+              }
+              
+              return;
+            }
+          }
+          
+          renderError("We don't have polling information for that location yet. Please contact your state elections board, or check back later.");
+          
+        } else {
+          renderError("We don't have polling information for that location yet. Please contact your state elections board, or check back later.");
+        }     
       }
     }
-    
   }
   
-  function initMap(center) {    
+  function initMap(center) {
+    $(window).resize(function () {
+      google.maps.event.trigger(map,'resize');
+      if (isMobileWidth()) {
+        mobileMap();
+      } else {
+        desktopMap();
+      }
+    })
+     
     var mapOptions = {
       zoom: 15,
       center: center
@@ -149,6 +176,16 @@
         map: map,
         position: center
     });
+    
+    if (isMobileWidth()) {
+      mobileMap();
+    } else {
+      desktopMap();
+    }
+  }
+  
+  function isMobileWidth() {
+    return $('#mobile-indicator').is(':visible');
   }
   
   function codeAdress(address) {
@@ -157,17 +194,24 @@
       if (status == 'OK') {
         initMap(results[0].geometry.location);
       } else {
-        renderError("We couldn't find polling information for that location. Please contact your county elections board.");
+        renderError("We don't have polling information for that location yet. Please contact your state elections board, or check back later.");
       }
     });
   }
   
   function collapse() {
+    $('.list-group-item').not('.hidden').find('.locator__body').css('height','auto');
+    $('.list-group-item').not('.hidden').find('.locator__heading').first().addClass('active');
+    $('.list-group-item').not('.hidden').find('.locator__heading').removeClass('collapsed');
     $('.list-group-item').not('.hidden').find('.locator__body').slice(1).removeClass('in');
     $('.list-group-item').not('.hidden').find('.locator__heading').slice(1).addClass('collapsed');
   }
   
   function clearResults() {
+    dropOff = null;
+    earlyVote = null;
+    electionDay = null;
+    
     $('.locator__address').html('');
     
     $('.locator__drop-off-locations').addClass('hidden');
@@ -205,6 +249,7 @@
         $('.locator__drop-off-locations .locator__hours').html("<h4>Hours:</h4></p>" + pollingHours + "</p>");
       }
       
+      $('.locator__drop-off-locations').data('address',data.address);
       $('.locator__drop-off-locations').removeClass('hidden');
     }
     if (response.earlyVoteSites) {
@@ -223,6 +268,7 @@
         $('.locator__early-vote-sites .locator__hours').html("<h4>Hours:</h4></p>" + pollingHours + "</p>");
       }
       
+      $('.locator__early-vote-sites').data('address',data.address);
       $('.locator__early-vote-sites').removeClass('hidden');
     }
     
@@ -242,6 +288,7 @@
         $('.locator__polling-location .locator__hours').html("<h4>Hours:</h4></p>" + pollingHours + "</p>");
       }
 
+      $('.locator__polling-location').data('address',data.address);
       $('.locator__polling-location').removeClass('hidden');
     }
     
@@ -253,25 +300,63 @@
     $('#error').removeClass('hidden');
   }
   
+  function mobileMap() {    
+    // Move map on mobile
+    $('.list-group-item').not('.hidden').find('.locator__body').first().after($('#map'));
+    google.maps.event.trigger(map,'resize');
+  }
+  
+  function desktopMap() {
+    // Move map on desktop
+    $('.container-app').append($('#map'));
+    google.maps.event.trigger(map,'resize');
+  }
+  
   function initAutocomplete() {
     autocomplete = new google.maps.places.Autocomplete(
         /** @type {!HTMLInputElement} */(document.getElementById('address')),
-        {types: ['geocode']});
+        {
+          types: ['geocode'],
+          componentRestrictions: {country: "us"}
+        });
         
     google.maps.event.addListener(autocomplete, 'place_changed', function() {
       $('form').submit();
     });
   }
   
+  function addListeners() {
+    $('.locator__heading').on('click', function() {
+      $('.locator__heading').not(this).parent().find('.locator__body').collapse("hide");
+      $('.locator__heading').removeClass('active');
+      $(this).addClass('active');
+      
+      var address = $(this).parent().data('address');
+      
+      var normalizedAddress = address.line1 + ' ' +
+          address.city + ', ' +
+          address.state + ' ' +
+          address.zip;
+          
+      codeAdress(normalizedAddress);
+    })
+  }
+  
   $(document).ready(function() {
     initAutocomplete();
+    addListeners();
     
     $('form').on('submit', function(e) {
       e.preventDefault();
       collapse();
       
       var addressInput = $('#address').val();
-      lookup(addressInput, renderResults);
+      
+      if (addressInput.length > 0) {      
+        lookup(addressInput, renderResults);
+      } else {
+        renderError('Please input a valid address.');
+      }
     })
   });
 </script>
